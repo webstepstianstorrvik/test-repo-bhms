@@ -9,8 +9,8 @@ class HelpVideos extends React.Component {
     render() {
         const videos = this.props.videoList.map((video, i) => {
             return (
-                <div className="video-thumb-container">
-                    <VideoThumb key={i}
+                <div className="video-thumb-container" key={i}>
+                    <VideoThumb
                                 videoHeaderImageUrl={video.videoHeaderImageUrl}
                                 videoTitle={video.videoTitle}
                                 videoUrl={video.videoUrl}
