@@ -5,7 +5,7 @@ import Footer from './components/common/Footer.js';
 
 import { PAGE_BRUKERVEILEDNING } from './helpers/dictionary/pages.js';
 
-class App extends React.Component {
+class Brukerportal extends React.Component {
 
     constructor() {
         super();
@@ -33,4 +33,4 @@ class App extends React.Component {
     }
 }
 
-export default App;
+export default Brukerportal;
