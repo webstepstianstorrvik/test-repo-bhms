@@ -9,5 +9,3 @@ export const PAGE_FAGVIDEOER = {
     parenttitle: 'Veiledning',
     title: 'Fagvideoer'
 };
-
-
