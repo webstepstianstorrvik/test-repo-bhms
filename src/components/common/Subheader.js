@@ -1,7 +1,6 @@
 import '../../assets/css/fonts.css';
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import './subheader.css';
 
 class Subheader extends React.Component {
