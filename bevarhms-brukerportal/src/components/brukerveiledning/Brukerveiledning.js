@@ -1,22 +1,22 @@
-import './../assets/css/fonts.css';
+import '../../assets/css/fonts.css';
 
 import React from 'react';
 import HelpVideos from './HelpVideos.js';
-import aktiviteterOgOppfolgning from './../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
-import avvikTiltak from './../assets/img/brukerveiledning/avvik_og_tiltak.png';
-import brukerRegistrer from './../assets/img/brukerveiledning/bruker_registrer.png';
-import flerbrukerTilgang from './../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
-import hmshandbok from './../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
-import kontaktOpprettRedigerSlett from './../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
-import passordEndre from './../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
-import risikovurderingBrukAvModul from './../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
-import startsidaIcon from './../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
-import arligGjennomgang from './../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
+import aktiviteterOgOppfolgning from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
+import avvikTiltak from './../../assets/img/brukerveiledning/avvik_og_tiltak.png';
+import brukerRegistrer from './../../assets/img/brukerveiledning/bruker_registrer.png';
+import flerbrukerTilgang from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
+import hmshandbok from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
+import kontaktOpprettRedigerSlett from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
+import passordEndre from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
+import risikovurderingBrukAvModul from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
+import startsidaIcon from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
+import arligGjennomgang from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
 
 class Content extends React.Component {
     render() {
         const videos = [{
-            videoUrl: "https://player.vimeo.com/video/516603780?h=dcb211b570&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+            videoUrl: "https://player.vimeo.com/video/516603780?h=dcb211b570&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Aktiviteter - Oppfølging",
             videoDurationText: "2:32 minutter",
             videoHeaderImageUrl: aktiviteterOgOppfolgning

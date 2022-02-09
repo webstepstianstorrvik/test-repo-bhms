@@ -1,4 +1,4 @@
-import './../assets/css/fonts.css';
+import '../../assets/css/fonts.css';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -11,7 +11,7 @@ class Subheader extends React.Component {
             <div className="subheader bg-bevarblack">
                 <div className="container">
                     <div className="content">
-                        <div className="subheader-text">{ this.props.text }</div>
+                        <div className="subheader-text">{ this.props.title }</div>
                     </div>
                 </div>
 

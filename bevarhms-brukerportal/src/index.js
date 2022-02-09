@@ -1,15 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import Header from './components/Header.js';
-import Content from './components/Content.js';
 import reportWebVitals from './reportWebVitals';
+import App from './App.js';
 import './assets/css/polyfill/bootstrap.css';
 import './main.css';
 
 ReactDOM.render(
   <React.StrictMode>
-      <Header headertext="Veiledning" subheadertext="Brukerveiledning"/>
-      <Content />
+      <App />
   </React.StrictMode>,
   document.getElementById('root')
 );

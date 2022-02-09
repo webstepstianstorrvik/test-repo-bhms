@@ -1,9 +1,10 @@
-import './../assets/css/fonts.css';
+import '../../assets/css/fonts.css';
 import './helpvideos.css';
 import React from 'react';
 import VideoThumb from './VideoThumb.js';
 
 class HelpVideos extends React.Component {
+
 
     render() {
         const videos = this.props.videoList.map((video, i) => {

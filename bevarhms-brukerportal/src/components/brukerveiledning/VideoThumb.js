@@ -1,4 +1,4 @@
-import './../assets/css/fonts.css';
+import '../../assets/css/fonts.css';
 import './videothumb.css';
 import React from 'react';
 import ReactModal from 'react-modal';

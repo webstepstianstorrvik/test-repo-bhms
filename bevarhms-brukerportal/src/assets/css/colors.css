@@ -1,6 +1,7 @@
 :root{
     --main-color-black: #3C3C3C;
     --main-color-blue: #175FAB;
+    --text-muted: #9DA9BB;
 }
 
 .bg-bevarblue {
@@ -9,4 +10,8 @@
 
 .bg-bevarblack {
     background-color: var(--main-color-black);
+}
+
+.text-muted {
+    color: var(--text-muted);
 }

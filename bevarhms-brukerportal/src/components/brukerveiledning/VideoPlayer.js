@@ -1,6 +1,6 @@
-import './../assets/css/fonts.css';
+import '../../assets/css/fonts.css';
 import './videoplayer.css';
-import cross from './../assets/img/icons/cross.svg';
+import cross from './../../assets/img/icons/cross.svg';
 
 import React from 'react';
 

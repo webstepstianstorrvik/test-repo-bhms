@@ -3,8 +3,7 @@
     flex-wrap: wrap;
     justify-content: space-between;
     flex-direction: row;
-    margin-left: -1rem;
-    margin-right: -1rem;
+    gap: 2rem;
 }
 
 
@@ -14,12 +13,12 @@
 @media(min-width:768px) {
 
     .video-thumb-container {
-        width: 50%;
+        width: calc(50% - 1rem);
     }
 }
 @media(min-width: 1024px) {
 
     .video-thumb-container {
-        width: 33%;
+        width: calc(33% - 2rem);
     }
 }

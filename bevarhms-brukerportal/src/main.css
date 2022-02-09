@@ -7,7 +7,7 @@ body {
 .container {
     display: flex;
     margin: auto;
-    width: 1141px;
+    max-width: 1141px;
 }
 
 .content {
@@ -27,4 +27,8 @@ body {
 .right-content {
     display: flex;
     justify-self: flex-end;
+}
+.center-content {
+    display: flex;
+    justify-self: center;
 }
