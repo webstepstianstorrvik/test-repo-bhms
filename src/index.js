@@ -1,24 +1,13 @@
-import Brukerportal from './Brukerportal.js';
 import React from 'react';
 import { render } from 'react-dom';
-import {
-    BrowserRouter,
-    Routes,
-    Route,
-    Link
-} from "react-router-dom";
+import Brukerportal from './Brukerportal.js';
 import './assets/css/polyfill/bootstrap.css';
 import './main.css';
 import reportWebVitals from './reportWebVitals';
 
 const rootElement = document.getElementById("root");
 render(
-    <BrowserRouter>
-        <Routes>
-            <Route path="/" element={<Brukerportal />} />
-            <Route path="brukerportal" element={<Brukerportal />} />
-        </Routes>
-    </BrowserRouter>,
+    <Brukerportal />,
     rootElement
 );
 
