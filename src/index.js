@@ -2,7 +2,7 @@ import Brukerportal from './Brukerportal.js';
 import React from 'react';
 import { render } from 'react-dom';
 import {
-    BrowserRouter as Router,
+    BrowserRouter,
     Routes,
     Route,
     Link
@@ -11,16 +11,16 @@ import './assets/css/polyfill/bootstrap.css';
 import './main.css';
 import reportWebVitals from './reportWebVitals';
 
-const App = () => (
-    <Router>
+const rootElement = document.getElementById("root");
+render(
+    <BrowserRouter>
         <Routes>
-            <Route path="/brukerportal" element={ <Brukerportal />} />
-            <Route path="/" element={<Brukerportal />}/>
+            <Route path="/" element={<Brukerportal />} />
+            <Route path="brukerportal" element={<Brukerportal />} />
         </Routes>
-    </Router>
+    </BrowserRouter>,
+    rootElement
 );
-
-render(<App />, document.getElementById('root'));
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))
