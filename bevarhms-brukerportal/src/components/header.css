@@ -1,0 +1,32 @@
+@import '../assets/css/colors.css';
+
+.header {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.header-logo {
+    width: 12.5rem;
+}
+
+.header-filler-border {
+    height: 2rem;
+    border-left: 1px solid white;
+}
+
+.x-auto {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.y-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+
+.header-text {
+    font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 1.25rem;
+    font-variant: normal;
+    color: white;
+}

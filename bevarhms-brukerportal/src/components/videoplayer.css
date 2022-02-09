@@ -1,0 +1,15 @@
+.video {
+    height: 100%;
+}
+
+iframe {
+    height: calc(100% - 2rem - 25px);
+    background-color: white;
+    margin-top: calc(25px + 1rem + 1rem);
+}
+
+.img-close-modal-icon {
+    right: 0.5rem;
+    margin-top: 1rem;
+    position: absolute;
+}

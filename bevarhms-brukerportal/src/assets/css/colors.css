@@ -1,0 +1,12 @@
+:root{
+    --main-color-black: #3C3C3C;
+    --main-color-blue: #175FAB;
+}
+
+.bg-bevarblue {
+    background-color: var(--main-color-blue);
+}
+
+.bg-bevarblack {
+    background-color: var(--main-color-black);
+}

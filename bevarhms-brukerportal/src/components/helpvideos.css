@@ -1,0 +1,25 @@
+.helpvideos {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    margin-left: -1rem;
+    margin-right: -1rem;
+}
+
+
+.video-thumb-container {
+    width: 100%;
+}
+@media(min-width:768px) {
+
+    .video-thumb-container {
+        width: 50%;
+    }
+}
+@media(min-width: 1024px) {
+
+    .video-thumb-container {
+        width: 33%;
+    }
+}
