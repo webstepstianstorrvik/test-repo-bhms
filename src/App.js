@@ -2,32 +2,34 @@ import React from 'react';
 import Header from './components/common/Header.js';
 import Content from './components/brukerveiledning/Brukerveiledning.js';
 import Footer from './components/common/Footer.js';
-
-import { PAGE_BRUKERVEILEDNING } from './helpers/dictionary/pages.js';
+import {PAGE_BRUKERVEILEDNING, PAGE_FAGVIDEOER} from './helpers/dictionary/pages.js';
 
 class App extends React.Component {
 
     constructor() {
         super();
 
-        this.state = {
-            page: PAGE_BRUKERVEILEDNING
-        }
-
-        this.changePage = this.changePage.bind(this);
+        this.findPage = this.findPage.bind(this);
     }
 
-    changePage(page) {
-        this.setState({
-            page: page
-        })
+    findPage() {
+        const page = this.props.page;
+        switch(page) {
+            case 'fagvideoer':
+                return PAGE_FAGVIDEOER;
+            case 'opplaering':
+            default:
+                return PAGE_BRUKERVEILEDNING;
+        }
     }
     render() {
+        const page = this.findPage();
+        console.log("Loaded: " + page.title);
 
         return (
             <div>
-                <Header headertext={this.state.page.parenttitle} subheadertext={this.state.page.title}/>
-                <Content changePage={this.changePage}/>
+                <Header headertext={page.parenttitle} subheadertext={page.title}/>
+                <Content />
                 <Footer />
             </div>
         );

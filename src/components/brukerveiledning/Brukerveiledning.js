@@ -19,11 +19,13 @@ class Content extends React.Component {
     render() {
         const menuItems = [
             {
-                itemUrl: ICONS_MENU_FAGVIDEOER,
+                itemUrl: '/fagvideoer',
+                itemImgUrl: ICONS_MENU_FAGVIDEOER,
                 title: 'Fagvideoer'
             },
             {
-                itemUrl: ICONS_MENU_OPPLAERING,
+                itemUrl: '/opplaering',
+                itemImgUrl: ICONS_MENU_OPPLAERING,
                 title: 'Opplæring'
             },
         ]
@@ -80,7 +82,7 @@ class Content extends React.Component {
         }];
         return (
             <div className="brukerveiledning">
-                <SidebarMenu items={menuItems} />
+                <SidebarMenu items={menuItems}/>
                 <div className="container">
                     <div className="content">
                         <HelpVideos videoList={videos}/>

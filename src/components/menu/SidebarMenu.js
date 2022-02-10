@@ -9,7 +9,7 @@ class SidebarMenu extends React.Component {
     render() {
         const menuItems = this.props.items.map((item, i) => {
             return (
-                <MenuItem itemUrl={item.itemUrl} title={item.title} />
+                <MenuItem key={i} itemImgUrl={item.itemImgUrl} itemUrl={item.itemUrl} title={item.title} />
             )
         });
 

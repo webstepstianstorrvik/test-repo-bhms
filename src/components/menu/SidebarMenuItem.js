@@ -7,8 +7,10 @@ class MenuItem extends React.Component {
     render() {
         return (
             <div className="sidebarmenu-item">
-                <img src={this.props.itemUrl} className="sidebarmenu-item-img"/>
-                <div className="sidebarmenu-item-title">{this.props.title}</div>
+                <a href={this.props.itemUrl} style={ {textDecoration: 'none' }}>
+                    <img src={this.props.itemImgUrl} className="sidebarmenu-item-img"/>
+                    <div className="sidebarmenu-item-title">{this.props.title}</div>
+                </a>
             </div>
         );
     }
