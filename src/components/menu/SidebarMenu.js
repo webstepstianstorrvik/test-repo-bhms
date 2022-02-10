@@ -3,9 +3,6 @@ import MenuItem from './SidebarMenuItem';
 import './sidebarmenu.css';
 class SidebarMenu extends React.Component {
 
-    constructor() {
-        super();
-    }
     render() {
         const menuItems = this.props.items.map((item, i) => {
             return (

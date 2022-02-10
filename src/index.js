@@ -6,8 +6,7 @@ import { useParams } from 'react-router-dom'
 import {
     BrowserRouter as Router,
     Routes,
-    Route,
-    Link
+    Route
 } from "react-router-dom";
 import './assets/css/polyfill/bootstrap.css';
 import './main.css';

@@ -24,12 +24,10 @@ class App extends React.Component {
     }
     render() {
         const page = this.findPage();
-        console.log("Loaded: " + page.title);
-
         return (
             <div>
                 <Header headertext={page.parenttitle} subheadertext={page.title}/>
-                <Content />
+                <Content page={page} />
                 <Footer />
             </div>
         );
