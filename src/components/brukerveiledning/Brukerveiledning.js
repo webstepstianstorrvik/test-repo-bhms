@@ -1,5 +1,5 @@
 import '../../assets/css/fonts.css';
-
+import './brukerveiledning.css';
 import React from 'react';
 import HelpVideos from './HelpVideos.js';
 import aktiviteterOgOppfolgning from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
@@ -12,9 +12,21 @@ import passordEndre from './../../assets/img/brukerveiledning/aktiviteter_og_opp
 import risikovurderingBrukAvModul from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
 import startsidaIcon from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
 import arligGjennomgang from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
+import SidebarMenu from './../menu/SidebarMenu.js';
+import { ICONS_MENU_FAGVIDEOER, ICONS_MENU_OPPLAERING } from './../../assets/img/image_dictionary.js';
 
 class Content extends React.Component {
     render() {
+        const menuItems = [
+            {
+                itemUrl: ICONS_MENU_FAGVIDEOER,
+                title: 'Fagvideoer'
+            },
+            {
+                itemUrl: ICONS_MENU_OPPLAERING,
+                title: 'Opplæring'
+            },
+        ]
         const videos = [{
             videoUrl: "https://player.vimeo.com/video/516603780?h=dcb211b570&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Aktiviteter - Oppfølging",
@@ -67,9 +79,12 @@ class Content extends React.Component {
             videoHeaderImageUrl: arligGjennomgang
         }];
         return (
-            <div className="container">
-                <div className="content">
-                    <HelpVideos videoList={videos}/>
+            <div className="brukerveiledning">
+                <SidebarMenu items={menuItems} />
+                <div className="container">
+                    <div className="content">
+                        <HelpVideos videoList={videos}/>
+                    </div>
                 </div>
             </div>
         );

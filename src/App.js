@@ -23,6 +23,7 @@ class App extends React.Component {
         })
     }
     render() {
+
         return (
             <div>
                 <Header headertext={this.state.page.parenttitle} subheadertext={this.state.page.title}/>
