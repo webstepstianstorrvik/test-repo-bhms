@@ -85,7 +85,7 @@ class Content extends React.Component {
                 <SidebarMenu items={menuItems}/>
                 <div className="container">
                     <div className="content">
-                        { this.props.page.id == 1 ? <HelpVideos videoList={videos}/> : <HelpVideos /> }
+                        { this.props.page.id === 1 ? <HelpVideos videoList={videos}/> : <HelpVideos videoList={[]}/> }
 
                     </div>
                 </div>

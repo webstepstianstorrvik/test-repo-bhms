@@ -21,7 +21,7 @@ class HelpVideos extends React.Component {
         });
         return (
             <div className="helpvideos">
-                { videos }
+                { videos.length > 0 ? videos : <div className="no-items">Ingen videoer tilgjengelig</div>}
             </div>
         );
     }
