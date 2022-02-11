@@ -3,6 +3,7 @@
     --main-color-blue: #175FAB;
     --main-color-text-faded: rgb(52, 64, 80);
     --text-muted: #9DA9BB;
+    --main-color-blue-filter: invert(26%) sepia(89%) saturate(886%) hue-rotate(179deg) brightness(102%) contrast(94%);
 }
 
 .bg-bevarblue {

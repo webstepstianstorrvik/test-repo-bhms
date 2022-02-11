@@ -1,4 +1,4 @@
-a, a:visited, a:hover, a:active {
+a, a:visited, a:active {
     color: inherit;
 }
 
@@ -11,11 +11,21 @@ a, a:visited, a:hover, a:active {
     padding-right: 2rem;
     margin-top: 3.68rem;
 }
+
+.sidebarmenu-item:hover {
+    filter: var(--main-color-blue-filter);
+}
 .sidebarmenu img {
+    fill: inherit;
+    opacity: inherit;
     width: 1.5rem;
     height: 1.5rem;
     max-width: 100%;
     display: inline-block;
+}
+
+.sidebarmenu img:hover {
+    filter: inherit;
 }
 
 .sidebarmenu-item {
