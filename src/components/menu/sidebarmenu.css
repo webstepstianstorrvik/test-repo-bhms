@@ -1,10 +1,10 @@
 .sidebarmenu {
-    position: absolute;
-    z-index: 2;
-    margin-left: 1rem;
-    width: 10rem;
-    display: none;
+    display: flex;
     flex-direction: column;
+    min-width: 1.5rem;
+    flex-grow: 1;
+    padding-right: 2rem;
+    margin-top: 3.68rem;
 }
 
 .sidebarmenu img {
@@ -15,6 +15,8 @@
 }
 
 .sidebarmenu-item {
+    display: flex;
+    flex-direction: row;
     height: 3rem;
     cursor: pointer;
 }
@@ -30,7 +32,6 @@
 
 @media (min-width: 1245px) {
     .sidebarmenu {
-        display: flex;
     }
 }
 @media (min-width: 1495px) {

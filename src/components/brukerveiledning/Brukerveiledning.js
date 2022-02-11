@@ -2,6 +2,7 @@ import '../../assets/css/fonts.css';
 import './brukerveiledning.css';
 import React from 'react';
 import HelpVideos from './HelpVideos.js';
+import Subheader from './../common/Subheader.js';
 import aktiviteterOgOppfolgning from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
 import avvikTiltak from './../../assets/img/brukerveiledning/avvik_og_tiltak.png';
 import brukerRegistrer from './../../assets/img/brukerveiledning/bruker_registrer.png';
@@ -16,20 +17,10 @@ import SidebarMenu from './../menu/SidebarMenu.js';
 import { ICONS_MENU_FAGVIDEOER, ICONS_MENU_OPPLAERING } from './../../assets/img/image_dictionary.js';
 
 class Content extends React.Component {
-    render() {
-        const menuItems = [
-            {
-                itemUrl: '/fagvideoer',
-                itemImgUrl: ICONS_MENU_FAGVIDEOER,
-                title: 'Fagvideoer'
-            },
-            {
-                itemUrl: '/opplaering',
-                itemImgUrl: ICONS_MENU_OPPLAERING,
-                title: 'Opplæring'
-            },
-        ]
-        const videos = [{
+
+    findVideos() {
+
+        const opplaeringvideoer = [{
             videoUrl: "https://player.vimeo.com/video/516603780?h=dcb211b570&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Aktiviteter - Oppfølging",
             videoDurationText: "2:32 minutter",
@@ -80,13 +71,47 @@ class Content extends React.Component {
             videoDurationText: "2:32 minutter",
             videoHeaderImageUrl: arligGjennomgang
         }];
-        return (
-            <div className="brukerveiledning">
-                <SidebarMenu items={menuItems}/>
-                <div className="container">
-                    <div className="content">
-                        { this.props.page.id === 1 ? <HelpVideos videoList={videos}/> : <HelpVideos videoList={[]}/> }
+        const fagvideoer = [{
+            videoUrl: "https://player.vimeo.com/video/516603780?h=dcb211b570&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
+            videoTitle: "Fagvideo 1",
+            videoDurationText: "2:32 minutter",
+            videoHeaderImageUrl: aktiviteterOgOppfolgning
+        }];
 
+        switch (this.props.page.id) {
+            case 1:
+                return opplaeringvideoer;
+            case 2:
+                return fagvideoer;
+            default:
+                return opplaeringvideoer;
+        }
+    }
+    render() {
+        const menuItems = [
+            {
+                itemUrl: '/fagvideoer',
+                itemImgUrl: ICONS_MENU_FAGVIDEOER,
+                title: 'Fagvideoer'
+            },
+            {
+                itemUrl: '/opplaering',
+                itemImgUrl: ICONS_MENU_OPPLAERING,
+                title: 'Opplæring'
+            },
+        ]
+
+        let videoer = this.findVideos();
+
+        return (
+            <div className="container">
+                <div className="content">
+                    <div className="brukerveiledning site-content">
+                        <SidebarMenu items={menuItems}/>
+                        <div className="main-content">
+                            <Subheader title={this.props.page.title}/>
+                            <HelpVideos videoList={videoer}/>
+                        </div>
                     </div>
                 </div>
             </div>

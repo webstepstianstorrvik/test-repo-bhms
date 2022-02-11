@@ -6,22 +6,15 @@
 }
 
 .header-logo {
-    width: 12.5rem;
+    width: 10.5rem;
 }
 
 .header-filler-border {
     height: 2rem;
     border-left: 1px solid white;
+    margin-left: 1rem;
 }
 
-.x-auto {
-    margin-left: 1rem;
-    margin-right: 1rem;
-}
-.y-auto {
-    margin-top: auto;
-    margin-bottom: auto;
-}
 
 
 .header-text {
@@ -29,4 +22,5 @@
     font-size: 1.25rem;
     font-variant: normal;
     color: white;
+    margin-left: 1rem;
 }

@@ -9,7 +9,6 @@ class Header extends React.Component {
         return (
             <div>
                 <Topheader title={this.props.headertext}/>
-                <Subheader title={this.props.subheadertext}/>
             </div>
         );
     }
