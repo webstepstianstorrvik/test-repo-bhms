@@ -1,4 +1,9 @@
+a, a:visited, a:hover, a:active {
+    color: inherit;
+}
+
 .sidebarmenu {
+    color: var(--main-color-text-faded);
     display: flex;
     flex-direction: column;
     min-width: 1.5rem;
@@ -6,7 +11,6 @@
     padding-right: 2rem;
     margin-top: 3.68rem;
 }
-
 .sidebarmenu img {
     width: 1.5rem;
     height: 1.5rem;
