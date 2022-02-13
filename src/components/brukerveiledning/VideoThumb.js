@@ -3,6 +3,9 @@ import './videothumb.css';
 import React from 'react';
 import ReactModal from 'react-modal';
 import VideoPlayer from './VideoPlayer';
+import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+
 
 class VideoThumb extends React.Component {
     constructor() {
@@ -39,7 +42,7 @@ class VideoThumb extends React.Component {
                             { this.props.videoTitle }
                         </div>
                         <div className="duration">
-                            { this.props.videoDurationText }
+                            <FontAwesomeIcon icon={faClock} /> { this.props.videoDurationText }
                         </div>
                     </div>
                 </div>

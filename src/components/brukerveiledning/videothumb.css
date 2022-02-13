@@ -45,3 +45,7 @@
     width: 25px;
     height: 25px;
 }
+
+.fa-clock {
+    color: var(--main-color-text-faded);
+}
