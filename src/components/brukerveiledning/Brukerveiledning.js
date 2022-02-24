@@ -3,20 +3,20 @@ import './brukerveiledning.css';
 import React from 'react';
 import HelpVideos from './HelpVideos.js';
 import Subheader from './../common/Subheader.js';
-import aktiviteterOgOppfolgning from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.png';
-import avvikTiltak from './../../assets/img/brukerveiledning/avvik_og_tiltak.png';
-import brukerRegistrer from './../../assets/img/brukerveiledning/bruker_registrer.png';
-import flerbrukertilgang from './../../assets/img/brukerveiledning/flerbrukertilgang.png';
-import hmshandbok from './../../assets/img/brukerveiledning/hmshandbok.png';
-import kontaktOpprettRedigerSlett from './../../assets/img/brukerveiledning/kontaktOpprettRedigerSlett.png';
-import passordEndre from './../../assets/img/brukerveiledning/passordEndre.png';
-import risikovurderingBrukAvModul from './../../assets/img/brukerveiledning/risikovurderingBrukAvModul.png';
-import startsidaIcon from './../../assets/img/brukerveiledning/startsidaIcon.png';
+import aktiviteterOgOppfolgning from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.jpg';
+import avvikTiltak from './../../assets/img/brukerveiledning/avvik_og_tiltak.jpg';
+import brukerRegistrer from './../../assets/img/brukerveiledning/bruker_registrer.jpg';
+import flerbrukertilgang from './../../assets/img/brukerveiledning/flerbrukertilgang.jpg';
+import hmshandbok from './../../assets/img/brukerveiledning/hmshandbok.jpg';
+import kontaktOpprettRedigerSlett from './../../assets/img/brukerveiledning/kontaktOpprettRedigerSlett.jpg';
+import passordEndre from './../../assets/img/brukerveiledning/passordEndre.jpg';
+import risikovurderingBrukAvModul from './../../assets/img/brukerveiledning/risikovurderingBrukAvModul.jpg';
+import startside from './../../assets/img/brukerveiledning/startside.jpg';
 import arligGjennomgang from './../../assets/img/brukerveiledning/arligGjennomgang.png';
-import styretsHmsAnsvar from './../../assets/img/fagvideoer/styretsHmsAnsvar.png';
-import risikovurderingIBorettslagOgSameier from './../../assets/img/fagvideoer/risikovurderingIBorettslagOgSameier.png';
-import byggherreforskriften from './../../assets/img/fagvideoer/byggherreforskriften.png';
-import internkontrollForHMSIBorettslagOgSameier from './../../assets/img/fagvideoer/internkontrollForHMSIBorettslagOgSameier.png';
+import styretsHmsAnsvar from './../../assets/img/fagvideoer/styretsHmsAnsvar.jpg';
+import risikovurderingIBorettslagOgSameier from './../../assets/img/fagvideoer/risikovurderingIBorettslagOgSameier.jpg';
+import byggherreforskriften from './../../assets/img/fagvideoer/byggherreforskriften.jpg';
+import internkontrollForHMSIBorettslagOgSameier from './../../assets/img/fagvideoer/internkontrollForHMSIBorettslagOgSameier.jpg';
 
 import SidebarMenu from './../menu/SidebarMenu.js';
 import { ICONS_MENU_FAGVIDEOER, ICONS_MENU_OPPLAERING } from './../../assets/img/image_dictionary.js';
@@ -78,7 +78,7 @@ class Content extends React.Component {
             videoTitle: "Startsida – Icon",
             duration: 36,
             videoDurationText: "0:36 minutter",
-            videoHeaderImageUrl: startsidaIcon
+            videoHeaderImageUrl: startside
         },{
             videoUrl: "https://player.vimeo.com/video/667225111?h=763b6d58d2&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Årlig gjennomgang – Kopiere til arkiv",
