@@ -11,7 +11,7 @@ import hmshandbok from './../../assets/img/brukerveiledning/hmshandbok.jpg';
 import kontaktOpprettRedigerSlett from './../../assets/img/brukerveiledning/kontaktOpprettRedigerSlett.jpg';
 import passordEndre from './../../assets/img/brukerveiledning/passordEndre.jpg';
 import risikovurderingBrukAvModul from './../../assets/img/brukerveiledning/risikovurderingBrukAvModul.jpg';
-import startside from './../../assets/img/brukerveiledning/startside.jpg';
+import startsida from './../../assets/img/brukerveiledning/startsida.jpg';
 import arligGjennomgang from './../../assets/img/brukerveiledning/arligGjennomgang.png';
 import styretsHmsAnsvar from './../../assets/img/fagvideoer/styretsHmsAnsvar.jpg';
 import risikovurderingIBorettslagOgSameier from './../../assets/img/fagvideoer/risikovurderingIBorettslagOgSameier.jpg';
@@ -78,7 +78,7 @@ class Content extends React.Component {
             videoTitle: "Startsida – Icon",
             duration: 36,
             videoDurationText: "0:36 minutter",
-            videoHeaderImageUrl: startside
+            videoHeaderImageUrl: startsida
         },{
             videoUrl: "https://player.vimeo.com/video/667225111?h=763b6d58d2&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Årlig gjennomgang – Kopiere til arkiv",
