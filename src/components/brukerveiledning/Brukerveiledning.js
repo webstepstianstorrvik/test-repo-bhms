@@ -85,9 +85,33 @@ class Content extends React.Component {
             duration: 144,
             videoDurationText: "2:24 minutter",
             videoHeaderImageUrl: arligGjennomgang
+        },{
+            videoUrl: "https://player.vimeo.com/video/701550388?h=b25ce28457&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+            videoTitle: "Arkiv – Lær alt om arkivet",
+            duration: 1,
+            videoDurationText: "2:24 minutter",
+            videoHeaderImageUrl: arligGjennomgang
+        },{
+            videoUrl: "https://player.vimeo.com/video/701183325?h=977f1fbe9b&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+            videoTitle: "Arkiv Del 1 – En oversikt",
+            duration: 159,
+            videoDurationText: "2:39 minutter",
+            videoHeaderImageUrl: arligGjennomgang
+        },{
+            videoUrl: "https://player.vimeo.com/video/701558271?h=1754321715&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+            videoTitle: "Arkiv Del 2 – Filer",
+            duration: 200,
+            videoDurationText: "3:20 minutter",
+            videoHeaderImageUrl: arligGjennomgang
+        },{
+            videoUrl: "https://player.vimeo.com/video/701571469?h=1ee86da71e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+            videoTitle: "Arkiv Del 3 – Mapper",
+            duration: 172,
+            videoDurationText: "2:52 minutter",
+            videoHeaderImageUrl: arligGjennomgang
         }];
 
-        const fagvideoer = [{
+            const fagvideoer = [{
             videoUrl: "https://player.vimeo.com/video/475461615?h=9e48c15ea9&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Internkontroll for HMS i borettslag og sameier",
             duration: 207,
