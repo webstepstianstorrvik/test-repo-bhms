@@ -80,12 +80,6 @@ class Content extends React.Component {
             videoDurationText: "0:36 minutter",
             videoHeaderImageUrl: startsida
         },{
-            videoUrl: "https://player.vimeo.com/video/667225111?h=763b6d58d2&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
-            videoTitle: "Årlig gjennomgang – Kopiere til arkiv",
-            duration: 144,
-            videoDurationText: "2:24 minutter",
-            videoHeaderImageUrl: arligGjennomgang
-        },{
             videoUrl: "https://player.vimeo.com/video/701550388?h=b25ce28457&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Arkiv – Lær alt om arkivet",
             duration: 1,
