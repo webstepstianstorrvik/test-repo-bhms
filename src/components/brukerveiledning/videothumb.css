@@ -29,6 +29,13 @@
 
 .video-thumb .info {
     height: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.right {
+    text-align: right;
+    align-self: center;
 }
 
 .video-thumb .duration {

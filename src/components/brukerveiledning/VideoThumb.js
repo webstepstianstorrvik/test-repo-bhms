@@ -4,8 +4,10 @@ import React from 'react';
 import ReactModal from 'react-modal';
 import VideoPlayer from './VideoPlayer';
 import { faClock } from "@fortawesome/free-regular-svg-icons";
+import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 class VideoThumb extends React.Component {
     constructor(props) {
@@ -33,16 +35,28 @@ class VideoThumb extends React.Component {
     render() {
         return (
             <div className="video-thumb-parent">
+                <ToastContainer
+                    position="top-right"
+                    autoClose={2000}
+                    hideProgressBar={true}
+                    closeOnClick={true}
+                    pauseOnFocusLoss={false}
+                    draggable={false}/>
                 <div className="card video-thumb" onClick={this.handleOpenModal}>
                     <div className="header-image-container">
                         <img className="header-image" src={this.props.videoHeaderImageUrl} alt={this.props.videoTitle}/>
                     </div>
                     <div className="info">
-                        <div className="title">
-                            { this.props.videoTitle }
+                        <div className="left">
+                            <div className="title">
+                                { this.props.videoTitle }
+                            </div>
+                            <div className="duration">
+                                <FontAwesomeIcon icon={faClock} /> { this.props.videoDurationText }
+                            </div>
                         </div>
-                        <div className="duration">
-                            <FontAwesomeIcon icon={faClock} /> { this.props.videoDurationText }
+                        <div className="right priority-click" onClick={(e) => {this.handleCopy(); e.stopPropagation(); }}>
+                            <FontAwesomeIcon icon={faLink} />
                         </div>
                     </div>
                 </div>
@@ -70,6 +84,11 @@ class VideoThumb extends React.Component {
                 </ReactModal>
             </div>
         );
+    }
+
+    handleCopy() {
+        navigator.clipboard.writeText(window.location + '/' + this.props.urlFriendlyName);
+        toast('Kopiert lenke til ' + this.props.videoTitle);
     }
 }
 

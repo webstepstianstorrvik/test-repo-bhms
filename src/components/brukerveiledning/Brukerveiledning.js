@@ -12,10 +12,10 @@ import kontaktOpprettRedigerSlett from './../../assets/img/brukerveiledning/kont
 import passordEndre from './../../assets/img/brukerveiledning/passordEndre.jpg';
 import risikovurderingBrukAvModul from './../../assets/img/brukerveiledning/risikovurderingBrukAvModul.jpg';
 import startsida from './../../assets/img/brukerveiledning/startsida.jpg';
-import arkivLaerAlt from './../../assets/img/brukerveiledning/arkiv_laer_alt.jpg.jpg';
-import arkiv1Oversikt from './../../assets/img/brukerveiledning/arkiv_1_oversikt.jpg.jpg';
-import arkiv2Filer from './../../assets/img/brukerveiledning/arkiv_2_filer.jpg.jpg';
-import arkiv3Mapper from './../../assets/img/brukerveiledning/arkiv_3_mapper.jpg.jpg';
+import arkivLaerAlt from './../../assets/img/brukerveiledning/arkiv_laer_alt.jpg';
+import arkiv1Oversikt from './../../assets/img/brukerveiledning/arkiv_1_oversikt.jpg';
+import arkiv2Filer from './../../assets/img/brukerveiledning/arkiv_2_filer.jpg';
+import arkiv3Mapper from './../../assets/img/brukerveiledning/arkiv_3_mapper.jpg';
 import styretsHmsAnsvar from './../../assets/img/fagvideoer/styretsHmsAnsvar.jpg';
 import risikovurderingIBorettslagOgSameier from './../../assets/img/fagvideoer/risikovurderingIBorettslagOgSameier.jpg';
 import byggherreforskriften from './../../assets/img/fagvideoer/byggherreforskriften.jpg';
