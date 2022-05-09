@@ -11,10 +11,12 @@ class HelpVideos extends React.Component {
             return (
                 <div className="video-thumb-container" key={i}>
                     <VideoThumb
-                                videoHeaderImageUrl={video.videoHeaderImageUrl}
-                                videoTitle={video.videoTitle}
-                                videoUrl={video.videoUrl}
-                                videoDurationText={video.videoDurationText}
+                        show={ video.urlFriendlyName == this.props.showVideoTitle }
+                        id={video.id}
+                        videoHeaderImageUrl={video.videoHeaderImageUrl}
+                        videoTitle={video.videoTitle}
+                        videoUrl={video.videoUrl}
+                        videoDurationText={video.videoDurationText}
                     />
                 </div>
             );

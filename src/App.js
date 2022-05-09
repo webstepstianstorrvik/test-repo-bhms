@@ -24,10 +24,11 @@ class App extends React.Component {
     }
     render() {
         const page = this.findPage();
+        const showVideoTitle = this.props.showVideoTitle;
         return (
             <div>
                 <Header headertext={page.parenttitle} subheadertext={page.title}/>
-                <Content page={page} />
+                <Content page={page} showVideoTitle={showVideoTitle}/>
                 <Footer />
             </div>
         );

@@ -14,8 +14,10 @@ import reportWebVitals from './reportWebVitals';
 
 
 function AppWithParams() {
-    let params = useParams();
-    return (<App page={params.pagePath} />);
+    let { pagePath,
+        showVideoTitle
+    } = useParams();
+    return (<App page={pagePath} showVideoTitle={showVideoTitle}/>);
 }
 
 const Brukerportal = () => (
@@ -24,6 +26,7 @@ const Brukerportal = () => (
                 <Routes>
                     <Route index element={<AppWithParams />} />
                     <Route path=":pagePath" element={<AppWithParams />} />
+                    <Route path=":pagePath/:showVideoTitle" element={<AppWithParams />} />
                 </Routes>
             </div>
         </Router >

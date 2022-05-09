@@ -8,13 +8,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 
 class VideoThumb extends React.Component {
-    constructor() {
+    constructor(props) {
 
-        super();
+        super(props);
         ReactModal.setAppElement('#root');
 
         this.state = {
-            showModal: false
+            showModal: props.show
         }
         this.handleOpenModal = this.handleOpenModal.bind(this);
         this.handleCloseModal = this.handleCloseModal.bind(this);
