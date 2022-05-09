@@ -6,7 +6,8 @@ import { useParams } from 'react-router-dom'
 import {
     BrowserRouter as Router,
     Routes,
-    Route
+    Route,
+    Navigate
 } from "react-router-dom";
 import './assets/css/polyfill/bootstrap.css';
 import './main.css';
@@ -24,7 +25,7 @@ const Brukerportal = () => (
         <Router>
             <div>
                 <Routes>
-                    <Route index element={<AppWithParams />} />
+                    <Route index element={<Navigate to="/fagvideoer" />} />
                     <Route path=":pagePath" element={<AppWithParams />} />
                     <Route path=":pagePath/:showVideoTitle" element={<AppWithParams />} />
                 </Routes>
