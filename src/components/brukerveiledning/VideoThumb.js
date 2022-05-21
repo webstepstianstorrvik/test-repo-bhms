@@ -48,9 +48,6 @@ class VideoThumb extends React.Component {
                     </div>
                     <div className="info">
                         <div className="left">
-                            <div className="title">
-                                { this.props.videoTitle }
-                            </div>
                             <div className="duration">
                                 <FontAwesomeIcon icon={faClock} /> { this.props.videoDurationText }
                             </div>
