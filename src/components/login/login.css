@@ -1,0 +1,32 @@
+.login {
+    margin-left: auto;
+    margin-right: auto;
+
+}
+.login-card {
+    max-width: 1024px;
+}
+.login-card-content {
+    margin: 2rem;
+}
+.login-card-main {
+    display: flex;
+    flex-direction: column;
+}
+
+.login-card label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+}
+
+.login-card input {
+    margin-bottom: 1.5rem;
+    height: 50px;
+}
+
+button {
+    height: 50px;
+    border: 1px solid #02A28A;
+    background-color: #027C69;
+    color: #FFFFFF;
+}

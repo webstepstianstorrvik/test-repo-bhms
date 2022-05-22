@@ -1,8 +1,11 @@
 import React from 'react';
 import Header from './components/common/Header.js';
+import Login from './components/login/Login.js';
 import Content from './components/brukerveiledning/Brukerveiledning.js';
 import Footer from './components/common/Footer.js';
+import { loginPage } from './helpers/featuretoggle/feature-toggles';
 import {PAGE_BRUKERVEILEDNING, PAGE_FAGVIDEOER} from './helpers/dictionary/pages.js';
+import './assets/css/app.css';
 
 class App extends React.Component {
 
@@ -22,13 +25,34 @@ class App extends React.Component {
                 return PAGE_BRUKERVEILEDNING;
         }
     }
+
+    renderIfLoggedIn(page, videoTitle) {
+        if (loginPage.active) {
+            let isLoggedIn = false;
+            if (isLoggedIn) {
+                return (
+                    <Content page={page} showVideoTitle={videoTitle}/>
+                );
+            } else {
+                return (
+                    <Login />
+                )
+            }
+        } else {
+            return (
+                <Content page={page} showVideoTitle={videoTitle}/>
+            );
+        }
+
+    }
     render() {
         const page = this.findPage();
-        const showVideoTitle = this.props.showVideoTitle;
+        const videoTitle = this.props.showVideoTitle;
+
         return (
             <div>
                 <Header headertext={page.parenttitle} subheadertext={page.title}/>
-                <Content page={page} showVideoTitle={showVideoTitle}/>
+                { this.renderIfLoggedIn(page, videoTitle) }
                 <Footer />
             </div>
         );
