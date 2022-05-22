@@ -14,8 +14,8 @@ class Login extends React.Component {
                         <h1>Logg inn</h1>
                     </div>
                     <div className="login-card-main">
-                        <div className="content-text">Vennligst logg inn for å få tilgang til brukerveiledning</div>
-                        
+                        <div className="content-text">Vennligst logg inn for å få tilgang til brukerveiledningen</div>
+
                         <label>Brukernavn</label>
                         <input placeholder="Brukernavn" type="text"/>
 
