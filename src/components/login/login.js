@@ -2,6 +2,7 @@ import '../../assets/css/fonts.css';
 
 import React from 'react';
 import Card from '../common/Card.js';
+import imgBlaakollen from './../../assets/img/blaakollen.jpg';
 import './login.css';
 
 class Login extends React.Component {
@@ -25,6 +26,7 @@ class Login extends React.Component {
                         <button type="button">Logg inn</button>
                     </div>
                 </div>
+                <div className="login-card-illustration" style={{backgroundImage: `url(${imgBlaakollen}`}}></div>
             </div>
         )
     }
