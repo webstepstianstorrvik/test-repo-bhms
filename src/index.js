@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {render} from 'react-dom';
 import App from './App.js';
 import { useParams } from 'react-router-dom'
@@ -14,7 +14,9 @@ import './main.css';
 import reportWebVitals from './reportWebVitals';
 
 
-function AppWithParams() {
+function AppWithParams() {useEffect(() => {
+    document.title = "BevarHMS Veiledning"
+    }, []);
     let { pagePath,
         showVideoTitle
     } = useParams();
