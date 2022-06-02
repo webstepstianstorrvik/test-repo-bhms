@@ -30,6 +30,7 @@ class Content extends React.Component {
 
         const opplaeringvideoer = [{
             id: 1,
+            category: "aktiviteter",
             videoUrl: "https://player.vimeo.com/video/516603780?h=dcb211b570&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Aktiviteter - Oppfølging",
             duration: 152,
@@ -38,6 +39,7 @@ class Content extends React.Component {
             urlFriendlyName: "aktiviteter-og-oppfoelgning"
         },{
             id: 2,
+            category: "avvik_tiltak",
             videoUrl: "https://player.vimeo.com/video/650247254?h=86b5e62798&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Avvik tiltak - Opprette og redigere",
             duration: 371,
@@ -46,6 +48,7 @@ class Content extends React.Component {
             urlFriendlyName: "avvik-tiltak-opprett-og-rediger"
         },{
             id: 3,
+            category: "brukerkonto",
             videoUrl: "https://player.vimeo.com/video/404549439?h=de4e471f99&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Bruker - Registrere ny",
             duration: 241,
@@ -54,6 +57,7 @@ class Content extends React.Component {
             urlFriendlyName: "bruker-registrere-ny"
         },{
             id: 4,
+            category: "brukerkonto",
             videoUrl: "https://player.vimeo.com/video/368535704?h=9a80a41eca&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Flerbruker tilgang – Brukerveiledning",
             duration: 78,
@@ -62,6 +66,7 @@ class Content extends React.Component {
             urlFriendlyName: "flerbrukertilgang-brukerveiledning"
         },{
             id: 5,
+            category: "hms_handbok",
             videoUrl: "https://player.vimeo.com/video/404511470?h=eb4b5abc75&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "HMS-håndbok – Søk",
             duration: 71,
@@ -70,6 +75,7 @@ class Content extends React.Component {
             urlFriendlyName: "hmshandbok-sok"
         },{
             id: 6,
+            category: "kontakt",
             videoUrl: "https://player.vimeo.com/video/404531408?h=e0da65d496&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Kontakt – Opprette, redigere og slette",
             duration: 176,
@@ -78,6 +84,7 @@ class Content extends React.Component {
             urlFriendlyName: "kontakt-opprette-redigere-slette"
         },{
             id: 7,
+            category: "brukerkonto",
             videoUrl: "https://player.vimeo.com/video/403658054?h=5683370a80&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Passord – Endre",
             duration: 50,
@@ -86,6 +93,7 @@ class Content extends React.Component {
             urlFriendlyName: "passord-endre"
         },{
             id: 8,
+            category: "risikovurdering",
             videoUrl: "https://player.vimeo.com/video/368537296?h=db6a2d64d7&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Risikovurdering – Bruk av modul",
             duration: 563,
@@ -94,6 +102,7 @@ class Content extends React.Component {
             urlFriendlyName: "risikovurdering-bruk-av-modul"
         },{
             id: 9,
+            category: "startside",
             videoUrl: "https://player.vimeo.com/video/368531527?h=0c8a5253d9&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Startsida – Icon",
             duration: 36,
@@ -102,6 +111,7 @@ class Content extends React.Component {
             urlFriendlyName: "startsida-icon"
         },{
             id: 10,
+            category: "arkiv",
             videoUrl: "https://player.vimeo.com/video/701550388?h=b25ce28457&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Arkiv – Lær alt om arkivet",
             duration: 1,
@@ -110,6 +120,7 @@ class Content extends React.Component {
             urlFriendlyName: "arkiv-laer-alt-om-arkivet"
         },{
             id: 11,
+            category: "arkiv",
             videoUrl: "https://player.vimeo.com/video/701183325?h=977f1fbe9b&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Arkiv Del 1 – En oversikt",
             duration: 159,
@@ -118,6 +129,7 @@ class Content extends React.Component {
             urlFriendlyName: "arkiv-1-oversikt"
         },{
             id: 12,
+            category: "arkiv",
             videoUrl: "https://player.vimeo.com/video/701558271?h=1754321715&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Arkiv Del 2 – Filer",
             duration: 200,
@@ -126,6 +138,7 @@ class Content extends React.Component {
             urlFriendlyName: "arkiv-2-filer"
         },{
             id: 13,
+            category: "arkiv",
             videoUrl: "https://player.vimeo.com/video/701571469?h=1ee86da71e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Arkiv Del 3 – Mapper",
             duration: 172,
@@ -136,6 +149,7 @@ class Content extends React.Component {
 
         const fagvideoer = [{
             id: 1,
+            category: "fagvideo1",
             videoUrl: "https://player.vimeo.com/video/475461615?h=9e48c15ea9&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Internkontroll for HMS i borettslag og sameier",
             duration: 207,
@@ -144,6 +158,7 @@ class Content extends React.Component {
             urlFriendlyName: "internkontroll-hms-borettslag-sameier"
         },{
             id: 2,
+            category: "fagvideo2",
             videoUrl: "https://player.vimeo.com/video/481628753?h=f44de17b59&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Styrets HMS-ansvar",
             duration: 154,
@@ -152,6 +167,7 @@ class Content extends React.Component {
             urlFriendlyName: "styrets-hms-ansvar"
         },{
             id: 3,
+            category: "fagvideo3",
             videoUrl: "https://player.vimeo.com/video/500798352?h=099b3450f3&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Risikovurdering i borettslag og sameier",
             duration: 324,
@@ -160,6 +176,7 @@ class Content extends React.Component {
             urlFriendlyName: "risikovurdering-borettslag-sameier"
         },{
             id: 4,
+            category: "fagvideo4",
             videoUrl: "https://player.vimeo.com/video/592706443?h=9f4ae2be12&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Byggherreforskriften",
             duration: 263,
