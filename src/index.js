@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import {render} from 'react-dom';
 import App from './App.js';
 import { useParams } from 'react-router-dom'
+import { AuthProvider } from "oidc-react"
 
 import {
     BrowserRouter as Router,
@@ -13,6 +14,14 @@ import './assets/css/polyfill/bootstrap.css';
 import './main.css';
 import reportWebVitals from './reportWebVitals';
 
+const oidcConfig = {
+    onSignIn: () => {
+        console.log("Signed in");
+    },
+    authority: process.env.REACT_APP_STS_AUTHORITY,
+    clientId: process.env.REACT_APP_CLIENT_ID,
+    redirectUri: process.env.REACT_APP_CLIENT_REDIRECT
+}
 
 function AppWithParams() {useEffect(() => {
     document.title = "BevarHMS Veiledning"
@@ -24,18 +33,19 @@ function AppWithParams() {useEffect(() => {
 }
 
 const Brukerportal = () => (
+    <AuthProvider {...oidcConfig}>
         <Router>
-            <div>
-                <Routes>
-                    <Route index element={<Navigate to="/fagvideoer" />} />
-                    <Route path=":pagePath" element={<AppWithParams />} />
-                    <Route path=":pagePath/:showVideoTitle" element={<AppWithParams />} />
-                </Routes>
-            </div>
+            <Routes>
+                <Route index element={<Navigate to="/fagvideoer" />} />
+                <Route path=":pagePath" element={<AppWithParams />} />
+                <Route path=":pagePath/:showVideoTitle" element={<AppWithParams />} />
+            </Routes>
         </Router >
+    </AuthProvider>
+
 );
 render(
-    <Brukerportal />
+        <Brukerportal />
     ,
     document.getElementById("root")
 )
