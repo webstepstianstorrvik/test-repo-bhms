@@ -19,8 +19,17 @@ body {
     margin-right: 2rem;
 }
 
+.grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    flex-direction: row;
+    grid-gap: 2rem;
+    gap: 2rem;
+}
+
 .site-content {
-    margin-top: 2.5rem;
+    margin: 1rem 2rem;
 }
 
 .main-content {
@@ -39,6 +48,7 @@ body {
 .center-content {
     display: flex;
     justify-self: center;
+    align-items: center;
 }
 
 .x-auto {

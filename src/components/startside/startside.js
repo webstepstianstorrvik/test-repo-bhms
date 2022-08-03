@@ -1,12 +1,11 @@
-import '../../assets/css/fonts.css';
 import React from 'react';
-class Startside extends React.Component {
 
-    render() {
-        return (
-            <div>En annen side</div>
-        );
-    }
+
+const Startside = () => {
+    
+    return (
+        <h1>Startside</h1>
+    );
 }
 
 export default Startside;

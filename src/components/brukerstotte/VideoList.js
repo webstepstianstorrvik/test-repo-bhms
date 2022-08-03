@@ -1,8 +1,8 @@
 import '../../assets/css/fonts.css';
-import './brukerveiledning.css';
+import './videolist.css';
 import React from 'react';
 import HelpVideos from './HelpVideos.js';
-import Subheader from './../common/Subheader.js';
+import Subheader from '../common/Subheader.js';
 import aktiviteterOgOppfolgning from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.jpg';
 import avvikTiltak from './../../assets/img/brukerveiledning/avvik_og_tiltak.jpg';
 import brukerRegistrer from './../../assets/img/brukerveiledning/bruker_registrer.jpg';
@@ -21,12 +21,9 @@ import risikovurderingIBorettslagOgSameier from './../../assets/img/fagvideoer/r
 import byggherreforskriften from './../../assets/img/fagvideoer/byggherreforskriften.jpg';
 import internkontrollForHMSIBorettslagOgSameier from './../../assets/img/fagvideoer/internkontrollForHMSIBorettslagOgSameier.jpg';
 
-import SidebarMenu from './../menu/SidebarMenu.js';
-import { ICONS_MENU_FAGVIDEOER, ICONS_MENU_OPPLAERING } from './../../assets/img/image_dictionary.js';
+const VideoList = ({videoType}) => {
 
-class Content extends React.Component {
-
-    findVideos() {
+    const findVideos = () => {
 
         const opplaeringvideoer = [{
             id: 1,
@@ -147,7 +144,7 @@ class Content extends React.Component {
             urlFriendlyName: "arkiv-3-mapper"
         }];
 
-        const fagvideoer = [{
+        const brukerveiledninger = [{
             id: 1,
             category: "fagvideo1",
             videoUrl: "https://player.vimeo.com/video/475461615?h=9e48c15ea9&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
@@ -185,46 +182,27 @@ class Content extends React.Component {
             urlFriendlyName: "byggherreforskriften"
         }];
 
-        switch (this.props.page.id) {
-            case 1:
+        switch (videoType) {
+            case "opplaeringsvideoer":
                 return opplaeringvideoer;
-            case 2:
-                return fagvideoer;
+            case "brukerveiledning":
+                return brukerveiledninger;
             default:
                 return opplaeringvideoer;
         }
     }
-    render() {
-        const menuItems = [
-            {
-                itemUrl: '/fagvideoer',
-                itemImgUrl: ICONS_MENU_FAGVIDEOER,
-                title: 'Fagvideoer'
-            },
-            {
-                itemUrl: '/opplaering',
-                itemImgUrl: ICONS_MENU_OPPLAERING,
-                title: 'Opplæring'
-            },
-        ]
-
-        let videoer = this.findVideos();
-        const showVideoTitle = this.props.showVideoTitle;
 
         return (
             <div className="container">
                 <div className="content">
                     <div className="brukerveiledning site-content">
-                        <SidebarMenu items={menuItems}/>
                         <div className="main-content">
-                            <Subheader title={this.props.page.title}/>
-                            <HelpVideos videoList={videoer} showVideoTitle={showVideoTitle} />
+                            <HelpVideos videoList={findVideos()} />
                         </div>
                     </div>
                 </div>
             </div>
         );
-    }
 }
 
-export default Content;
+export default VideoList;

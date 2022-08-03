@@ -3,23 +3,29 @@ a, a:visited, a:active {
 }
 
 .sidebarmenu {
-    color: var(--main-color-text-faded);
+    color: var(--main-text-color-black);
     display: flex;
     flex-direction: column;
     min-width: 1.5rem;
-    flex-grow: 1;
-    padding-right: 2rem;
-    margin-top: 3.68rem;
+    padding-left: 2rem;
+    padding-top: 1.2rem;
 }
 
-.sidebarmenu-item:hover {
+.sidebarmenu-title {
+    color: var(--main-text-color-grey);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.sidebarmenu-item:hover,
+.sidebarmenu-item.active {
     filter: var(--main-color-blue-filter);
 }
 .sidebarmenu img {
     fill: inherit;
     opacity: inherit;
-    width: 1.5rem;
-    height: 1.5rem;
+    width: 1.3rem;
+    height: 1.3rem;
     max-width: 100%;
     display: inline-block;
 }
@@ -31,15 +37,17 @@ a, a:visited, a:active {
 .sidebarmenu-item {
     display: flex;
     flex-direction: row;
+    align-items: center;
     height: 3rem;
     cursor: pointer;
+    text-decoration: none;
 }
 .sidebarmenu-item-title {
-    display: none;
-    height: 100%;
-    margin-left: 0.5rem;
+    margin-left: 1.3rem;
+    margin-top: 0.1rem;
     vertical-align: top;
     font-family: var(--main-font-family);
+    color: var(--main-color-text-faded);
     font-size: 0.9rem;
     font-weight: 600;
 }

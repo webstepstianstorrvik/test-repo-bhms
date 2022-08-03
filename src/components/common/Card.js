@@ -3,22 +3,15 @@ import './card.css';
 
 import React from 'react';
 
-class Card extends React.Component {
-    constructor(props) {
-        super(props);
-        this.backgroundColor = "white";
-        this.borderColor = "black";
-    }
+const Card = ({children, className}) => {
 
-    render() {
-        return (
-            <div className={ "card" + (this.props.border ? "" : " no-border")}>
-                <div className="card-content">
-                    { this.props.content }
-                </div>
+    return (
+        <div className={`card ${className}`}>
+            <div className="card-content">
+                { children }
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default Card;

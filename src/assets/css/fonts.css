@@ -11,3 +11,9 @@
     font-weight: var(--main-text-font-weight);
     margin-bottom: 1rem;
 }
+
+h1 {
+    color: var(--main-color-black);
+    font-size: 1.2rem;
+    font-weight: 700;
+}
