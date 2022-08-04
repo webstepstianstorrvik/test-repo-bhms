@@ -67,7 +67,10 @@
 
 .header .header-icon {
     margin-right: 2rem;
+    margin-top: auto;
+    margin-bottom: auto;
 }
+
 .header .header-icon:hover {
     cursor: pointer;
 }

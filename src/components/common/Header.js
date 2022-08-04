@@ -1,14 +1,19 @@
 import '../../assets/css/fonts.css';
 
 import React, { useState } from 'react';
+import { useAuth } from 'oidc-react';
 import './header.css';
 import MenuIconHover from '../../assets/img/icons/header/menu.svg'
 import MenuIcon from '../../assets/img/icons/header/menu_expanded.svg'
 import NotificationIcon from '../../assets/img/icons/header/notification.svg'
 import ProfileIcon from '../../assets/img/icons/header/profile.svg'
+import { Link } from 'react-router-dom';
 
 const Header = ({toggleMenu}) => {
+    const auth = useAuth();
     const [isHovered, setIsHovered] = useState(false);
+
+    console.log(auth.userData)
 
         return (
             <div className="header bg-bevarblue">
@@ -27,9 +32,13 @@ const Header = ({toggleMenu}) => {
                             <div className="center-content">
                             </div>
                             <div className="right-content">
-                                <img className="header-icon" src={NotificationIcon} alt="Notification icon button"></img>
-                                <img className="header-icon" src={ProfileIcon} alt="Profile icon button"></img>
-                                <button className="logout-button">Logg ut</button>
+                                <Link to="#" className="header-icon">
+                                    <img src={NotificationIcon} alt="Notification icon button"></img>
+                                </Link>
+                                <Link to="/profil" className="header-icon">
+                                    <img  src={ProfileIcon} alt="Profile icon button"></img>
+                                </Link>
+                                <button className="logout-button" onClick={() => auth.signOut()}>Logg ut</button>
                             </div>
                         </div>
                     </div>

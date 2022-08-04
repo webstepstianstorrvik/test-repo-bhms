@@ -9,6 +9,7 @@ import {
     Routes,
     Route,
 } from "react-router-dom";
+import { AuthProvider } from 'oidc-react';
 import Brukerstotte from './components/brukerstotte/Brukerstotte.js';
 import VideoList from './components/brukerstotte/VideoList.js';
 import Startside from './components/startside/Startside.js';
@@ -24,9 +25,20 @@ import Aktiviteter from './components/aktiviteter/Aktiviteter.js';
 import Avviktiltak from './components/avviktiltak/Avviktiltak.js';
 import KontaktBoligbyggelaget from './components/brukerstotte/KontaktBoligbyggelaget.js';
 import OfteStilteSpoersmal from './components/brukerstotte/OfteStilteSpoersmal.js';
+import Profil from './components/profil/Profil.js';
 
+const oidcConfig = {
+    onSignIn: () => {
+      // Redirect?
+      console.log("SIGNED IN!")
+    },
+    authority: process.env.REACT_APP_STS_AUTHORITY,
+    clientId: process.env.REACT_APP_CLIENT_ID,
+    redirectUri: process.env.REACT_APP_CLIENT_REDIRECT
+  };
 
 render(
+    <AuthProvider {...oidcConfig}>
     <Router>
         <Routes>
         <Route path="/" element={<App />}>
@@ -47,17 +59,21 @@ render(
                 <Route path="brukerstotte/ofte-stilte-spoersmal" element={<OfteStilteSpoersmal />} />
                 <Route path="brukerstotte/opplaeringsvideoer" element={<VideoList videoType="opplaeringsvideoer"/>} />
             <Route path="innstillinger" element={<Innstillinger />} />
+
+            <Route path="profil" element={<Profil />} />
+
             <Route
                 path="*"
                 element={
                     <main style={{ padding: "1rem" }}>
-                    <h1>404 NOT FOUND</h1>
+                    <h1>Kunne ikke finne siden du ser etter..</h1>
                     </main>
                 }
             />
         </Route>
         </Routes>
-    </Router >,
+    </Router >
+    </AuthProvider>,
     document.getElementById("root")
 )
 ;
