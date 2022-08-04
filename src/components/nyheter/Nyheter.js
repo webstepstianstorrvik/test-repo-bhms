@@ -4,7 +4,7 @@ import React from 'react';
 const Nyheter = () => {
     
     return (
-        <h1>Nyheter</h1>
+        <div></div>
     );
 }
 

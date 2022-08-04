@@ -3,9 +3,7 @@ import React from "react";
 const OfteStilteSpoersmal = () => {
 
     return (
-        <section>
-            <h1>Ofte stilte spørsmål</h1>
-        </section>
+        <div></div>
     )
 }
 export default OfteStilteSpoersmal;

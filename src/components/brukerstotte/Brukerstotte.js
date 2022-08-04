@@ -32,13 +32,10 @@ const Brukerstotte = () => {
     ]
 
     return (
-        <section>
-            <h1>Brukerstøtte</h1>
             <div className="container grid">
                 {buttons.map(({title, icon, link}) => <Button key={title} title={title} icon={icon} link={link} />)}
             </div>
-        </section>
-    )
+)
 } 
 
 export default Brukerstotte;

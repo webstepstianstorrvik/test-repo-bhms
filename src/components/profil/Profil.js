@@ -8,7 +8,7 @@ const Profil = () => {
 
     return (
         <div>
-            <h1>Profil</h1>
+            <p><b>Følgende info er hentet fra auth:</b></p>
             <p>{name}</p>
             <p>{phone_number}</p>
             <p>{metadata_email}</p>

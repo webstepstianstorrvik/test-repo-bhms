@@ -2,7 +2,6 @@ import '../../assets/css/fonts.css';
 import './videolist.css';
 import React from 'react';
 import HelpVideos from './HelpVideos.js';
-import Subheader from '../common/Subheader.js';
 import aktiviteterOgOppfolgning from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.jpg';
 import avvikTiltak from './../../assets/img/brukerveiledning/avvik_og_tiltak.jpg';
 import brukerRegistrer from './../../assets/img/brukerveiledning/bruker_registrer.jpg';
@@ -194,11 +193,9 @@ const VideoList = ({videoType}) => {
 
         return (
             <div className="container">
-                <div className="content">
-                    <div className="brukerveiledning site-content">
-                        <div className="main-content">
-                            <HelpVideos videoList={findVideos()} />
-                        </div>
+                <div className="brukerveiledning">
+                    <div className="main-content">
+                        <HelpVideos videoList={findVideos()} />
                     </div>
                 </div>
             </div>

@@ -46,6 +46,7 @@ a, a:visited, a:active {
     height: 3rem;
     cursor: pointer;
     text-decoration: none;
+    margin-right: 1rem;
 }
 .sidebarmenu-item-title {
     margin-left: 1.3rem;

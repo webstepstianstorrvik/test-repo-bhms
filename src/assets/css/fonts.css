@@ -1,12 +1,17 @@
-@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900&amp;display=swap');
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:100,200,300,400,500,600,700%7cPoppins:100,200,300,400,500,600,700,800,900&amp;display=swap');
 
 :root {
     --main-font-family: "Open Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
     --main-text-font-weight: 400;
 }
 
-.content-text {
+* {
     font-family: var(--main-font-family);
+    font-weight: var(--main-text-font-weight);
+}
+
+.content-text {
+    
     font-size: 1.1rem;
     font-weight: var(--main-text-font-weight);
     margin-bottom: 1rem;
@@ -14,6 +19,7 @@
 
 h1 {
     color: var(--main-color-black);
-    font-size: 1.2rem;
+    font-size: 1.5rem;
     font-weight: 700;
+    margin: 0.25rem 0;
 }

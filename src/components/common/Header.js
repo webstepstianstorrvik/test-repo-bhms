@@ -13,8 +13,6 @@ const Header = ({toggleMenu}) => {
     const auth = useAuth();
     const [isHovered, setIsHovered] = useState(false);
 
-    console.log(auth.userData)
-
         return (
             <div className="header bg-bevarblue">
                 <div className="container">

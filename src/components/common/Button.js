@@ -1,4 +1,5 @@
 import './button.css';
+import "../../assets/css/fonts.css"
 
 import React from "react";
 import { Link } from "react-router-dom";
@@ -11,7 +12,7 @@ const Button = ({title, icon, link}) => {
             <Link to={link} className="button-link">
                 <button className="button">
                     <img src={icon} alt={title}/>
-                    <h3 className="bevar-button-title">{title}</h3>
+                    <p className="button-title">{title}</p>
                 </button>
             </Link>
         </Card>

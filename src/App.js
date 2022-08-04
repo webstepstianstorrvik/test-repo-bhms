@@ -5,6 +5,7 @@ import Footer from './components/common/Footer.js';
 import './assets/css/app.css';
 import SidebarMenu from './components/menu/SidebarMenu.js';
 import { useLocation } from "react-router-dom";
+import Heading from './components/common/Heading.js';
 
 
 const App = () => {
@@ -48,9 +49,12 @@ const App = () => {
             <Header toggleMenu={toggleMenu}/>
             <div className="container">
                 <SidebarMenu isMenuOpen={isMenuOpen} isMobile={isMobile}/>
-                <div className="site-content">
-                    <Outlet />
-                </div>
+                <section>
+                    <div className="site-content">
+                        <Heading />
+                        <Outlet />
+                    </div>
+                </section>
             </div>
             <Footer />
         </main>
