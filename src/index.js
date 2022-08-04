@@ -22,6 +22,8 @@ import Innstillinger from './components/Innstillinger/Instillinger.js';
 import Handbok from './components/handbok/Handbok.js';
 import Aktiviteter from './components/aktiviteter/Aktiviteter.js';
 import Avviktiltak from './components/avviktiltak/Avviktiltak.js';
+import KontaktBoligbyggelaget from './components/brukerstotte/KontaktBoligbyggelaget.js';
+import OfteStilteSpoersmal from './components/brukerstotte/OfteStilteSpoersmal.js';
 
 
 render(
@@ -41,8 +43,18 @@ render(
             <Route path="nyheter" element={<Nyheter />} />
             <Route path="brukerstotte" element={<Brukerstotte />} />
                 <Route path="brukerstotte/brukerveiledning" element={<VideoList videoType="brukerveiledning"/>} />
+                <Route path="brukerstotte/kontakt-boligbyggelaget" element={<KontaktBoligbyggelaget />} />
+                <Route path="brukerstotte/ofte-stilte-spoersmal" element={<OfteStilteSpoersmal />} />
                 <Route path="brukerstotte/opplaeringsvideoer" element={<VideoList videoType="opplaeringsvideoer"/>} />
             <Route path="innstillinger" element={<Innstillinger />} />
+            <Route
+                path="*"
+                element={
+                    <main style={{ padding: "1rem" }}>
+                    <h1>404 NOT FOUND</h1>
+                    </main>
+                }
+            />
         </Route>
         </Routes>
     </Router >,

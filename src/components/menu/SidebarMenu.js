@@ -18,7 +18,7 @@ import BrukerstotteIcon from '../../assets/img/icons/menu/brukerstotte.svg';
 import InstillingerIcon from '../../assets/img/icons/menu/innstillinger.svg';
 
 
-const SidebarMenu = ({isMenuOpen}) => {
+const SidebarMenu = ({isMenuOpen, isMobile}) => {
 
     const menuItems = [
         {
@@ -85,11 +85,18 @@ const SidebarMenu = ({isMenuOpen}) => {
     ]
 
     return (
+        <>{!isMobile ? 
         <nav className="sidebarmenu">
             { menuItems.map(({itemImgUrl, itemUrl, title}) => <MenuItem key={title} itemImgUrl={itemImgUrl} itemUrl={itemUrl} title={title} isMenuOpen={isMenuOpen} />) }
             <h4 className="sidebarmenu-title" style={isMenuOpen ? {} : {"display": "none"}}>NAVIGASJON</h4>
             { navigationItems.map(({itemImgUrl, itemUrl, title}) => <MenuItem key={title} itemImgUrl={itemImgUrl} itemUrl={itemUrl} title={title} isMenuOpen={isMenuOpen}/>) }
         </nav>
+        : 
+        <nav className="sidebarmenu mobile" style={(isMenuOpen) ? {} : {"display": "none"}}>
+            { menuItems.map(({itemImgUrl, itemUrl, title}) => <MenuItem key={title} itemImgUrl={itemImgUrl} itemUrl={itemUrl} title={title} isMenuOpen={isMenuOpen} />) }
+            <h4 className="sidebarmenu-title" style={isMenuOpen ? {} : {"display": "none"}}>NAVIGASJON</h4>
+            { navigationItems.map(({itemImgUrl, itemUrl, title}) => <MenuItem key={title} itemImgUrl={itemImgUrl} itemUrl={itemUrl} title={title} isMenuOpen={isMenuOpen}/>) }
+        </nav>}</>
     );
 }
 

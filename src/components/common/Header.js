@@ -1,10 +1,14 @@
 import '../../assets/css/fonts.css';
 
-import React from 'react';
+import React, { useState } from 'react';
 import './header.css';
-import MenuIcon from '../../assets/img/icons/header/menu.svg'
+import MenuIconHover from '../../assets/img/icons/header/menu.svg'
+import MenuIcon from '../../assets/img/icons/header/menu_expanded.svg'
+import NotificationIcon from '../../assets/img/icons/header/notification.svg'
+import ProfileIcon from '../../assets/img/icons/header/profile.svg'
 
 const Header = ({toggleMenu}) => {
+    const [isHovered, setIsHovered] = useState(false);
 
         return (
             <div className="header bg-bevarblue">
@@ -12,7 +16,7 @@ const Header = ({toggleMenu}) => {
                     <div className="content">
                         <div className="desktop-header">
                             <div className="left-content center-content">
-                                <img src={MenuIcon} className="menu-toggle-icon" onClick={() => toggleMenu()}/>
+                                <img src={isHovered ? MenuIconHover : MenuIcon} className="menu-toggle-icon" alt="Menu toggle" onClick={() => toggleMenu()} onMouseEnter={() => setIsHovered(true)} onMouseLeave={() => setIsHovered(false)}/>
                                 <div className="logo-content">
                                     <img className="header-logo" src="./img/bevarhms-hvit_compressed.svg" alt=""/>
                                 </div>
@@ -23,6 +27,9 @@ const Header = ({toggleMenu}) => {
                             <div className="center-content">
                             </div>
                             <div className="right-content">
+                                <img className="header-icon" src={NotificationIcon} alt="Notification icon button"></img>
+                                <img className="header-icon" src={ProfileIcon} alt="Profile icon button"></img>
+                                <button className="logout-button">Logg ut</button>
                             </div>
                         </div>
                     </div>
