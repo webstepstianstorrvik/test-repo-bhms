@@ -9,7 +9,7 @@ const Heading = () => {
     const heading = paths[paths.length - 1]
 
     const formatText = (text) => {
-        return text.charAt(0).toUpperCase() + text.slice(1).replaceAll("-", " ").replaceAll("aa","å").replaceAll("ae","æ")
+        return text.charAt(0).toUpperCase() + text.slice(1).replaceAll("-", " ").replaceAll("aa","å").replaceAll("ae","æ").replaceAll("oo", "ø")
     }
 
     const getPath = (index) => {

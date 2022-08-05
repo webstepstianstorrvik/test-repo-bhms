@@ -20,7 +20,7 @@ const Brukerstotte = () => {
             title: 'Kontakt boligbyggelaget'
         },
         {
-            link: 'ofte-stilte-spoersmal',
+            link: 'ofte-stilte-spoorsmaal',
             icon: OftestiltesporsmolIcon,
             title: 'Ofte stilte spørsmål'
         },

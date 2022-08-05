@@ -27,7 +27,7 @@ const SidebarMenu = ({isMenuOpen, isMobile}) => {
             title: 'Startside'
         },
         {
-            itemUrl: '/handbok',
+            itemUrl: '/haandbok',
             itemImgUrl: HandbokIcon,
             title: 'Håndbok'
         },
@@ -73,7 +73,7 @@ const SidebarMenu = ({isMenuOpen, isMobile}) => {
             title: 'Nyheter'
         },
         {
-            itemUrl: '/brukerstotte',
+            itemUrl: '/brukerstootte',
             itemImgUrl: BrukerstotteIcon,
             title: 'Brukerstøtte'
         },
