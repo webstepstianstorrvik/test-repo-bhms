@@ -1,6 +1,7 @@
 import './sidebarmenu.css';
 
-import React from 'react';
+import React, { useContext } from 'react';
+import { Context } from '../../App';
 import MenuItem from './SidebarMenuItem';
 
 import StartsideIcon from '../../assets/img/icons/menu/startside.svg';
@@ -18,7 +19,8 @@ import BrukerstotteIcon from '../../assets/img/icons/menu/brukerstotte.svg';
 import InstillingerIcon from '../../assets/img/icons/menu/innstillinger.svg';
 
 
-const SidebarMenu = ({isMenuOpen, isMobile}) => {
+const SidebarMenu = ({isMenuOpen}) => {
+    const { isMobile } = useContext(Context)
 
     const menuItems = [
         {

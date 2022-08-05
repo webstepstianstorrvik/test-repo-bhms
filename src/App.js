@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, createContext } from 'react';
 import { Outlet } from "react-router-dom";
 import Header from './components/common/Header.js';
 import Footer from './components/common/Footer.js';
@@ -7,6 +7,7 @@ import SidebarMenu from './components/menu/SidebarMenu.js';
 import { useLocation } from "react-router-dom";
 import Heading from './components/common/Heading.js';
 
+export const Context = createContext();
 
 const App = () => {
     const location = useLocation();
@@ -45,19 +46,21 @@ const App = () => {
     
 
     return (
-        <main>
-            <Header toggleMenu={toggleMenu}/>
-            <div className="container">
-                <SidebarMenu isMenuOpen={isMenuOpen} isMobile={isMobile}/>
-                <section>
-                    <div className="site-content">
-                        <Heading />
-                        <Outlet />
-                    </div>
-                </section>
-            </div>
-            <Footer />
-        </main>
+        <Context.Provider value={{isMobile}}>
+            <main>
+                <Header toggleMenu={toggleMenu}/>
+                <div className="container">
+                    <SidebarMenu isMenuOpen={isMenuOpen}/>
+                    <section>
+                        <div className="site-content">
+                            <Heading />
+                            <Outlet />
+                        </div>
+                    </section>
+                </div>
+                <Footer />
+            </main>
+        </Context.Provider>
     );
 }
 
