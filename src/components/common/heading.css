@@ -1,5 +1,6 @@
 .top-heading {
     margin-bottom: 2rem;
+    display: inline-block;
 }
 
 .top-heading a,
