@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="47" height="47" viewBox="0 0 47 47">
+  <g id="Group_1315" data-name="Group 1315" transform="translate(6111 4648)">
+    <rect id="Rectangle_2277" data-name="Rectangle 2277" width="47" height="47" transform="translate(-6111 -4648)" fill="rgba(255,255,255,0)"/>
+    <g id="Group_909" data-name="Group 909" transform="translate(-7143.84 -5623.366)">
+      <g id="Group_899" data-name="Group 899" transform="translate(1059.539 1003.405)">
+        <path id="Path_770" data-name="Path 770" d="M316.359,115.062" transform="translate(-316.359 -115.062)" fill="none" stroke="#1a1818" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+      </g>
+      <g id="Group_900" data-name="Group 900" transform="translate(1039.204 1002.397)">
+        <path id="Path_771" data-name="Path 771" d="M319.69,126.193H294.765a.9.9,0,0,1-.9-.9A13.335,13.335,0,0,1,299.92,114.1a.9.9,0,0,1,.99,1.513,11.535,11.535,0,0,0-5.207,8.777h23.048a11.555,11.555,0,0,0-5.062-8.682.9.9,0,0,1,1.011-1.5,13.362,13.362,0,0,1,5.893,11.084A.9.9,0,0,1,319.69,126.193Z" transform="translate(-293.861 -113.947)" fill="#1a1818"/>
+      </g>
+      <g id="Group_901" data-name="Group 901" transform="translate(1044.855 983.087)">
+        <path id="Path_772" data-name="Path 772" d="M307.848,108.053a7.735,7.735,0,1,1,7.735-7.735A7.744,7.744,0,0,1,307.848,108.053Zm0-13.663a5.927,5.927,0,1,0,5.927,5.927A5.934,5.934,0,0,0,307.848,94.391Z" transform="translate(-300.113 -92.583)" fill="#1a1818"/>
+      </g>
+      <g id="Group_902" data-name="Group 902" transform="translate(1063.381 996.731)">
+        <path id="Path_773" data-name="Path 773" d="M329.8,109.486h-8.287a.9.9,0,1,1,0-1.808H329.8a.9.9,0,1,1,0,1.808Z" transform="translate(-320.61 -107.678)" fill="#1a1818"/>
+      </g>
+      <g id="Group_903" data-name="Group 903" transform="translate(1067.525 992.588)">
+        <path id="Path_774" data-name="Path 774" d="M326.1,113.187a.9.9,0,0,1-.9-.9V104A.9.9,0,1,1,327,104v8.286A.9.9,0,0,1,326.1,113.187Z" transform="translate(-325.194 -103.094)" fill="#1a1818"/>
+      </g>
+    </g>
+  </g>
+</svg>

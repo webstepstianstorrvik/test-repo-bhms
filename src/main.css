@@ -1,7 +1,11 @@
 body {
     margin: 0;
     background-color: #edf2f9;
-    font-family: var(--main-font-family)
+    font-family: var(--main-font-family);
+    line-height: 1.5;
+    color: #5e6e82;
+    text-align: left;
+    background-color: #edf2f9;
 }
 
 .container {
@@ -58,4 +62,62 @@ body {
 .y-auto {
     margin-top: auto;
     margin-bottom: auto;
+}
+
+
+/************************ BUTTONS *************************/
+.btn {
+    font-family: var(--main-font-family);
+    font-size: 0.9rem;
+    font-weight: var(--main-text-font-weight);
+    line-height: 1.125rem;
+    min-height: 2.815rem;
+    min-width: 7rem;
+    display: inline-block;
+    padding: 0.875rem;
+    text-align: center;
+    border-radius: 4px;
+    outline: 0;
+    transition: none;
+    border: 0;
+    font-size: 0.9rem;
+}
+.btn:hover {
+    cursor: pointer;
+}
+
+.btn-secondary {
+    background-color: var(--main-card-hover-background-color);
+    border: 1px solid var(--main-border-color);
+    color: #414141;
+}
+.btn-secondary:hover {
+    background-color: var(--main-border-color);
+    color: #414141;
+}
+
+
+/************************ STATUS BADGE *************************/
+.status-badge {
+    display: inline-block;
+    border-radius: 50%;
+    width: 1rem;
+    height: 1rem;
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.status-badge.green {
+    background: #00b050;
+}
+.status-badge.yellow {
+    background: #FFCE34;
+}
+.status-badge.red {
+    background: #F53737;
+}
+
+.status-badge.small {
+    height: 10px;
+    width: 10px;
 }

@@ -5,9 +5,11 @@
     --main-text-font-weight: 400;
 }
 
-* {
+h1, h2, h3, h4, h5, h6 {
     font-family: var(--main-font-family);
     font-weight: var(--main-text-font-weight);
+    color: var(--main-text-color-black);
+    margin: 0;
 }
 
 .content-text {
@@ -22,4 +24,35 @@ h1 {
     font-size: 1.5rem;
     font-weight: 700;
     margin: 0.25rem 0;
+}
+
+h2 {
+    font-family: var(--main-font-family);
+    color: var(--main-text-color-black);
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+h4 {
+    font-family: var(--main-font-family);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+h5 {
+    font-family: var(--main-font-family);
+    font-size: 1rem;
+    font-weight: var(--main-text-font-weight);
+}
+
+h6 {
+    font-family: var(--main-font-family);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+p {
+    margin: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
 }

@@ -12,7 +12,7 @@ const Button = ({title, icon, link}) => {
             <Link to={link} className="button-link">
                 <button className="button">
                     <img src={icon} alt={title}/>
-                    <p className="button-title">{title}</p>
+                    <h3 className="button-title">{title}</h3>
                 </button>
             </Link>
         </Card>

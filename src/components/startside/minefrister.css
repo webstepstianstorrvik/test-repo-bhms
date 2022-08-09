@@ -1,0 +1,65 @@
+.mine-frister {
+    width: 100%;
+}
+
+.mine-frister .top {
+    display: flex;
+    border-bottom: 1px solid var(--main-border-color-faded);
+}
+.mine-frister .top > h4 {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    background-color: var(--main-bevar-elements-background);
+    padding: 1rem;
+}
+.mine-frister .top > h4:last-child {
+    border-left: 1px solid var(--main-border-color-faded);
+}
+.mine-frister .top .frist-count {
+    border: 1px solid var(--main-bevar-divider-color);
+    border-radius: 100%;
+    background-color: white;
+    width: 22px;
+    height: 22px;
+    text-align: center;
+}
+
+.mine-frister .container{
+    padding: 0.8rem;
+}
+
+.mine-frister .has-comment {
+    background-color: var(--main-table-marked-color);
+}
+
+.mine-frister .list-element:hover {
+    background-color: var(--main-border-color-faded);
+}
+
+.mine-frister .list-item .list-subheading {
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.mine-frister .list-item .status-badge {
+    margin: 0 1rem;
+}
+
+
+.mine-frister .bottom {
+    display: flex;
+    border-top: 1px solid var(--main-border-color-faded);
+}
+
+.mine-frister .bottom .btn {
+    flex: 1;
+    padding: 1rem;
+    max-width: none;
+    background-color: var(--main-bevar-elements-background);;
+}
+
+.mine-frister .bottom .btn {
+    border-left: 1px solid var(--main-border-color-faded);
+}
+

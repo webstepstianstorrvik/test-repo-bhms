@@ -1,5 +1,6 @@
 .card-content {
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     width: 100%;
@@ -8,4 +9,17 @@
 
 .card a {
     text-decoration: none;
+}
+
+.card-header {
+    border-bottom: 1px solid var(--main-border-color-faded);
+    padding: 1rem 1.25rem;
+}
+
+.card .card-title {
+    font-size: 1.1rem;
+    font-weight: 600;
+    line-height: 2rem;
+    margin: 0;
+    color: var(--main-text-color-black)
 }
