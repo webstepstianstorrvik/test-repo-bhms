@@ -28,10 +28,10 @@ const Heading = () => {
         <div className="top-heading">
             <h1>{formatText(heading)}</h1>
             <div>{paths.map( (path, index) => (
-                <>
+                <div key={path} className="heading-path-item">
                     {index > 0 ? <span>&gt;</span>: null}
-                    <Link key={path} to={getPath(index)}>{formatText(path)}</Link>
-                </>
+                    <Link to={getPath(index)}>{formatText(path)}</Link>
+                </div>
             ))}
             </div>
         </div>
