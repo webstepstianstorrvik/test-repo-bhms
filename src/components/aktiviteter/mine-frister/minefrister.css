@@ -38,3 +38,17 @@
         margin-left: 2rem;
     }
 }
+
+.mine-frister-main .list-view {
+    display: flex;
+    flex-direction: column;
+}
+
+.mine-frister-main .list-view .buttons-wrapper {
+    margin-left: auto;
+    margin-bottom: 0.6rem;
+}
+
+.mine-frister-main .list-view .buttons-wrapper select {
+    margin-right: 0.6rem;
+}
