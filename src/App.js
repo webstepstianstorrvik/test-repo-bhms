@@ -6,11 +6,13 @@ import './assets/css/app.css';
 import SidebarMenu from './components/menu/SidebarMenu.js';
 import { useLocation } from "react-router-dom";
 import Heading from './components/common/Heading.js';
+import { useAuth } from 'react-oidc-context';
 
 export const Context = createContext();
 
 const App = () => {
     const location = useLocation();
+    const auth = useAuth();
     const [isMenuOpen, setIsMenuOpen] = useState(true)
     const [isMobile, setIsMobile] = useState();
 
@@ -41,16 +43,16 @@ const App = () => {
 
     const toggleMenu = () => {
         setIsMenuOpen(prevValue => !prevValue)
-    }
-
+    }  
     
-
+    
+    
     return (
         <Context.Provider value={{isMobile}}>
             <main>
                 <Header toggleMenu={toggleMenu}/>
                 <div className="container">
-                    <SidebarMenu isMenuOpen={isMenuOpen}/>
+                    { auth.isAuthenticated && <SidebarMenu isMenuOpen={isMenuOpen}/> }
                     <section>
                         <div className="site-content">
                             <Heading />
