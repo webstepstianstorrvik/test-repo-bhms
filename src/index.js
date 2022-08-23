@@ -3,20 +3,17 @@ import './assets/css/fonts.css';
 import './main.css';
 
 import React from 'react';
-import { AuthProvider } from 'oidc-react';
+import { AuthProvider } from 'react-oidc-context';
 import {render} from 'react-dom';
 import reportWebVitals from './reportWebVitals';
-import Routes from './Routes';
+import Routes from './components/router/Routes';
 
 
 const oidcConfig = {
-    onSignIn: () => {
-      // Redirect?
-      console.log("SIGNED IN!")
-    },
     authority: process.env.REACT_APP_STS_AUTHORITY,
-    clientId: process.env.REACT_APP_CLIENT_ID,
-    redirectUri: process.env.REACT_APP_CLIENT_REDIRECT
+    client_id: process.env.REACT_APP_CLIENT_ID,
+    redirect_uri: process.env.REACT_APP_CLIENT_REDIRECT,
+    post_logout_redirect_uri: process.env.REACT_APP_CLIENT_REDIRECT
   };
 
 render(

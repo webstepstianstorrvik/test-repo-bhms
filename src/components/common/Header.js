@@ -2,7 +2,7 @@ import '../../assets/css/fonts.css';
 
 import React, { useState, useContext } from 'react';
 import { Context } from '../../App';
-import { useAuth } from 'oidc-react';
+import { useAuth } from 'react-oidc-context';
 import './header.css';
 import MenuIconHover from '../../assets/img/icons/header/menu.svg'
 import MenuIcon from '../../assets/img/icons/header/menu_expanded.svg'
@@ -38,7 +38,10 @@ const Header = ({toggleMenu}) => {
                                 <Link to="/profil" className="header-icon">
                                     <img  src={ProfileIcon} alt="Profile icon button"></img>
                                 </Link>
-                                <button className="logout-button" style={isMobile ? {"display": "none"} : {}} onClick={() => auth.signOut()}>Logg ut</button>
+                                {auth.isAuthenticated ? 
+                                    <button className="logout-button" style={isMobile ? {"display": "none"} : {}} onClick={() => auth.signoutRedirect()}>Logg ut</button> :
+                                    <button className="logout-button" style={isMobile ? {"display": "none"} : {}} onClick={() => void auth.signinRedirect()}>Logg inn</button> 
+                                }
                             </div>
                         </div>
                     </div>

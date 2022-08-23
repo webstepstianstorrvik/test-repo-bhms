@@ -14,25 +14,25 @@ const MineFrister = () => {
             comment: ""
         },
         {
-            title: "Spiker ut av vegg i trappoppgang",
+            title: "Spiker ut av vegg i trappoppgang 1",
             type: "Avvik/tiltak",
             deadline: "04.10.2019",
             comment: "Some comment"
         },
         {
-            title: "Spiker ut av vegg i trappoppgang",
+            title: "Spiker ut av vegg i trappoppgang 2",
             type: "Avvik/tiltak",
             deadline: "04.10.2019",
             comment: "Some comment"
         },
         {
-            title: "Spiker ut av vegg i trappoppgang",
+            title: "Spiker ut av vegg i trappoppgang 3",
             type: "Avvik/tiltak",
             deadline: "04.10.2019",
             comment: ""
         },
         {
-            title: "Spiker ut av vegg i trappoppgang",
+            title: "Spiker ut av vegg i trappoppgang 4",
             type: "Avvik/tiltak",
             deadline: "04.10.2019",
             comment: "Some comment"
@@ -47,7 +47,7 @@ const MineFrister = () => {
             </div>
             <div className="main">
                 {frister.map(({title, deadline, type, comment}) => (
-                    <ListElement>
+                    <ListElement key={title}>
                         <div className={`container ${comment ? "has-comment" : ""}`}>
                             <div className="list-item">
                                 <h4>{title}</h4>

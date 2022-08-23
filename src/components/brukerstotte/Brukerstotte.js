@@ -14,16 +14,16 @@ const Brukerstotte = () => {
             icon: BrukerveiledningerIcon,
             title: 'Brukerveiledninger'
         },
-        {
-            link: 'kontakt-boligbyggelaget',
-            icon: KontaktboligbyggelagetIcon,
-            title: 'Kontakt boligbyggelaget'
-        },
-        {
-            link: 'ofte-stilte-spoorsmaal',
-            icon: OftestiltesporsmolIcon,
-            title: 'Ofte stilte spørsmål'
-        },
+        // {
+        //     link: 'kontakt-boligbyggelaget',
+        //     icon: KontaktboligbyggelagetIcon,
+        //     title: 'Kontakt boligbyggelaget'
+        // },
+        // {
+        //     link: 'ofte-stilte-spoorsmaal',
+        //     icon: OftestiltesporsmolIcon,
+        //     title: 'Ofte stilte spørsmål'
+        // },
         {
             link: 'opplaeringsvideoer',
             icon: OpplaeringsvideoerIcon,
