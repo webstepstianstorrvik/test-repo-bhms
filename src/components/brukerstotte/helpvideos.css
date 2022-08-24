@@ -1,9 +1,8 @@
 .helpvideos {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
     flex-direction: row;
-    gap: 2rem;
+    gap: 3rem;
 }
 
 .helpvideos .no-items {

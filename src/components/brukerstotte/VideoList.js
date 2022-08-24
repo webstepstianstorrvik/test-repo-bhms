@@ -15,6 +15,10 @@ import arkivLaerAlt from './../../assets/img/brukerveiledning/arkiv_laer_alt.jpg
 import arkiv1Oversikt from './../../assets/img/brukerveiledning/arkiv_1_oversikt.jpg';
 import arkiv2Filer from './../../assets/img/brukerveiledning/arkiv_2_filer.jpg';
 import arkiv3Mapper from './../../assets/img/brukerveiledning/arkiv_3_mapper.jpg';
+import demoErfaringBevar from './../../assets/img/brukerveiledning/demo_og_erfaring_bevar.jpg';
+import demoErfaringLite from './../../assets/img/brukerveiledning/demo_og_erfaring_1.jpg';
+import demoErfaringMellomstort from './../../assets/img/brukerveiledning/demo_og_erfaring_2.jpg';
+import demoErfaringStort from './../../assets/img/brukerveiledning/demo_og_erfaring_3.jpg';
 import styretsHmsAnsvar from './../../assets/img/fagvideoer/styretsHmsAnsvar.jpg';
 import risikovurderingIBorettslagOgSameier from './../../assets/img/fagvideoer/risikovurderingIBorettslagOgSameier.jpg';
 import byggherreforskriften from './../../assets/img/fagvideoer/byggherreforskriften.jpg';
@@ -112,7 +116,7 @@ const VideoList = ({videoType}) => {
         },{
             id: 10,
             category: "arkiv",
-            videoUrl: "https://player.vimeo.com/video/701550388?h=b25ce28457&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+            videoUrl: "https://player.vimeo.com/video/701550388?h=b25ce28457&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Arkiv – Lær alt om arkivet",
             duration: 1,
             videoDurationText: "2:24 minutter",
@@ -121,7 +125,7 @@ const VideoList = ({videoType}) => {
         },{
             id: 11,
             category: "arkiv",
-            videoUrl: "https://player.vimeo.com/video/701183325?h=977f1fbe9b&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+            videoUrl: "https://player.vimeo.com/video/701183325?h=977f1fbe9b&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Arkiv Del 1 – En oversikt",
             duration: 159,
             videoDurationText: "2:39 minutter",
@@ -130,7 +134,7 @@ const VideoList = ({videoType}) => {
         },{
             id: 12,
             category: "arkiv",
-            videoUrl: "https://player.vimeo.com/video/701558271?h=1754321715&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+            videoUrl: "https://player.vimeo.com/video/701558271?h=1754321715&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Arkiv Del 2 – Filer",
             duration: 200,
             videoDurationText: "3:20 minutter",
@@ -139,12 +143,52 @@ const VideoList = ({videoType}) => {
         },{
             id: 13,
             category: "arkiv",
-            videoUrl: "https://player.vimeo.com/video/701571469?h=1ee86da71e&amp;badge=0&amp;autopause=0&amp;player_id=0&amp;app_id=58479",
+            videoUrl: "https://player.vimeo.com/video/701571469?h=1ee86da71e&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
             videoTitle: "Arkiv Del 3 – Mapper",
             duration: 172,
             videoDurationText: "2:52 minutter",
             videoHeaderImageUrl: arkiv3Mapper,
             urlFriendlyName: "arkiv-3-mapper"
+        }
+        ,{
+            id: 14,
+            category: "demo_og_erfaring",
+            videoUrl: "https://player.vimeo.com/video/415894095?h=f3042dcdca&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
+            videoTitle: "Demo BevarHMS",
+            duration: 112,
+            videoDurationText: "1:52 minutter",
+            videoHeaderImageUrl: demoErfaringBevar,
+            urlFriendlyName: "demo-bevarhms"
+        }
+        ,{
+            id: 15,
+            category: "demo_og_erfaring",
+            videoUrl: "https://player.vimeo.com/video/372569470?h=bdefac3a03&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
+            videoTitle: "Lite sameie",
+            duration: 170,
+            videoDurationText: "2:50 minutter",
+            videoHeaderImageUrl: demoErfaringLite,
+            urlFriendlyName: "demo-lite-sameie"
+        }
+        ,{
+            id: 16,
+            category: "demo_og_erfaring",
+            videoUrl: "https://player.vimeo.com/video/383068108?h=437791110c&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
+            videoTitle: "Mellomstort borettslag",
+            duration: 134,
+            videoDurationText: "2:14 minutter",
+            videoHeaderImageUrl: demoErfaringMellomstort,
+            urlFriendlyName: "demo-mellomstort-borettslag"
+        }
+        ,{
+            id: 17,
+            category: "demo_og_erfaring",
+            videoUrl: "https://player.vimeo.com/video/368741334?h=07300b5056&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
+            videoTitle: "Stort borettslag",
+            duration: 178,
+            videoDurationText: "2:58 minutter",
+            videoHeaderImageUrl: demoErfaringStort,
+            urlFriendlyName: "demo-stort-borettslag"
         }];
 
         const brukerveiledninger = [{
