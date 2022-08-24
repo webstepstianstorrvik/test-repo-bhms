@@ -5,7 +5,7 @@ name: Build and deploy Node.js app to Azure Web App - brukerportal-web
 
 env:
   REACT_APP_STS_AUTHORITY: https://identity.bevarhms.no/
-  REACT_APP_CLIENT_ID: c1acace7-5853-4a1b-abae-4f5d8af1bbc6
+  REACT_APP_CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
   REACT_APP_CLIENT_REDIRECT: https://brukerportal-web.azurewebsites.net/
 
 on:
