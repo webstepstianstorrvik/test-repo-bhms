@@ -2,8 +2,8 @@ import React from "react";
 import Button from "../common/Button";
 
 import BrukerveiledningerIcon from '../../assets/img/icons/brukerstotte/brukerveiledninger.svg';
-import KontaktboligbyggelagetIcon from '../../assets/img/icons/brukerstotte/kontaktboligbyggelaget.svg';
-import OftestiltesporsmolIcon from '../../assets/img/icons/brukerstotte/oftestiltesporsmol.svg';
+// import KontaktboligbyggelagetIcon from '../../assets/img/icons/brukerstotte/kontaktboligbyggelaget.svg';
+// import OftestiltesporsmolIcon from '../../assets/img/icons/brukerstotte/oftestiltesporsmol.svg';
 import OpplaeringsvideoerIcon from '../../assets/img/icons/brukerstotte/opplaeringsvideoer.svg';
 
 const Brukerstotte = () => {
