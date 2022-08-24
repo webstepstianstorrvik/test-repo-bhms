@@ -1,0 +1,33 @@
+
+.handbok > .card {
+    width: 100%;
+}
+
+.handbok .list-heading {
+    font-weight: 600;
+}
+
+.handbok .list-subheading {
+    margin-top: 0.4rem;
+    font-weight: 400;
+}
+
+.handbok .cancel-icon {
+    width: 1rem;
+    opacity: 0.5;   
+}
+
+@media(min-width:768px) {
+    .handbok .buttons {
+        flex: 2;
+        margin-top: 0;
+    }
+
+    .handbok .button-wrapper {
+        width: calc(50% - 1rem);
+    }
+    
+    .handbok > .card {
+        flex: 1;
+    }    
+}

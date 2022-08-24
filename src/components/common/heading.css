@@ -1,0 +1,14 @@
+.top-heading {
+    margin-bottom: 2rem;
+    display: inline-block;
+}
+
+.top-heading a,
+.top-heading span {
+    padding-right: 0.5rem;
+    font-size: 0.8rem;
+}
+
+.heading-path-item {
+    display: inline-block;
+}

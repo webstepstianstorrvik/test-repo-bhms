@@ -1,0 +1,23 @@
+.aktiviteter .buttons {
+    width: 100%;
+    margin-top: 0;
+}
+
+.aktiviteter .chart {
+    width: 100%;
+    height: 400px;
+}
+
+@media(min-width:1280px) {
+    .aktiviteter .buttons {
+        flex: 2;
+    }
+
+    .aktiviteter .button-wrapper {
+        width: calc(50% - 1rem);
+    }
+    
+    .aktiviteter .chart {
+        flex: 1;
+    }
+}

@@ -1,0 +1,23 @@
+.avviktiltak .buttons {
+    width: 100%;
+    margin-top: 0;
+}
+
+.avviktiltak .chart {
+    width: 100%;
+    height: 400px;
+}
+
+@media(min-width:1280px) {
+    .avviktiltak .buttons {
+        flex: 2;
+    }
+
+    .avviktiltak .button-wrapper {
+        width: calc(50% - 1rem);
+    }
+    
+    .avviktiltak .chart {
+        flex: 1;
+    }
+}

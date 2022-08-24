@@ -1,0 +1,34 @@
+
+.mine-frister-wrapper,
+.borettslaget-wrapper,
+.nyheter-wrapper,
+.aktuelle-tema-wrapper {
+    width: 100%;
+}
+
+.aktuelle-tema-wrapper > h2 {
+    margin-bottom: 0.8rem;
+}
+
+@media(min-width:768px) {
+    .borettslaget-wrapper {
+        flex: 3;
+    }
+    
+    .mine-frister-wrapper {
+        flex: 2;
+    }
+    .nyheter-wrapper {
+        flex-basis: 100%;
+    }
+}
+@media(min-width: 1280px) {
+    .nyheter-wrapper {
+        flex: 2;
+    }
+    .startside .button-wrapper {
+        width: 100%;
+        flex: 1;
+    }
+}
+

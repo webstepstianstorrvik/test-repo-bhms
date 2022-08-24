@@ -1,24 +1,23 @@
 import '../../assets/css/fonts.css';
+import '../../assets/css/colors.css';
 import './card.css';
 
 import React from 'react';
 
-class Card extends React.Component {
-    constructor(props) {
-        super(props);
-        this.backgroundColor = "white";
-        this.borderColor = "black";
-    }
+const Card = ({children, className, title}) => {
 
-    render() {
-        return (
-            <div className={ "card" + (this.props.border ? "" : " no-border")}>
-                <div className="card-content">
-                    { this.props.content }
+    return (
+        <div className={`card ${className}`}>
+            { title && 
+                <div className="card-header">
+                    <h2 className="card-title">{title}</h2>
                 </div>
+            }
+            <div className="card-content">
+                { children }
             </div>
-        );
-    }
+        </div>
+    );
 }
 
 export default Card;

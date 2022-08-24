@@ -1,0 +1,46 @@
+.borettslaget {
+    width: 100%;
+}
+
+.borettslaget img {
+    width: 100%;
+    height: auto;
+    object-fit: fill;
+    border-radius: 0.375rem 0.375rem 0 0;
+}
+
+.borettslaget-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 1rem 1rem 1rem;
+    border-bottom: 1px solid var(--main-border-color-faded);
+}
+
+.borettslaget-header h2 {
+    margin-bottom: 0;
+}
+
+.borettslaget-header button {
+    height: 40px;
+    margin: auto 0;
+}
+
+.borettslaget-header p {
+    margin-top: 0;
+    font-size: 0.95rem;
+    font-weight: 500;
+}
+
+.borettslaget-content {
+    padding: 1rem;
+}
+
+.borettslaget-content h4 {
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    flex: 1;
+}
+
+.borettslaget-content p {
+    flex: 2;
+}

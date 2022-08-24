@@ -1,62 +1,69 @@
-import React from 'react';
+import React, { useState, useEffect, createContext } from 'react';
+import { Outlet } from "react-router-dom";
 import Header from './components/common/Header.js';
-import Login from './components/login/Login.js';
-import Content from './components/brukerveiledning/Brukerveiledning.js';
 import Footer from './components/common/Footer.js';
-import { loginPage } from './helpers/featuretoggle/feature-toggles';
-import {PAGE_BRUKERVEILEDNING, PAGE_FAGVIDEOER} from './helpers/dictionary/pages.js';
 import './assets/css/app.css';
+import SidebarMenu from './components/menu/SidebarMenu.js';
+import { useLocation } from "react-router-dom";
+import Heading from './components/common/Heading.js';
+import { useAuth } from 'react-oidc-context';
 
-class App extends React.Component {
+export const Context = createContext();
 
-    constructor() {
-        super();
+const App = () => {
+    const location = useLocation();
+    const auth = useAuth();
+    const [isMenuOpen, setIsMenuOpen] = useState(true)
+    const [isMobile, setIsMobile] = useState();
 
-        this.findPage = this.findPage.bind(this);
-    }
+    useEffect(() => {
+        if (isMobile) {
+            setIsMenuOpen(false);
+        }
+      }, [location]);
 
-    findPage() {
-        const page = this.props.page;
-        switch(page) {
-            case 'fagvideoer':
-                return PAGE_FAGVIDEOER;
-            case 'opplaering':
-            default:
-                return PAGE_BRUKERVEILEDNING;
+  useEffect(() => {
+    setIsMobile(window.innerWidth <= 640);
+  }, []);
+
+  useEffect(() => {
+    function handleResize() {
+        setIsMobile(window.innerWidth <= 640);
+        if (window.innerWidth < 992) {
+            setIsMenuOpen(false)
+        }
+        if (window.innerWidth >= 992) {
+            setIsMenuOpen(true)
         }
     }
 
-    renderIfLoggedIn(page, videoTitle) {
-        if (loginPage.active) {
-            let isLoggedIn = false;
-            if (isLoggedIn) {
-                return (
-                    <Content page={page} showVideoTitle={videoTitle}/>
-                );
-            } else {
-                return (
-                    <Login />
-                )
-            }
-        } else {
-            return (
-                <Content page={page} showVideoTitle={videoTitle}/>
-            );
-        }
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
-    }
-    render() {
-        const page = this.findPage();
-        const videoTitle = this.props.showVideoTitle;
-
-        return (
-            <div>
-                <Header headertext={page.parenttitle} subheadertext={page.title}/>
-                { this.renderIfLoggedIn(page, videoTitle) }
+    const toggleMenu = () => {
+        setIsMenuOpen(prevValue => !prevValue)
+    }  
+    
+    
+    
+    return (
+        <Context.Provider value={{isMobile}}>
+            <main>
+                <Header toggleMenu={toggleMenu}/>
+                <div className="container">
+                    { auth.isAuthenticated && <SidebarMenu isMenuOpen={isMenuOpen}/> }
+                    <section>
+                        <div className="site-content">
+                            <Heading />
+                            <Outlet />
+                        </div>
+                    </section>
+                </div>
                 <Footer />
-            </div>
-        );
-    }
+            </main>
+        </Context.Provider>
+    );
 }
 
 export default App;

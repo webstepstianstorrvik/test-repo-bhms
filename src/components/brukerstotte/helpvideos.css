@@ -1,0 +1,28 @@
+.helpvideos {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    gap: 3rem;
+}
+
+.helpvideos .no-items {
+    display: flex;
+    width: 100%;
+}
+
+
+.video-thumb-container {
+    width: 100%;
+}
+@media(min-width:768px) {
+
+    .video-thumb-container {
+        width: calc(50% - 1rem);
+    }
+}
+@media(min-width: 1280px) {
+
+    .video-thumb-container {
+        width: calc(33% - 2rem);
+    }
+}

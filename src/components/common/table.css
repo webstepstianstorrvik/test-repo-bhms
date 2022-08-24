@@ -1,0 +1,23 @@
+.table-card {
+    padding: 1rem;
+}
+
+.table {
+    border-collapse: collapse;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 400;
+}
+
+.table tr {
+    height: 3rem;
+}
+
+.table tr:not(:last-child),
+.table thead > tr {
+    border-bottom: 1px solid var(--main-bevar-divider-color);
+}
+
+.table tr td, tr th {
+    padding: 0.5rem;
+}

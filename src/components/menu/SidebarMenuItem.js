@@ -1,14 +1,14 @@
 import React from 'react';
-class MenuItem extends React.Component {
+import { NavLink } from 'react-router-dom';
 
-    render() {
-        return (
-            <a className="sidebarmenu-item" href={this.props.itemUrl} style={ {textDecoration: 'none' }}>
-                <img src={this.props.itemImgUrl} className="sidebarmenu-item-img" alt={this.props.title}/>
-                <div className="sidebarmenu-item-title">{this.props.title}</div>
-            </a>
-        );
-    }
+const MenuItem = ({title, itemUrl, itemImgUrl, isMenuOpen}) => {
+
+    return (
+        <NavLink className={({ isActive }) => isActive ? "sidebarmenu-item active" : "sidebarmenu-item"} to={itemUrl}>
+            <img src={itemImgUrl} className="sidebarmenu-item-img" alt={title}/>
+            <div className="sidebarmenu-item-title" style={isMenuOpen ? {} : {"display": "none"}}>{title}</div>
+        </NavLink>
+    );
 }
 
 export default MenuItem;

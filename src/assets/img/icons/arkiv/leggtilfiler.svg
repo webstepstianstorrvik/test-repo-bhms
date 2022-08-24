@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="38.575" height="45.019" viewBox="0 0 38.575 45.019">
+  <g id="Group_1326" data-name="Group 1326" transform="translate(-843.472 -239)">
+    <g id="Group_1149" data-name="Group 1149" transform="translate(210 -398)">
+      <g id="Group_1132" data-name="Group 1132" transform="translate(652.221 658.971)">
+        <g id="Group_1130" data-name="Group 1130" transform="translate(0 4.986)">
+          <path id="Path_1008" data-name="Path 1008" d="M262.737,1193.672h-9.971a1.163,1.163,0,0,1,0-2.326h9.971a1.163,1.163,0,0,1,0,2.326Z" transform="translate(-251.603 -1191.346)" fill="#1a1818"/>
+        </g>
+        <g id="Group_1131" data-name="Group 1131" transform="translate(4.985)">
+          <path id="Path_1009" data-name="Path 1009" d="M257.052,1199.357a1.163,1.163,0,0,1-1.163-1.163v-9.972a1.163,1.163,0,1,1,2.326,0v9.972A1.163,1.163,0,0,1,257.052,1199.357Z" transform="translate(-255.889 -1187.059)" fill="#1a1818"/>
+        </g>
+      </g>
+      <g id="Group_1140" data-name="Group 1140" transform="translate(644.691 648.219)">
+        <path id="Path_1017" data-name="Path 1017" d="M271.322,1211.615h0l-25.029-.071a1.164,1.164,0,0,1-1.16-1.163v-31.4a1.166,1.166,0,0,1,.342-.823,1.392,1.392,0,0,1,.825-.34l25.029.071a1.163,1.163,0,0,1,1.16,1.163v20.935a1.163,1.163,0,0,1-2.326,0v-19.776l-22.7-.064v29.077l23.87.067a1.163,1.163,0,0,1,0,2.326Z" transform="translate(-245.129 -1177.815)" fill="#1a1818"/>
+      </g>
+      <g id="Group_1141" data-name="Group 1141" transform="translate(638.938 642.465)">
+        <path id="Path_1018" data-name="Path 1018" d="M247.1,1206.67h-.014l-5.754-.072a1.163,1.163,0,0,1-1.149-1.163v-31.4a1.163,1.163,0,0,1,1.163-1.163h0l25.031.072a1.163,1.163,0,0,1,1.16,1.163v5.735a1.163,1.163,0,0,1-2.326,0v-4.576l-22.7-.065v29.089l4.6.057a1.163,1.163,0,0,1-.014,2.326Z" transform="translate(-240.182 -1172.868)" fill="#1a1818"/>
+      </g>
+      <g id="Group_1142" data-name="Group 1142" transform="translate(633.472 637)">
+        <path id="Path_1019" data-name="Path 1019" d="M242.113,1201.969H242.1l-5.465-.071a1.163,1.163,0,0,1-1.148-1.163v-31.4a1.164,1.164,0,0,1,1.163-1.163h0l25.029.071a1.164,1.164,0,0,1,1.16,1.163v5.45a1.163,1.163,0,1,1-2.326,0v-4.289l-22.7-.065v29.089l4.317.056a1.163,1.163,0,0,1-.014,2.326Z" transform="translate(-235.483 -1168.169)" fill="#1a1818"/>
+      </g>
+    </g>
+  </g>
+</svg>

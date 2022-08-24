@@ -1,42 +1,25 @@
-import React, { useEffect } from 'react';
-import {render} from 'react-dom';
-import App from './App.js';
-import { useParams } from 'react-router-dom'
-
-import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Navigate
-} from "react-router-dom";
 import './assets/css/polyfill/bootstrap.css';
+import './assets/css/fonts.css';
 import './main.css';
+
+import React from 'react';
+import { AuthProvider } from 'react-oidc-context';
+import {render} from 'react-dom';
 import reportWebVitals from './reportWebVitals';
+import Routes from './components/router/Routes';
 
 
-function AppWithParams() {useEffect(() => {
-    document.title = "BevarHMS Veiledning"
-    }, []);
-    let { pagePath,
-        showVideoTitle
-    } = useParams();
-    return (<App page={pagePath} showVideoTitle={showVideoTitle}/>);
-}
+const oidcConfig = {
+    authority: process.env.REACT_APP_STS_AUTHORITY,
+    client_id: process.env.REACT_APP_CLIENT_ID,
+    redirect_uri: process.env.REACT_APP_CLIENT_REDIRECT,
+    post_logout_redirect_uri: process.env.REACT_APP_CLIENT_REDIRECT
+  };
 
-const Brukerportal = () => (
-        <Router>
-            <div>
-                <Routes>
-                    <Route index element={<Navigate to="/fagvideoer" />} />
-                    <Route path=":pagePath" element={<AppWithParams />} />
-                    <Route path=":pagePath/:showVideoTitle" element={<AppWithParams />} />
-                </Routes>
-            </div>
-        </Router >
-);
 render(
-    <Brukerportal />
-    ,
+    <AuthProvider {...oidcConfig}>
+        <Routes />
+    </AuthProvider>,
     document.getElementById("root")
 )
 ;
