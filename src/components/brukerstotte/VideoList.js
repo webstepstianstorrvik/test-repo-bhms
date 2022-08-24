@@ -19,8 +19,12 @@ import styretsHmsAnsvar from './../../assets/img/fagvideoer/styretsHmsAnsvar.jpg
 import risikovurderingIBorettslagOgSameier from './../../assets/img/fagvideoer/risikovurderingIBorettslagOgSameier.jpg';
 import byggherreforskriften from './../../assets/img/fagvideoer/byggherreforskriften.jpg';
 import internkontrollForHMSIBorettslagOgSameier from './../../assets/img/fagvideoer/internkontrollForHMSIBorettslagOgSameier.jpg';
+import { useSearchParams } from 'react-router-dom';
 
 const VideoList = ({videoType}) => {
+    const [searchParams] = useSearchParams();
+    const showVideoTitle = searchParams.get("video")
+
 
     const findVideos = () => {
 
@@ -195,7 +199,7 @@ const VideoList = ({videoType}) => {
             <div className="container">
                 <div className="brukerveiledning">
                     <div className="main-content">
-                        <HelpVideos videoList={findVideos()} />
+                        <HelpVideos videoList={findVideos()} showVideoTitle={showVideoTitle}/>
                     </div>
                 </div>
             </div>

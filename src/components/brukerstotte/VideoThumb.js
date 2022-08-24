@@ -1,6 +1,6 @@
 import '../../assets/css/fonts.css';
 import './videothumb.css';
-import React from 'react';
+import React, { useState } from 'react';
 import ReactModal from 'react-modal';
 import VideoPlayer from './VideoPlayer';
 import { faClock } from "@fortawesome/free-regular-svg-icons";
@@ -8,31 +8,27 @@ import { faLink } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { useSearchParams } from 'react-router-dom';
 
-class VideoThumb extends React.Component {
-    constructor(props) {
+const VideoThumb = ({videoTitle, urlFriendlyName, videoHeaderImageUrl, videoDurationText, videoUrl, show}) => {
+    const [showModal, setShowModal] = useState(show)
+    const [, setSearchParams] = useSearchParams();
 
-        super(props);
-        ReactModal.setAppElement('#root');
-
-        this.state = {
-            showModal: props.show
-        }
-        this.handleOpenModal = this.handleOpenModal.bind(this);
-        this.handleCloseModal = this.handleCloseModal.bind(this);
+    const handleCloseModal = () => {
+        setShowModal(false)
+        setSearchParams()
     }
 
-
-    handleOpenModal() {
-        this.setState({showModal: true});
+    const handleOpenModal = () => {
+        setShowModal(true)
+        setSearchParams({"video": urlFriendlyName})
     }
 
-    handleCloseModal() {
-        this.setState({showModal: false});
+    const handleCopy = () => {
+        navigator.clipboard.writeText(window.location + '?video=' + urlFriendlyName);
+        toast('Kopiert lenke til ' + videoTitle);
     }
 
-
-    render() {
         return (
             <div className="video-thumb-parent">
                 <ToastContainer
@@ -42,26 +38,26 @@ class VideoThumb extends React.Component {
                     closeOnClick={true}
                     pauseOnFocusLoss={false}
                     draggable={false}/>
-                <div className="card video-thumb" onClick={this.handleOpenModal}>
+                <div className="card video-thumb" onClick={handleOpenModal}>
                     <div className="header-image-container">
-                        <img className="header-image" src={this.props.videoHeaderImageUrl} alt={this.props.videoTitle}/>
+                        <img className="header-image" src={videoHeaderImageUrl} alt={videoTitle}/>
                     </div>
                     <div className="info">
                         <div className="left">
                             <div className="duration">
-                                <FontAwesomeIcon icon={faClock} /> { this.props.videoDurationText }
+                                <FontAwesomeIcon icon={faClock} /> { videoDurationText }
                             </div>
                         </div>
-                        <div className="right priority-click" onClick={(e) => {this.handleCopy(); e.stopPropagation(); }}>
+                        <div className="right priority-click" onClick={(e) => {handleCopy(); e.stopPropagation(); }}>
                             <FontAwesomeIcon icon={faLink} />
                         </div>
                     </div>
                 </div>
 
                 <ReactModal
-                    isOpen={this.state.showModal}
-                    contentLabel={this.props.videoTitle}
-                    onRequestClose={this.handleCloseModal}
+                    isOpen={showModal}
+                    contentLabel={videoTitle}
+                    onRequestClose={handleCloseModal}
                     style={{
                         overlay: {
                             backgroundColor: 'rgba(0, 0, 0, 0.8)'
@@ -77,16 +73,12 @@ class VideoThumb extends React.Component {
                         }
                     }}
                 >
-                    <VideoPlayer videoUrl={this.props.videoUrl} closeModalHandler={this.handleCloseModal}/>
+                    <VideoPlayer videoUrl={videoUrl} closeModalHandler={handleCloseModal}/>
                 </ReactModal>
             </div>
         );
-    }
 
-    handleCopy() {
-        navigator.clipboard.writeText(window.location + '/' + this.props.urlFriendlyName);
-        toast('Kopiert lenke til ' + this.props.videoTitle);
-    }
+   
 }
 
 export default VideoThumb;

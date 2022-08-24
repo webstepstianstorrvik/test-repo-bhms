@@ -4,7 +4,7 @@ import {
     BrowserRouter as Router,
     Routes as RouterRoutes,
     Route,
-    Navigate,
+    Navigate
 } from "react-router-dom";
 import Brukerstotte from '../brukerstotte/Brukerstotte.js';
 import VideoList from '../brukerstotte/VideoList.js';
@@ -115,7 +115,7 @@ const Routes = () => {
                 <Route path="innstillinger/rediger-styreleder" element={<ProtectedRoute><RedigerStyreleder /></ProtectedRoute>} />
                 <Route path="innstillinger/snarveier" element={<ProtectedRoute><Snarveier /></ProtectedRoute>} />
 
-            <Route path="profil" element={<Profil />} />
+            <Route path="profil" element={<ProtectedRoute><Profil /></ProtectedRoute>} />
 
             <Route
                 path="*"

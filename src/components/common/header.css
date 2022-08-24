@@ -57,6 +57,7 @@
     padding-right: 2rem;
     width: 8rem;
     font-size: 1rem;
+    white-space: nowrap;
 }
 
 .header .logout-button:hover {

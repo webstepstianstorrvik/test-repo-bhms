@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import { useEffect } from "react";
 import { useAuth } from "react-oidc-context";
 
 const ProtectedRoute = ({children}) => {
@@ -12,7 +12,7 @@ const ProtectedRoute = ({children}) => {
     }, [auth.isLoading, auth.isAuthenticated])
 
     if(auth.isLoading || !auth.isAuthenticated) {
-        return <></>
+        return null
     }
 
     return children;

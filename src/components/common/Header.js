@@ -35,7 +35,7 @@ const Header = ({toggleMenu}) => {
                                 <Link to="#" className="header-icon">
                                     <img src={NotificationIcon} alt="Notification icon button"></img>
                                 </Link>
-                                <Link to="/profil" className="header-icon">
+                                <Link to="#" className="header-icon">
                                     <img  src={ProfileIcon} alt="Profile icon button"></img>
                                 </Link>
                                 {auth.isAuthenticated ? 
