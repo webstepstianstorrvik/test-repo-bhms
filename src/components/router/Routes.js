@@ -24,7 +24,7 @@ import OfteStilteSpoersmal from '../brukerstotte/ofte-stilte-sporsmal/OfteStilte
 import Profil from '../profil/Profil.js';
 import Rutiner from '../handbok/rutiner/Rutiner';
 import Skjema from '../handbok/skjema/Skjema';
-import Fagvideoer from '../handbok/fagvideoer/Fagvideoer';
+// import Fagvideoer from '../handbok/fagvideoer/Fagvideoer';
 import Sjekklister from '../handbok/sjekklister/Sjekklister';
 import MineFristerAktiviteter from '../aktiviteter/mine-frister/MineFrister';
 import NyAktivitet from '../aktiviteter/ny-aktivitet/NyAktivitet';
