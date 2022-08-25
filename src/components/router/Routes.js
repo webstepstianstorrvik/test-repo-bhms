@@ -67,7 +67,7 @@ const Routes = () => {
         <Router>
         <RouterRoutes>
         <Route path="/" element={<App />}>
-            <Route index element={auth.isAuthenticated ? <ProtectedRoute><Startside /></ProtectedRoute> : <Navigate replace to="/brukerstootte" />} />
+            <Route index element={auth.isAuthenticated ? <ProtectedRoute><Startside /></ProtectedRoute> : <Navigate replace to="/brukerstotte" />} />
             <Route path="haandbok" element={<ProtectedRoute><Handbok /></ProtectedRoute>} />
                 <Route path="haandbok/rutiner" element={<ProtectedRoute><Rutiner /></ProtectedRoute>} />
                 <Route path="haandbok/skjema" element={<ProtectedRoute><Skjema /></ProtectedRoute>} />
@@ -99,11 +99,11 @@ const Routes = () => {
             <Route path="snarveier" element={<ProtectedRoute><Snarveier /></ProtectedRoute>} />
             <Route path="bilder" element={<ProtectedRoute><Bilder /></ProtectedRoute>} />
             <Route path="nyheter" element={<ProtectedRoute><Nyheter /></ProtectedRoute>} />
-            <Route index path="brukerstootte" element={<Brukerstotte />} />
+            <Route index path="brukerstotte" element={<Brukerstotte />} />
                 <Route path="haandbok/fagvideoer" element={<VideoList videoType="fagvideoer"/>} />
-                <Route path="brukerstootte/kontakt-boligbyggelaget" element={<ProtectedRoute><KontaktBoligbyggelaget /></ProtectedRoute>} />
-                <Route path="brukerstootte/ofte-stilte-spoorsmaal" element={<ProtectedRoute><OfteStilteSpoersmal /></ProtectedRoute>} />
-                <Route path="brukerstootte/opplaeringsvideoer" element={<VideoList videoType="opplaeringsvideoer"/>} />
+                <Route path="brukerstotte/kontakt-boligbyggelaget" element={<ProtectedRoute><KontaktBoligbyggelaget /></ProtectedRoute>} />
+                <Route path="brukerstotte/ofte-stilte-spoorsmaal" element={<ProtectedRoute><OfteStilteSpoersmal /></ProtectedRoute>} />
+                <Route path="brukerstotte/opplaeringsvideoer" element={<VideoList videoType="opplaeringsvideoer"/>} />
             <Route path="innstillinger" element={<ProtectedRoute><Innstillinger /></ProtectedRoute>} />
                 <Route path="innstillinger/brukerregister" element={<ProtectedRoute><Brukerregister /></ProtectedRoute>} />
                 <Route path="innstillinger/innstillingvarsling" element={<ProtectedRoute><Innstillingvarsling /></ProtectedRoute>} />

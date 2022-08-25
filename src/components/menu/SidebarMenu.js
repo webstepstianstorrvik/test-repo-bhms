@@ -75,7 +75,7 @@ const SidebarMenu = ({isMenuOpen}) => {
             title: 'Nyheter'
         },
         {
-            itemUrl: '/brukerstootte',
+            itemUrl: '/brukerstotte',
             itemImgUrl: BrukerstotteIcon,
             title: 'Brukerstøtte'
         },

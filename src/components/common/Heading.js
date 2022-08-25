@@ -12,7 +12,7 @@ const Heading = () => {
 
     /** @TODO: START Fix this hack to avoid broken backlink in haandbok */
     if (paths[0] === 'haandbok') {
-        paths[0] = 'brukerstootte';
+        paths[0] = 'brukerstotte';
     }
     /** @Todo: END */
 

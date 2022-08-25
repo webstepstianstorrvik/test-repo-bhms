@@ -32,7 +32,7 @@ const VideoList = ({videoType}) => {
 
     const findVideos = () => {
 
-        const opplaeringvideoer = [{
+        const brukerveiledninger = [{
             id: 1,
             category: "aktiviteter",
             videoUrl: "https://player.vimeo.com/video/516603780?h=dcb211b570&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
@@ -191,7 +191,7 @@ const VideoList = ({videoType}) => {
             urlFriendlyName: "demo-stort-borettslag"
         }];
 
-        const brukerveiledninger = [{
+        const fagvideoer = [{
             id: 1,
             category: "fagvideo1",
             videoUrl: "https://player.vimeo.com/video/475461615?h=9e48c15ea9&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
@@ -230,12 +230,12 @@ const VideoList = ({videoType}) => {
         }];
 
         switch (videoType) {
-            case "opplaeringsvideoer":
-                return opplaeringvideoer;
+            case "fagvideoer":
+                return fagvideoer;
             case "brukerveiledning":
                 return brukerveiledninger;
             default:
-                return opplaeringvideoer;
+                return brukerveiledninger;
         }
     }
 
