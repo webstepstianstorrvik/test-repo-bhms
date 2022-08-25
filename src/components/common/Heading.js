@@ -8,6 +8,14 @@ const Heading = () => {
     const paths = location.pathname.split("/").filter(path => path);
     const heading = paths[paths.length - 1]
 
+
+
+    /** @TODO: START Fix this hack to avoid broken backlink in haandbok */
+    if (paths[0] === 'haandbok') {
+        paths[0] = 'brukerstootte';
+    }
+    /** @Todo: END */
+
     const formatText = (text) => {
         return text.charAt(0).toUpperCase() + text.slice(1).replaceAll("-", " ").replaceAll("aa","å").replaceAll("ae","æ").replaceAll("oo", "ø")
     }

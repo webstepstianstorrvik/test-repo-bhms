@@ -71,7 +71,6 @@ const Routes = () => {
             <Route path="haandbok" element={<ProtectedRoute><Handbok /></ProtectedRoute>} />
                 <Route path="haandbok/rutiner" element={<ProtectedRoute><Rutiner /></ProtectedRoute>} />
                 <Route path="haandbok/skjema" element={<ProtectedRoute><Skjema /></ProtectedRoute>} />
-                <Route path="haandbok/fagvideoer" element={<ProtectedRoute><Fagvideoer /></ProtectedRoute>} />
                 <Route path="haandbok/sjekklister" element={<ProtectedRoute><Sjekklister /></ProtectedRoute>} />
             <Route path="aktiviteter" element={<ProtectedRoute><Aktiviteter /></ProtectedRoute>} />
                 <Route path="aktiviteter/avtaler" element={<ProtectedRoute><Avtaler /></ProtectedRoute>} />
@@ -101,7 +100,7 @@ const Routes = () => {
             <Route path="bilder" element={<ProtectedRoute><Bilder /></ProtectedRoute>} />
             <Route path="nyheter" element={<ProtectedRoute><Nyheter /></ProtectedRoute>} />
             <Route index path="brukerstootte" element={<Brukerstotte />} />
-                <Route path="brukerstootte/brukerveiledning" element={<VideoList videoType="brukerveiledning"/>} />
+                <Route path="haandbok/fagvideoer" element={<VideoList videoType="fagvideoer"/>} />
                 <Route path="brukerstootte/kontakt-boligbyggelaget" element={<ProtectedRoute><KontaktBoligbyggelaget /></ProtectedRoute>} />
                 <Route path="brukerstootte/ofte-stilte-spoorsmaal" element={<ProtectedRoute><OfteStilteSpoersmal /></ProtectedRoute>} />
                 <Route path="brukerstootte/opplaeringsvideoer" element={<VideoList videoType="opplaeringsvideoer"/>} />
