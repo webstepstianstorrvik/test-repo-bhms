@@ -19,6 +19,7 @@ import demoErfaringBevar from './../../assets/img/brukerveiledning/demo_og_erfar
 import demoErfaringLite from './../../assets/img/brukerveiledning/demo_og_erfaring_1.jpg';
 import demoErfaringMellomstort from './../../assets/img/brukerveiledning/demo_og_erfaring_2.jpg';
 import demoErfaringStort from './../../assets/img/brukerveiledning/demo_og_erfaring_3.jpg';
+import redigeringUnderFanenAdmin from './../../assets/img/brukerveiledning/redigere_under_fanen_admin.jpg';
 import styretsHmsAnsvar from './../../assets/img/fagvideoer/styretsHmsAnsvar.jpg';
 import risikovurderingIBorettslagOgSameier from './../../assets/img/fagvideoer/risikovurderingIBorettslagOgSameier.jpg';
 import byggherreforskriften from './../../assets/img/fagvideoer/byggherreforskriften.jpg';
@@ -189,6 +190,15 @@ const VideoList = ({videoType}) => {
             videoDurationText: "2:58 minutter",
             videoHeaderImageUrl: demoErfaringStort,
             urlFriendlyName: "demo-stort-borettslag"
+        },{
+            id:18,
+            category: "innstillinger",
+            videoUrl: "https://player.vimeo.com/video/744518055?h=36cda6910e&amp;badge=0&amp;autoplay=1&amp;player_id=0&amp;app_id=58479",
+            videoTitle: "Redigere under fanen admin",
+            duration: 376,
+            videoDurationText: "6:16 minutter",
+            videoHeaderImageUrl: redigeringUnderFanenAdmin,
+            urlFriendlyName: "innstillinger-redigering-fanen-admin"
         }];
 
         const fagvideoer = [{
