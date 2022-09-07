@@ -23,6 +23,10 @@ import redigeringUnderFanenAdmin from './../../assets/img/brukerveiledning/redig
 import styretsHmsAnsvar from './../../assets/img/fagvideoer/styretsHmsAnsvar.jpg';
 import risikovurderingIBorettslagOgSameier from './../../assets/img/fagvideoer/risikovurderingIBorettslagOgSameier.jpg';
 import byggherreforskriften from './../../assets/img/fagvideoer/byggherreforskriften.jpg';
+import vedlikeholdOgTestAvRoykvarsler from './../../assets/img/fagvideoer/vedlikeholdOgTestAvRoykvarsler.jpg';
+import vedlikeholdOgSjekkAvBrannslukker from './../../assets/img/fagvideoer/vedlikeholdOgSjekkAvBrannslukker.jpg';
+import vedlikeholdOgTestAvHusbrannslange from './../../assets/img/fagvideoer/vedlikeholdOgTestAvHusbrannslange.jpg';
+import romningsplanOgRomningsveier from './../../assets/img/fagvideoer/romningsplanOgRomningsveier.jpg';
 import internkontrollForHMSIBorettslagOgSameier from './../../assets/img/fagvideoer/internkontrollForHMSIBorettslagOgSameier.jpg';
 import { useSearchParams } from 'react-router-dom';
 
@@ -237,6 +241,42 @@ const VideoList = ({videoType}) => {
             videoDurationText: "7:53 minutter",
             videoHeaderImageUrl: byggherreforskriften,
             urlFriendlyName: "byggherreforskriften"
+        },{
+            id: 5,
+            category: "fagvideo5",
+            videoUrl: "https://www.youtube.com/embed/bjYeEEPoW2g?autoplay=1",
+            videoTitle: "Vedlikehold og test av røykvarsler",
+            duration: 198,
+            videoDurationText: "3:18 minutter",
+            videoHeaderImageUrl: vedlikeholdOgTestAvRoykvarsler,
+            urlFriendlyName: "vedlikehold-test-roykvarsler"
+        },{
+            id: 6,
+            category: "fagvideo6",
+            videoUrl: "https://www.youtube.com/embed/6Jt1B5iPDOE?autoplay=1",
+            videoTitle: "Vedlikehold og sjekk av brannslukker",
+            duration: 131,
+            videoDurationText: "2:11 minutter",
+            videoHeaderImageUrl: vedlikeholdOgSjekkAvBrannslukker,
+            urlFriendlyName: "vedlikehold-sjekk-av-brannslukker"
+        },{
+            id: 7,
+            category: "fagvideo7",
+            videoUrl: "https://www.youtube.com/embed/yCmIcDV6Qeo?autoplay=1",
+            videoTitle: "Vedlikehold og test av husbrannslange",
+            duration: 125,
+            videoDurationText: "2:05 minutter",
+            videoHeaderImageUrl: vedlikeholdOgTestAvHusbrannslange,
+            urlFriendlyName: "vedlikehold-test-husbrannslange"
+        },{
+            id: 8,
+            category: "fagvideo8",
+            videoUrl: "https://www.youtube.com/embed/8ei7r5GgL30?autoplay=1",
+            videoTitle: "Rømningsplan og rømningsveier",
+            duration: 166,
+            videoDurationText: "2:46 minutter",
+            videoHeaderImageUrl: romningsplanOgRomningsveier,
+            urlFriendlyName: "romningsplan-romningsveier"
         }];
 
         switch (videoType) {
