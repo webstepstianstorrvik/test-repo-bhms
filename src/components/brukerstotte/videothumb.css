@@ -52,6 +52,13 @@
     width: 25px;
     height: 25px;
 }
+.img-close-modal-icon-internal {
+    right: 0.5rem;
+    position: absolute;
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
+}
 
 .fa-clock {
     color: var(--main-color-text-faded);

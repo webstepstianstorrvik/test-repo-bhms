@@ -32,6 +32,8 @@ class HelpVideos extends React.Component {
                         videoTitle={video.videoTitle}
                         videoUrl={video.videoUrl}
                         videoDurationText={video.videoDurationText}
+                        modalTitle={video.modalTitle}
+                        modalContent={video.modalContent}
                         urlFriendlyName={video.urlFriendlyName}
                     />
                 </div>

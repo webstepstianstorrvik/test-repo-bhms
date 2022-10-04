@@ -2,6 +2,7 @@ import '../../assets/css/fonts.css';
 import './videolist.css';
 import React from 'react';
 import HelpVideos from './HelpVideos.js';
+import {SvarkortModalContent} from './SvarkortModalContent.js';
 import aktiviteterOgOppfolgning from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.jpg';
 import avvikTiltak from './../../assets/img/brukerveiledning/avvik_og_tiltak.jpg';
 import brukerRegistrer from './../../assets/img/brukerveiledning/bruker_registrer.jpg';
@@ -204,7 +205,6 @@ const VideoList = ({videoType}) => {
             videoHeaderImageUrl: redigeringUnderFanenAdmin,
             urlFriendlyName: "innstillinger-redigering-fanen-admin"
         }];
-
         const fagvideoer = [{
             id: 1,
             category: "fagvideo1",
@@ -249,6 +249,8 @@ const VideoList = ({videoType}) => {
             duration: 198,
             videoDurationText: "3:18 minutter",
             videoHeaderImageUrl: vedlikeholdOgTestAvRoykvarsler,
+            modalTitle: "Hva er svarkort?",
+            modalContent: SvarkortModalContent,
             urlFriendlyName: "vedlikehold-test-roykvarsler"
         },{
             id: 6,
@@ -258,6 +260,8 @@ const VideoList = ({videoType}) => {
             duration: 131,
             videoDurationText: "2:11 minutter",
             videoHeaderImageUrl: vedlikeholdOgSjekkAvBrannslukker,
+            modalTitle: "Hva er svarkort?",
+            modalContent: SvarkortModalContent,
             urlFriendlyName: "vedlikehold-sjekk-av-brannslukker"
         },{
             id: 7,
@@ -267,6 +271,8 @@ const VideoList = ({videoType}) => {
             duration: 125,
             videoDurationText: "2:05 minutter",
             videoHeaderImageUrl: vedlikeholdOgTestAvHusbrannslange,
+            modalTitle: "Hva er svarkort?",
+            modalContent: SvarkortModalContent,
             urlFriendlyName: "vedlikehold-test-husbrannslange"
         },{
             id: 8,
@@ -276,6 +282,8 @@ const VideoList = ({videoType}) => {
             duration: 166,
             videoDurationText: "2:46 minutter",
             videoHeaderImageUrl: romningsplanOgRomningsveier,
+            modalTitle: "Hva er svarkort?",
+            modalContent: SvarkortModalContent,
             urlFriendlyName: "romningsplan-romningsveier"
         }];
 
