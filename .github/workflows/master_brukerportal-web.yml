@@ -5,7 +5,7 @@ name: Build and deploy Node.js app to Azure Web App - brukerportal-web
 
 env:
   STS_AUTHORITY: https://identity.bevarhms.no/
-  CLIENT_ID: ${{ secrets.REACT_APP_CLIENT_ID }}
+  CLIENT_ID: ${{ secrets.CLIENT_ID }}
   CLIENT_REDIRECT: https://brukerportal-web.azurewebsites.net/
 
 on:
@@ -28,6 +28,9 @@ jobs:
           
       - name: echo env variables
         run: env
+        
+      - name: echo oicd env variables
+        run: echo $STS_AUTHORITY $CLIENT_ID $CLIENT_REDIRECT
 
       - name: npm install, build, and test
         run: |
