@@ -16,7 +16,7 @@ const oidcConfig = {
     post_logout_redirect_uri: process.env.REACT_APP_CLIENT_REDIRECT
   };
 
-console.log(oidcConfig);
+console.log(process.env);
 
 render(
     <AuthProvider {...oidcConfig}>
