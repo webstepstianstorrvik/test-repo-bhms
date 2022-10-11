@@ -29,8 +29,8 @@ jobs:
       - name: echo env variables
         run: env
         
-      - name: echo oicd env variables
-        run: echo $STS_AUTHORITY $CLIENT_ID $CLIENT_REDIRECT
+      - name: cat .env file
+        run: cat .env
 
       - name: npm install, build, and test
         run: |
