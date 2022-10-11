@@ -4,9 +4,9 @@
 name: Build and deploy Node.js app to Azure Web App - brukerportal-web
 
 env:
-  REACT_APP_WORKFLOW_STS_AUTHORITY: https://identity.bevarhms.no/
-  REACT_APP_WORKFLOW_CLIENT_ID: ${{ secrets.CLIENT_ID }}
-  REACT_APP_WORKFLOW_CLIENT_REDIRECT: https://brukerportal-web.azurewebsites.net/
+  OIDC_STS_AUTHORITY: https://identity.bevarhms.no/
+  OIDC_CLIENT_ID: ${{ secrets.OIDC_CLIENT_ID }}
+  OIDC_CLIENT_REDIRECT: https://brukerportal-web.azurewebsites.net/
 
 on:
   push:
