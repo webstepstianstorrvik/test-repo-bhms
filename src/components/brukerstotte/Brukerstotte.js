@@ -29,7 +29,7 @@ const Brukerstotte = () => {
         //     title: 'Ofte stilte spørsmål'
         // },
         {
-            link: 'opplaeringsvideoer',
+            link: 'brukerstotte/opplaeringsvideoer',
             icon: OpplaeringsvideoerIcon,
             title: 'Opplæringsvideoer',
         },
