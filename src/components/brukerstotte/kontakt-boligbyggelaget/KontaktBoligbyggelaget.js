@@ -1,9 +1,6 @@
-import React from "react";
+import React from 'react'
 
 const KontaktBoligbyggelaget = () => {
-
-    return (
-        <div></div>
-    )
+    return <div></div>
 }
-export default KontaktBoligbyggelaget;
+export default KontaktBoligbyggelaget

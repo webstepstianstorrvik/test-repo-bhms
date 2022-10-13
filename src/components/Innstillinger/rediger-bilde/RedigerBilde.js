@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const RedigerBilde = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default RedigerBilde;
+export default RedigerBilde

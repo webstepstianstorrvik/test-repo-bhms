@@ -1,12 +1,11 @@
-import '../../assets/css/fonts.css';
+import '../../assets/css/fonts.css'
 
-import React from 'react';
-import Card from '../common/Card.js';
-import imgBlaakollen from './../../assets/img/blaakollen.jpg';
-import './login.css';
+import React from 'react'
+import Card from '../common/Card.js'
+import imgBlaakollen from './../../assets/img/blaakollen.jpg'
+import './login.css'
 
 class Login extends React.Component {
-
     cardContent() {
         return (
             <div className="login-card">
@@ -15,24 +14,29 @@ class Login extends React.Component {
                         <h1>Logg inn</h1>
                     </div>
                     <div className="login-card-main">
-                        <div className="content-text">Vennligst logg inn for å få tilgang til brukerveiledningen</div>
+                        <div className="content-text">
+                            Vennligst logg inn for å få tilgang til
+                            brukerveiledningen
+                        </div>
 
                         <label>Brukernavn</label>
-                        <input placeholder="Brukernavn" type="text"/>
+                        <input placeholder="Brukernavn" type="text" />
 
                         <label>Passord</label>
-                        <input placeholder="Passord" type="text"/>
+                        <input placeholder="Passord" type="text" />
 
                         <button type="button">Logg inn</button>
                     </div>
                 </div>
-                <div className="login-card-illustration" style={{backgroundImage: `url(${imgBlaakollen}`}}></div>
+                <div
+                    className="login-card-illustration"
+                    style={{ backgroundImage: `url(${imgBlaakollen}` }}
+                ></div>
             </div>
         )
     }
     render() {
         return (
-
             <div className="container">
                 <div className="content">
                     <div className="login">
@@ -40,8 +44,8 @@ class Login extends React.Component {
                     </div>
                 </div>
             </div>
-        );
+        )
     }
 }
 
-export default Login;
+export default Login

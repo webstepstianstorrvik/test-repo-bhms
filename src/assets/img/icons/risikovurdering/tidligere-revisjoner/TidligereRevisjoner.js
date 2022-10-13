@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const TidligereRevisjoner = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default TidligereRevisjoner;
+export default TidligereRevisjoner

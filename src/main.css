@@ -64,7 +64,6 @@ body {
     margin-bottom: auto;
 }
 
-
 /************************ BUTTONS *************************/
 .btn {
     font-family: var(--main-font-family);
@@ -86,13 +85,13 @@ body {
     cursor: pointer;
 }
 .btn-primary {
-    border: 1px solid #175FAB;
+    border: 1px solid #175fab;
     background-color: var(--main-link-text-color-blue);
-    color: #FFFFFF;
+    color: #ffffff;
 }
 .btn-primary:hover {
     border: 1px solid #414141;
-    color: #FFFFFF;
+    color: #ffffff;
 }
 .btn-secondary {
     background-color: var(--main-card-hover-background-color);
@@ -103,7 +102,6 @@ body {
     background-color: var(--main-border-color);
     color: #414141;
 }
-
 
 /************************ STATUS BADGE *************************/
 .status-badge {
@@ -119,10 +117,10 @@ body {
     background: #00b050;
 }
 .status-badge.yellow {
-    background: #FFCE34;
+    background: #ffce34;
 }
 .status-badge.red {
-    background: #F53737;
+    background: #f53737;
 }
 
 .status-badge.small {

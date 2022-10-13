@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Arkiv = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default Arkiv;
+export default Arkiv

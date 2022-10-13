@@ -1,3 +1,3 @@
 export const loginPage = {
-    active: false
+    active: false,
 }

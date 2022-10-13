@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Avtaler = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default Avtaler;
+export default Avtaler

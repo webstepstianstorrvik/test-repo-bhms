@@ -1,9 +1,6 @@
-import React from "react";
+import React from 'react'
 
 const OfteStilteSpoersmal = () => {
-
-    return (
-        <div></div>
-    )
+    return <div></div>
 }
-export default OfteStilteSpoersmal;
+export default OfteStilteSpoersmal

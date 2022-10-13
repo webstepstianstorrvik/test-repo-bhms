@@ -1,23 +1,20 @@
-import '../../assets/css/fonts.css';
-import '../../assets/css/colors.css';
-import './card.css';
+import '../../assets/css/fonts.css'
+import '../../assets/css/colors.css'
+import './card.css'
 
-import React from 'react';
+import React from 'react'
 
-const Card = ({children, className, title}) => {
-
+const Card = ({ children, className, title }) => {
     return (
         <div className={`card ${className}`}>
-            { title && 
+            {title && (
                 <div className="card-header">
                     <h2 className="card-title">{title}</h2>
                 </div>
-            }
-            <div className="card-content">
-                { children }
-            </div>
+            )}
+            <div className="card-content">{children}</div>
         </div>
-    );
+    )
 }
 
-export default Card;
+export default Card

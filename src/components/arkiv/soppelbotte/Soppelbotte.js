@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Soppelbotte = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default Soppelbotte;
+export default Soppelbotte

@@ -10,18 +10,15 @@
     width: 100%;
 }
 
-
 .video-thumb-container {
     width: 100%;
 }
-@media(min-width:768px) {
-
+@media (min-width: 768px) {
     .video-thumb-container {
         width: calc(50% - 1rem);
     }
 }
-@media(min-width: 1280px) {
-
+@media (min-width: 1280px) {
     .video-thumb-container {
         width: calc(33% - 2rem);
     }

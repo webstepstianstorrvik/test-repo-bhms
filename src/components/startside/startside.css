@@ -1,4 +1,3 @@
-
 .mine-frister-wrapper,
 .borettslaget-wrapper,
 .nyheter-wrapper,
@@ -10,11 +9,11 @@
     margin-bottom: 0.8rem;
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
     .borettslaget-wrapper {
         flex: 3;
     }
-    
+
     .mine-frister-wrapper {
         flex: 2;
     }
@@ -22,7 +21,7 @@
         flex-basis: 100%;
     }
 }
-@media(min-width: 1280px) {
+@media (min-width: 1280px) {
     .nyheter-wrapper {
         flex: 2;
     }
@@ -31,4 +30,3 @@
         flex: 1;
     }
 }
-

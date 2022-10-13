@@ -1,5 +1,5 @@
 .top-heading-button-wrapper {
-   margin-bottom: 2rem;
+    margin-bottom: 2rem;
 }
 
 .toggle-view-button-wrapper {
@@ -30,7 +30,7 @@
     margin: 1px;
 }
 
-@media(min-width:768px) {
+@media (min-width: 768px) {
     .top-heading-button-wrapper {
         float: right;
     }

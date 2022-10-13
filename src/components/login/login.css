@@ -17,7 +17,6 @@
     height: inherit;
     flex-grow: 0;
     background: no-repeat center center;
-
 }
 .login-card-content {
     flex-grow: 1;
@@ -40,9 +39,9 @@
 
 button {
     height: 50px;
-    border: 1px solid #02A28A;
-    background-color: #027C69;
-    color: #FFFFFF;
+    border: 1px solid #02a28a;
+    background-color: #027c69;
+    color: #ffffff;
     font-family: var(--main-font-family);
     font-size: 1rem;
 }

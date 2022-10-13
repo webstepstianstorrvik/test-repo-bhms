@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Oversikt = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default Oversikt;
+export default Oversikt

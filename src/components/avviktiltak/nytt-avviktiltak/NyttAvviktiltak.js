@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const NyttAvviktiltak = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default NyttAvviktiltak;
+export default NyttAvviktiltak

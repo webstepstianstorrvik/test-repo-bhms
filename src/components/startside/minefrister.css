@@ -25,7 +25,7 @@
     text-align: center;
 }
 
-.mine-frister .container{
+.mine-frister .container {
     padding: 0.8rem;
 }
 
@@ -46,7 +46,6 @@
     margin: 0 1rem;
 }
 
-
 .mine-frister .bottom {
     display: flex;
     border-top: 1px solid var(--main-border-color-faded);
@@ -56,10 +55,9 @@
     flex: 1;
     padding: 1rem;
     max-width: none;
-    background-color: var(--main-bevar-elements-background);;
+    background-color: var(--main-bevar-elements-background);
 }
 
 .mine-frister .bottom .btn {
     border-left: 1px solid var(--main-border-color-faded);
 }
-

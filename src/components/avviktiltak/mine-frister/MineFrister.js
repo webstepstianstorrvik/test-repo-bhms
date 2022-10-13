@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const MineFrister = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default MineFrister;
+export default MineFrister

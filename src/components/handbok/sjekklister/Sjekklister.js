@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Sjekklister = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default Sjekklister;
+export default Sjekklister
