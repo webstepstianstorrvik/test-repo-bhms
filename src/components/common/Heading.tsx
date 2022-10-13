@@ -14,7 +14,7 @@ const Heading = () => {
     }
     /** @Todo: END */
 
-    const formatText = (text) => {
+    const formatText = (text: string) => {
         return (
             text.charAt(0).toUpperCase() +
             text
@@ -26,7 +26,7 @@ const Heading = () => {
         )
     }
 
-    const getPath = (index) => {
+    const getPath = (index: number) => {
         let path = ''
         for (let i = 0; i <= index; i++) {
             path += '/' + paths[i]

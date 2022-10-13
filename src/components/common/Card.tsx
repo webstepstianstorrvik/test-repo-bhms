@@ -2,9 +2,15 @@ import '../../assets/css/fonts.css'
 import '../../assets/css/colors.css'
 import './card.css'
 
-import React from 'react'
+import React, { ReactNode } from 'react'
 
-const Card = ({ children, className, title }) => {
+interface ICardProps {
+    children: ReactNode
+    className?: string
+    title?: string
+}
+
+const Card = ({ children, className, title }: ICardProps) => {
     return (
         <div className={`card ${className}`}>
             {title && (

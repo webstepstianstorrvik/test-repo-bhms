@@ -3,6 +3,16 @@ import React from 'react'
 import Card from './Card'
 import { useTable, useSortBy } from 'react-table'
 
+// export interface Columns {
+//     header: string
+//     accessor: string
+// }
+
+// interface ITableProps {
+//     data: Aktivitet[],
+//     columns: Columns[]
+// }
+
 const Table = ({ data, columns }) => {
     const tableInstance = useTable({ columns, data }, useSortBy)
     const { getTableProps, getTableBodyProps, headerGroups, rows, prepareRow } =

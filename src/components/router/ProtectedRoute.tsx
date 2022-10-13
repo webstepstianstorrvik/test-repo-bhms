@@ -1,7 +1,11 @@
 import { useEffect } from 'react'
 import { useAuth } from 'react-oidc-context'
 
-const ProtectedRoute = ({ children }) => {
+interface IProtectedRouteProps {
+    children: JSX.Element
+}
+
+const ProtectedRoute = ({ children }: IProtectedRouteProps) => {
     const auth = useAuth()
 
     useEffect(() => {

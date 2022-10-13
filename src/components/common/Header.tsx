@@ -10,7 +10,11 @@ import NotificationIcon from '../../assets/img/icons/header/notification.svg'
 import ProfileIcon from '../../assets/img/icons/header/profile.svg'
 import { Link } from 'react-router-dom'
 
-const Header = ({ toggleMenu }) => {
+interface IHeaderProps {
+    toggleMenu: () => void
+}
+
+const Header = ({ toggleMenu }: IHeaderProps) => {
     const auth = useAuth()
     const { isMobile } = useContext(Context)
     const [isHovered, setIsHovered] = useState(false)

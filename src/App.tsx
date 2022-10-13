@@ -1,20 +1,20 @@
 import React, { useState, useEffect, createContext } from 'react'
 import { Outlet } from 'react-router-dom'
-import Header from './components/common/Header.js'
-import Footer from './components/common/Footer.js'
+import Header from './components/common/Header'
+import Footer from './components/common/Footer'
 import './assets/css/app.css'
-import SidebarMenu from './components/menu/SidebarMenu.js'
+import SidebarMenu from './components/menu/SidebarMenu'
 import { useLocation } from 'react-router-dom'
-import Heading from './components/common/Heading.js'
+import Heading from './components/common/Heading'
 import { useAuth } from 'react-oidc-context'
 
-export const Context = createContext()
+export const Context = createContext({ isMobile: false })
 
 const App = () => {
     const location = useLocation()
     const auth = useAuth()
     const [isMenuOpen, setIsMenuOpen] = useState(true)
-    const [isMobile, setIsMobile] = useState()
+    const [isMobile, setIsMobile] = useState(false)
 
     useEffect(() => {
         if (isMobile) {

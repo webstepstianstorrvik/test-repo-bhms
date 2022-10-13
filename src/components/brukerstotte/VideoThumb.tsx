@@ -1,15 +1,26 @@
 import '../../assets/css/fonts.css'
 import './videothumb.css'
-import React, { useState } from 'react'
+import React, { ReactNode, useState } from 'react'
 import ReactModal from 'react-modal'
 import VideoPlayer from './VideoPlayer'
 import { faClock } from '@fortawesome/free-regular-svg-icons'
 import { faLink } from '@fortawesome/free-solid-svg-icons'
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { ToastContainer, toast } from 'react-toastify'
 import { useSearchParams } from 'react-router-dom'
 import 'react-toastify/dist/ReactToastify.css'
 import cross from './../../assets/img/icons/cross-black.svg'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
+interface IVideoThumbProps {
+    videoTitle: string
+    urlFriendlyName: string
+    videoHeaderImageUrl: string
+    videoDurationText: string
+    videoUrl: string
+    modalTitle: string
+    modalContent: ReactNode
+    show: boolean
+}
 
 const VideoThumb = ({
     videoTitle,
@@ -20,7 +31,7 @@ const VideoThumb = ({
     modalTitle,
     modalContent,
     show,
-}) => {
+}: IVideoThumbProps) => {
     const [showModal, setShowModal] = useState(show)
     const [showHelperModal, setShowHelperModal] = useState(false)
     const [, setSearchParams] = useSearchParams()
@@ -145,6 +156,7 @@ const VideoThumb = ({
                 }}
             >
                 <VideoPlayer
+                    videoTitle={videoTitle}
                     videoUrl={videoUrl}
                     closeModalHandler={handleCloseModal}
                 />

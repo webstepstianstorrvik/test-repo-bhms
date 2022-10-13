@@ -1,8 +1,8 @@
 import '../../assets/css/fonts.css'
 import './videolist.css'
-import React from 'react'
-import HelpVideos from './HelpVideos.js'
-import { SvarkortModalContent } from './SvarkortModalContent.js'
+import React, { ReactNode } from 'react'
+import HelpVideos from './HelpVideos'
+import { SvarkortModalContent } from './SvarkortModalContent'
 import aktiviteterOgOppfolgning from './../../assets/img/brukerveiledning/aktiviteter_og_oppfolging.jpg'
 import avvikTiltak from './../../assets/img/brukerveiledning/avvik_og_tiltak.jpg'
 import brukerRegistrer from './../../assets/img/brukerveiledning/bruker_registrer.jpg'
@@ -31,12 +31,29 @@ import romningsplanOgRomningsveier from './../../assets/img/fagvideoer/romningsp
 import internkontrollForHMSIBorettslagOgSameier from './../../assets/img/fagvideoer/internkontrollForHMSIBorettslagOgSameier.jpg'
 import { useSearchParams } from 'react-router-dom'
 
-const VideoList = ({ videoType }) => {
+export type Video = {
+    id: number
+    category: string
+    videoUrl: string
+    videoTitle: string
+    duration: number
+    videoDurationText: string
+    videoHeaderImageUrl: string
+    urlFriendlyName: string
+    modalTitle?: string
+    modalContent?: ReactNode
+}
+
+interface IVideoListProps {
+    videoType: string
+}
+
+const VideoList = ({ videoType }: IVideoListProps) => {
     const [searchParams] = useSearchParams()
     const showVideoTitle = searchParams.get('video')
 
     const findVideos = () => {
-        const brukerveiledninger = [
+        const brukerveiledninger: Video[] = [
             {
                 id: 1,
                 category: 'aktiviteter',
@@ -236,7 +253,7 @@ const VideoList = ({ videoType }) => {
                 urlFriendlyName: 'innstillinger-redigering-fanen-admin',
             },
         ]
-        const fagvideoer = [
+        const fagvideoer: Video[] = [
             {
                 id: 1,
                 category: 'fagvideo1',

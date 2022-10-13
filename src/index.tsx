@@ -5,20 +5,20 @@ import './main.css'
 import React from 'react'
 import { AuthProvider } from 'react-oidc-context'
 import { createRoot } from 'react-dom/client'
-import reportWebVitals from './reportWebVitals'
 import Routes from './components/router/Routes'
+import reportWebVitals from './reportWebVitals'
 
 const oidcConfig = {
-    authority: process.env.REACT_APP_STS_AUTHORITY,
-    client_id: process.env.REACT_APP_CLIENT_ID,
-    redirect_uri: process.env.REACT_APP_CLIENT_REDIRECT,
+    authority: process.env.REACT_APP_STS_AUTHORITY ?? '',
+    client_id: process.env.REACT_APP_CLIENT_ID ?? '',
+    redirect_uri: process.env.REACT_APP_CLIENT_REDIRECT ?? '',
     post_logout_redirect_uri: process.env.REACT_APP_CLIENT_REDIRECT,
 }
 
 console.log(process.env)
 
 const container = document.getElementById('root')
-const root = createRoot(container)
+const root = createRoot(container!)
 
 root.render(
     <AuthProvider {...oidcConfig}>

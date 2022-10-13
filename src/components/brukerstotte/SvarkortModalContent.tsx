@@ -6,8 +6,8 @@ export const SvarkortModalContent = (
             tilbake til styret om at de har vurdert sikkerheten i egen
             leilighet. BevarHMS har lagt opp til at det årlig sendes ut et skriv
             til alle beboere om deres vedlikeholdsplikt og råd om sikkerhet. Det
-            vises til HMS-håndbok > Skjemasamling > og skjema HMS-informasjon
-            til beboer.
+            vises til HMS-håndbok &gt; Skjemasamling &gt; og skjema
+            HMS-informasjon til beboer.
         </p>
         <br />
         <p>

@@ -1,29 +1,34 @@
 import React, { useState } from 'react'
 import Table from '../../common/Table'
+import { Aktivitet } from './MineFrister'
 
-const MineFristerListView = ({ events }) => {
+interface IMineFristerListViewProps {
+    events: Aktivitet[]
+}
+
+const MineFristerListView = ({ events }: IMineFristerListViewProps) => {
     const [filter, setFilter] = useState('Aktive')
 
     const columns = React.useMemo(
         () => [
             {
-                Header: 'Tittel',
+                header: 'Tittel',
                 accessor: 'tittel',
             },
             {
-                Header: 'Hyppighet',
+                header: 'Hyppighet',
                 accessor: 'hyppighet',
             },
             {
-                Header: 'Neste frist',
+                header: 'Neste frist',
                 accessor: 'nesteFrist',
             },
             {
-                Header: 'Sist utført',
+                header: 'Sist utført',
                 accessor: 'sistUtført',
             },
             {
-                Header: 'Ansvarlige',
+                header: 'Ansvarlige',
                 accessor: 'ansvarlige',
             },
         ],

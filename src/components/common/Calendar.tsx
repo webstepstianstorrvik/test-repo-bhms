@@ -8,7 +8,21 @@ import 'moment/locale/nb'
 
 const localizer = momentLocalizer(moment)
 
-const Calendar = ({ events }) => {
+export interface Event {
+    title: string
+    start: string
+    end: string
+    allDay?: boolean
+    resource?: any
+    customFeild: string
+    id: number
+}
+
+interface ICalendarProps {
+    events: Event[]
+}
+
+const Calendar = ({ events }: ICalendarProps) => {
     const lang = {
         week: 'Uke',
         work_week: 'Arbeidsuke',
@@ -19,7 +33,7 @@ const Calendar = ({ events }) => {
         today: 'I dag',
         agenda: 'Agenda',
 
-        showMore: (total) => `+${total} mer`,
+        showMore: (total: number) => `+${total} mer`,
     }
 
     return (

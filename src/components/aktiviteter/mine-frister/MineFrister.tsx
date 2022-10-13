@@ -8,10 +8,19 @@ import ListButtonIcon from '../../../assets/img/icons/aktiviteter/oversikt.svg'
 import PagesButtonIcon from '../../../assets/img/icons/arkiv/arkiv.svg'
 import MineFristerListView from './MineFristerListView'
 
+export interface Aktivitet {
+    tittel: string
+    hyppighet: string
+    nesteFrist: string
+    sistUtført: string
+    ansvarlige: string[]
+    isActive: boolean
+}
+
 const MineFrister = () => {
     const [view, setView] = useState('CALENDAR')
 
-    const events = useMemo(
+    const events: Aktivitet[] = useMemo(
         () => [
             {
                 tittel: 'Årlig kontroll av brannalarmanlegg',
@@ -86,7 +95,7 @@ const MineFrister = () => {
             </div>
 
             <div className="mine-frister-main">
-                {view === 'CALENDAR' && <Calendar events={events} />}
+                {view === 'CALENDAR' && <Calendar events={[]} />}
                 {view === 'LIST' && <MineFristerListView events={events} />}
             </div>
         </>

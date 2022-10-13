@@ -12,7 +12,16 @@ import {
 
 const COLORS = ['#e17055', '#fdcb6e', '#00b894']
 
-const PieChart = ({ data }) => {
+type DataPoint = {
+    name: string
+    value: string | number
+}
+
+interface IPieChart {
+    data: DataPoint[]
+}
+
+const PieChart = ({ data }: IPieChart) => {
     return (
         <ResponsiveContainer width="100%" height="100%" className="pie-chart">
             <RechartsPieChart

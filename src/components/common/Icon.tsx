@@ -1,7 +1,13 @@
 import React from 'react'
 import Icons from '../../assets/img/icons/icons.svg'
 
-const Icon = ({ name, color, size }) => (
+interface IIconsProps {
+    name: string
+    color: string
+    size: number
+}
+
+const Icon = ({ name, color, size }: IIconsProps) => (
     <svg
         className={`icon icon-${name}`}
         fill={color}

@@ -12,7 +12,16 @@ import {
 
 const COLORS = ['#e17055', '#fdcb6e', '#00b894']
 
-const BarChart = ({ data }) => {
+type DataPoint = {
+    name: string
+    value: string | number
+}
+
+interface IBarChartProps {
+    data: DataPoint[]
+}
+
+const BarChart = ({ data }: IBarChartProps) => {
     return (
         <ResponsiveContainer width="100%" height="100%" className="bar-chart">
             <RechartsBarChart

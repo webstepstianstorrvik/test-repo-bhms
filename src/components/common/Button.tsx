@@ -5,7 +5,13 @@ import React from 'react'
 import { Link } from 'react-router-dom'
 import Card from './Card'
 
-const Button = ({ title, icon, link }) => {
+interface IButtonProps {
+    title: string
+    icon: string
+    link: string
+}
+
+const Button = ({ title, icon, link }: IButtonProps) => {
     return (
         <Card className="button-wrapper">
             <Link to={link} className="button-link">

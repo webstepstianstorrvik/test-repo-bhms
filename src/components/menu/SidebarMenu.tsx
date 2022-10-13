@@ -18,7 +18,11 @@ import NyheterIcon from '../../assets/img/icons/menu/nyheter.svg'
 import BrukerstotteIcon from '../../assets/img/icons/menu/brukerstotte.svg'
 import InstillingerIcon from '../../assets/img/icons/menu/innstillinger.svg'
 
-const SidebarMenu = ({ isMenuOpen }) => {
+interface ISidebarMenuProps {
+    isMenuOpen: boolean
+}
+
+const SidebarMenu = ({ isMenuOpen }: ISidebarMenuProps) => {
     const { isMobile } = useContext(Context)
 
     const menuItems = [

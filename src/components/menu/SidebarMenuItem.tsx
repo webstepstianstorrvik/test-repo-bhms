@@ -1,9 +1,22 @@
 import React from 'react'
 import { NavLink } from 'react-router-dom'
 
-const MenuItem = ({ title, itemUrl, itemImgUrl, isMenuOpen }) => {
+interface IMenuItemProps {
+    title: string
+    itemUrl: string
+    itemImgUrl: string
+    isMenuOpen: boolean
+}
+
+const MenuItem = ({
+    title,
+    itemUrl,
+    itemImgUrl,
+    isMenuOpen,
+}: IMenuItemProps) => {
     return (
         <NavLink
+            end={itemUrl === '/'}
             className={({ isActive }) =>
                 isActive ? 'sidebarmenu-item active' : 'sidebarmenu-item'
             }
