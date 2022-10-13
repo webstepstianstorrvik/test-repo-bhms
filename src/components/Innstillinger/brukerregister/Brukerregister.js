@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Brukerregister = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default Brukerregister;
+export default Brukerregister

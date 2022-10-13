@@ -1,12 +1,8 @@
-import "./listelement.css"
-import React from "react";
+import './listelement.css'
+import React from 'react'
 
-const ListElement = ({children}) => {
-    return (
-        <div className="list-element">
-        {children}
-    </div>
-    );
+const ListElement = ({ children }) => {
+    return <div className="list-element">{children}</div>
 }
 
-export default ListElement;
+export default ListElement

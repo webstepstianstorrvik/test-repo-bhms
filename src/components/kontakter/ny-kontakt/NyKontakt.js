@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const NyKontakt = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default NyKontakt;
+export default NyKontakt

@@ -4,70 +4,70 @@
 name: Build and deploy Node.js app to Azure Web App - brukerportal-web
 
 env:
-  OIDC_STS_AUTHORITY: https://identity.bevarhms.no/
-  OIDC_CLIENT_ID: ${{ secrets.OIDC_CLIENT_ID }}
-  OIDC_CLIENT_REDIRECT: https://brukerportal-web.azurewebsites.net/
+    OIDC_STS_AUTHORITY: https://identity.bevarhms.no/
+    OIDC_CLIENT_ID: ${{ secrets.OIDC_CLIENT_ID }}
+    OIDC_CLIENT_REDIRECT: https://brukerportal-web.azurewebsites.net/
 
 on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:
+    push:
+        branches:
+            - master
+    workflow_dispatch:
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+    build:
+        runs-on: ubuntu-latest
 
-    steps:
-      - uses: actions/checkout@v2
+        steps:
+            - uses: actions/checkout@v2
 
-      - name: Set up Node.js version
-        uses: actions/setup-node@v1
-        with:
-          node-version: '16.x'
-          
-      - name: echo env variables
-        run: env
-        
-      - name: cat .env file
-        run: cat .env
+            - name: Set up Node.js version
+              uses: actions/setup-node@v1
+              with:
+                  node-version: '16.x'
 
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm run build --if-present
-          npm run test --if-present
+            - name: echo env variables
+              run: env
 
-      - name: Zip artifact for deployment
-        run: zip release.zip ./* -r
-    
-      - name: Upload artifact for deployment job
-        uses: actions/upload-artifact@v2
-        with:
-          name: node-app
-          path: release.zip
+            - name: cat .env file
+              run: cat .env
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+            - name: npm install, build, and test
+              run: |
+                  npm install
+                  npm run build --if-present
+                  npm run test --if-present
 
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v2
-        with:
-          name: node-app
+            - name: Zip artifact for deployment
+              run: zip release.zip ./* -r
 
-      - name: unzip artifact for deployment
-        run: unzip release.zip
+            - name: Upload artifact for deployment job
+              uses: actions/upload-artifact@v2
+              with:
+                  name: node-app
+                  path: release.zip
 
-      - name: 'Deploy to Azure Web App'
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'brukerportal-web'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1158516443A646B5821FFAEE09B4413B }}
-          package: .
+    deploy:
+        runs-on: ubuntu-latest
+        needs: build
+        environment:
+            name: 'Production'
+            url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
+
+        steps:
+            - name: Download artifact from build job
+              uses: actions/download-artifact@v2
+              with:
+                  name: node-app
+
+            - name: unzip artifact for deployment
+              run: unzip release.zip
+
+            - name: 'Deploy to Azure Web App'
+              id: deploy-to-webapp
+              uses: azure/webapps-deploy@v2
+              with:
+                  app-name: 'brukerportal-web'
+                  slot-name: 'Production'
+                  publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_1158516443A646B5821FFAEE09B4413B }}
+                  package: .

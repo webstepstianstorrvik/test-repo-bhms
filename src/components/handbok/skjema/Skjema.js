@@ -1,12 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const Skjema = () => {
-    
-    return (
-        <div>
-
-        </div>
-    )
+    return <div></div>
 }
 
-export default Skjema;
+export default Skjema

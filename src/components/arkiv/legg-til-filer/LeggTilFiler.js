@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const LeggTilFiler = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default LeggTilFiler;
+export default LeggTilFiler

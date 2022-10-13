@@ -8,7 +8,7 @@
     height: 400px;
 }
 
-@media(min-width:1280px) {
+@media (min-width: 1280px) {
     .aktiviteter .buttons {
         flex: 2;
     }
@@ -16,7 +16,7 @@
     .aktiviteter .button-wrapper {
         width: calc(50% - 1rem);
     }
-    
+
     .aktiviteter .chart {
         flex: 1;
     }

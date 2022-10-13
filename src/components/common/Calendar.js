@@ -1,15 +1,14 @@
-import "react-big-calendar/lib/css/react-big-calendar.css";
-import "./calendar.css";
+import 'react-big-calendar/lib/css/react-big-calendar.css'
+import './calendar.css'
 
-import React from "react";
+import React from 'react'
 import { Calendar as BigCalendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
-import 'moment/locale/nb'; 
+import 'moment/locale/nb'
 
 const localizer = momentLocalizer(moment)
 
-const Calendar = ({events}) => {
-
+const Calendar = ({ events }) => {
     const lang = {
         week: 'Uke',
         work_week: 'Arbeidsuke',
@@ -19,9 +18,9 @@ const Calendar = ({events}) => {
         next: 'Neste',
         today: 'I dag',
         agenda: 'Agenda',
-    
+
         showMore: (total) => `+${total} mer`,
-      }
+    }
 
     return (
         <div className="calendar">
@@ -36,7 +35,7 @@ const Calendar = ({events}) => {
                 style={{ height: 600 }}
             />
         </div>
-    );
+    )
 }
 
-export default Calendar;
+export default Calendar

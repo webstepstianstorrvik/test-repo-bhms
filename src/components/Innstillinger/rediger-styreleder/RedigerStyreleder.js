@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const RedigerStyreleder = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default RedigerStyreleder;
+export default RedigerStyreleder

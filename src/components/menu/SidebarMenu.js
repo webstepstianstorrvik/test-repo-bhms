@@ -1,62 +1,61 @@
-import './sidebarmenu.css';
+import './sidebarmenu.css'
 
-import React, { useContext } from 'react';
-import { Context } from '../../App';
-import MenuItem from './SidebarMenuItem';
+import React, { useContext } from 'react'
+import { Context } from '../../App'
+import MenuItem from './SidebarMenuItem'
 
-import StartsideIcon from '../../assets/img/icons/menu/startside.svg';
-import HandbokIcon from '../../assets/img/icons/menu/handbok.svg';
-import AktiviteterIcon from '../../assets/img/icons/menu/aktiviteter.svg';
-import AvviktiltakIcon from '../../assets/img/icons/menu/avviktiltak.svg';
-import RisikovurderingIcon from '../../assets/img/icons/menu/risikovurdering.svg';
-import KontakterIcon from '../../assets/img/icons/menu/kontakter.svg';
-import ArkivIcon from '../../assets/img/icons/menu/arkiv.svg';
+import StartsideIcon from '../../assets/img/icons/menu/startside.svg'
+import HandbokIcon from '../../assets/img/icons/menu/handbok.svg'
+import AktiviteterIcon from '../../assets/img/icons/menu/aktiviteter.svg'
+import AvviktiltakIcon from '../../assets/img/icons/menu/avviktiltak.svg'
+import RisikovurderingIcon from '../../assets/img/icons/menu/risikovurdering.svg'
+import KontakterIcon from '../../assets/img/icons/menu/kontakter.svg'
+import ArkivIcon from '../../assets/img/icons/menu/arkiv.svg'
 
-import SnarveierIcon from '../../assets/img/icons/menu/snarveier.svg';
-import BilderIcon from '../../assets/img/icons/menu/bilder.svg';
-import NyheterIcon from '../../assets/img/icons/menu/nyheter.svg';
-import BrukerstotteIcon from '../../assets/img/icons/menu/brukerstotte.svg';
-import InstillingerIcon from '../../assets/img/icons/menu/innstillinger.svg';
+import SnarveierIcon from '../../assets/img/icons/menu/snarveier.svg'
+import BilderIcon from '../../assets/img/icons/menu/bilder.svg'
+import NyheterIcon from '../../assets/img/icons/menu/nyheter.svg'
+import BrukerstotteIcon from '../../assets/img/icons/menu/brukerstotte.svg'
+import InstillingerIcon from '../../assets/img/icons/menu/innstillinger.svg'
 
-
-const SidebarMenu = ({isMenuOpen}) => {
+const SidebarMenu = ({ isMenuOpen }) => {
     const { isMobile } = useContext(Context)
 
     const menuItems = [
         {
             itemUrl: '/',
             itemImgUrl: StartsideIcon,
-            title: 'Startside'
+            title: 'Startside',
         },
         {
             itemUrl: '/haandbok',
             itemImgUrl: HandbokIcon,
-            title: 'Håndbok'
+            title: 'Håndbok',
         },
         {
             itemUrl: '/aktiviteter',
             itemImgUrl: AktiviteterIcon,
-            title: 'Aktiviteter'
+            title: 'Aktiviteter',
         },
         {
             itemUrl: '/avviktiltak',
             itemImgUrl: AvviktiltakIcon,
-            title: 'Avviktiltak'
+            title: 'Avviktiltak',
         },
         {
             itemUrl: '/risikovurdering',
             itemImgUrl: RisikovurderingIcon,
-            title: 'Risikovurdering'
+            title: 'Risikovurdering',
         },
         {
             itemUrl: '/kontakter',
             itemImgUrl: KontakterIcon,
-            title: 'Kontakter'
+            title: 'Kontakter',
         },
         {
             itemUrl: '/arkiv',
             itemImgUrl: ArkivIcon,
-            title: 'Arkiv'
+            title: 'Arkiv',
         },
     ]
 
@@ -64,42 +63,92 @@ const SidebarMenu = ({isMenuOpen}) => {
         {
             itemUrl: '/snarveier',
             itemImgUrl: SnarveierIcon,
-            title: 'Snarveier'
-        },{
+            title: 'Snarveier',
+        },
+        {
             itemUrl: '/bilder',
             itemImgUrl: BilderIcon,
-            title: 'Bilder'
-        },{
+            title: 'Bilder',
+        },
+        {
             itemUrl: '/nyheter',
             itemImgUrl: NyheterIcon,
-            title: 'Nyheter'
+            title: 'Nyheter',
         },
         {
             itemUrl: '/brukerstotte',
             itemImgUrl: BrukerstotteIcon,
-            title: 'Brukerstøtte'
+            title: 'Brukerstøtte',
         },
         {
             itemUrl: '/innstillinger',
             itemImgUrl: InstillingerIcon,
-            title: 'Innstillinger'
-        }
+            title: 'Innstillinger',
+        },
     ]
 
     return (
-        <>{!isMobile ? 
-        <nav className="sidebarmenu">
-            { menuItems.map(({itemImgUrl, itemUrl, title}) => <MenuItem key={title} itemImgUrl={itemImgUrl} itemUrl={itemUrl} title={title} isMenuOpen={isMenuOpen} />) }
-            <h4 className="sidebarmenu-title" style={isMenuOpen ? {} : {"display": "none"}}>NAVIGASJON</h4>
-            { navigationItems.map(({itemImgUrl, itemUrl, title}) => <MenuItem key={title} itemImgUrl={itemImgUrl} itemUrl={itemUrl} title={title} isMenuOpen={isMenuOpen}/>) }
-        </nav>
-        : 
-        <nav className="sidebarmenu mobile" style={(isMenuOpen) ? {} : {"display": "none"}}>
-            { menuItems.map(({itemImgUrl, itemUrl, title}) => <MenuItem key={title} itemImgUrl={itemImgUrl} itemUrl={itemUrl} title={title} isMenuOpen={isMenuOpen} />) }
-            <h4 className="sidebarmenu-title" style={isMenuOpen ? {} : {"display": "none"}}>NAVIGASJON</h4>
-            { navigationItems.map(({itemImgUrl, itemUrl, title}) => <MenuItem key={title} itemImgUrl={itemImgUrl} itemUrl={itemUrl} title={title} isMenuOpen={isMenuOpen}/>) }
-        </nav>}</>
-    );
+        <>
+            {!isMobile ? (
+                <nav className="sidebarmenu">
+                    {menuItems.map(({ itemImgUrl, itemUrl, title }) => (
+                        <MenuItem
+                            key={title}
+                            itemImgUrl={itemImgUrl}
+                            itemUrl={itemUrl}
+                            title={title}
+                            isMenuOpen={isMenuOpen}
+                        />
+                    ))}
+                    <h4
+                        className="sidebarmenu-title"
+                        style={isMenuOpen ? {} : { display: 'none' }}
+                    >
+                        NAVIGASJON
+                    </h4>
+                    {navigationItems.map(({ itemImgUrl, itemUrl, title }) => (
+                        <MenuItem
+                            key={title}
+                            itemImgUrl={itemImgUrl}
+                            itemUrl={itemUrl}
+                            title={title}
+                            isMenuOpen={isMenuOpen}
+                        />
+                    ))}
+                </nav>
+            ) : (
+                <nav
+                    className="sidebarmenu mobile"
+                    style={isMenuOpen ? {} : { display: 'none' }}
+                >
+                    {menuItems.map(({ itemImgUrl, itemUrl, title }) => (
+                        <MenuItem
+                            key={title}
+                            itemImgUrl={itemImgUrl}
+                            itemUrl={itemUrl}
+                            title={title}
+                            isMenuOpen={isMenuOpen}
+                        />
+                    ))}
+                    <h4
+                        className="sidebarmenu-title"
+                        style={isMenuOpen ? {} : { display: 'none' }}
+                    >
+                        NAVIGASJON
+                    </h4>
+                    {navigationItems.map(({ itemImgUrl, itemUrl, title }) => (
+                        <MenuItem
+                            key={title}
+                            itemImgUrl={itemImgUrl}
+                            itemUrl={itemUrl}
+                            title={title}
+                            isMenuOpen={isMenuOpen}
+                        />
+                    ))}
+                </nav>
+            )}
+        </>
+    )
 }
 
-export default SidebarMenu;
+export default SidebarMenu

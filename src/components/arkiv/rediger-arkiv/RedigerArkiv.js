@@ -1,11 +1,7 @@
-import React from "react";
+import React from 'react'
 
 const RedigerArkiv = () => {
-    
-    return (
-        <div>
-        </div>
-    )
+    return <div></div>
 }
 
-export default RedigerArkiv;
+export default RedigerArkiv
