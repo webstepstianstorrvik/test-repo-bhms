@@ -20,7 +20,7 @@ const App = () => {
         if (isMobile) {
             setIsMenuOpen(false);
         }
-      }, [location]);
+      }, [location, isMobile]);
 
   useEffect(() => {
     setIsMobile(window.innerWidth <= 640);

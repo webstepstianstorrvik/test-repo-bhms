@@ -9,7 +9,7 @@ const ProtectedRoute = ({children}) => {
         if(!auth.isLoading && !auth.isAuthenticated) {
             auth.signinRedirect()
         }
-    }, [auth.isLoading, auth.isAuthenticated])
+    }, [auth])
 
     if(auth.isLoading || !auth.isAuthenticated) {
         return null
