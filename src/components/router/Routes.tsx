@@ -33,9 +33,7 @@ import OversiktAktiviteter from '../aktiviteter/oversikt/Oversikt'
 import OversiktAvviktiltak from '../avviktiltak/oversikt/Oversikt'
 import MineFristerAvviktiltak from '../avviktiltak/mine-frister/MineFrister'
 import NyttAvviktiltak from '../avviktiltak/nytt-avviktiltak/NyttAvviktiltak'
-import RedigerNyRisikovurdering from '../../assets/img/icons/risikovurdering/rediger-ny-risikovurdering/RedigerNyRisikovurdering'
-import SeRisikovurdering from '../../assets/img/icons/risikovurdering/se-risikovurdering/SeRisikovurdering'
-import TidligereRevisjoner from '../../assets/img/icons/risikovurdering/tidligere-revisjoner/TidligereRevisjoner'
+import RedigerNyRisikovurdering from '../risikovurdering/rediger-ny-risikovurdering/RedigerNyRisikovurdering'
 import Boligbyggelaget from '../kontakter/boligbyggelaget/Boligbyggelaget'
 import Kontaktregister from '../kontakter/kontaktregister/Kontaktregister'
 import MinKontaktinformasjon from '../kontakter/min-kontaktinformasjon/MinKontaktinformasjon'
@@ -54,6 +52,8 @@ import RedigerStyreleder from '../Innstillinger/rediger-styreleder/RedigerStyrel
 import App from '../../App'
 import ProtectedRoute from './ProtectedRoute'
 import { useAuth } from 'react-oidc-context'
+import TidligereRevisjoner from '../risikovurdering/tidligere-revisjoner/TidligereRevisjoner'
+import SeRisikovurdering from '../risikovurdering/se-risikovurdering/SeRisikovurdering'
 
 const Routes = () => {
     const auth = useAuth()
