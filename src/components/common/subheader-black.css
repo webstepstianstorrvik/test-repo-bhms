@@ -1,0 +1,30 @@
+@import '../../assets/css/colors.css';
+
+.subheader {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    margin-bottom: 2rem;
+}
+.header-logo {
+    width: 12.5rem;
+}
+
+.header-filler-border {
+    height: 2rem;
+    border-left: 1px solid white;
+}
+
+.x-auto {
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+.y-auto {
+    margin-top: auto;
+    margin-bottom: auto;
+}
+
+.subheader-text {
+    font-size: 1rem;
+    font-variant: normal;
+    color: white;
+}
