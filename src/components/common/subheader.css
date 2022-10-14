@@ -1,0 +1,12 @@
+@import '../../assets/css/colors.css';
+
+.subheader {
+    margin-bottom: 2rem;
+}
+
+.subheader-text {
+    font-size: 1.2rem;
+    font-variant: normal;
+    color: black;
+    font-weight: 700;
+}
