@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../common/Button'
+import BevarButton from '../common/BevarButton'
 
 import BrukerregisterIcon from '../../assets/img/icons/innstillinger/brukerregister.svg'
 import InnstillingvarslingIcon from '../../assets/img/icons/innstillinger/innstillingvarsling.svg'
@@ -57,7 +57,12 @@ const Innstillinger = () => {
     return (
         <div className="container grid">
             {buttons.map(({ title, icon, link }) => (
-                <Button key={title} title={title} icon={icon} link={link} />
+                <BevarButton
+                    key={title}
+                    title={title}
+                    icon={icon}
+                    link={link}
+                />
             ))}
         </div>
     )

@@ -1,0 +1,11 @@
+details > summary {
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 1.2rem 0.2rem 0.7rem 0.2rem;
+    cursor: pointer;
+}
+
+details > summary::-webkit-details-marker {
+    display: none;
+}

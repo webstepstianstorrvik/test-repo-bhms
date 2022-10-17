@@ -1,7 +1,7 @@
 import './avviktiltak.css'
 
 import React from 'react'
-import Button from '../common/Button'
+import BevarButton from '../common/BevarButton'
 
 import OversiktIcon from '../../assets/img/icons/avviktiltak/oversikt.svg'
 import MineFristerIcon from '../../assets/img/icons/avviktiltak/minefrister.svg'
@@ -50,7 +50,12 @@ const Avviktiltak = () => {
         <div className="grid avviktiltak">
             <div className="container grid buttons">
                 {buttons.map(({ title, icon, link }) => (
-                    <Button key={title} title={title} icon={icon} link={link} />
+                    <BevarButton
+                        key={title}
+                        title={title}
+                        icon={icon}
+                        link={link}
+                    />
                 ))}
             </div>
             <div className="container chart">

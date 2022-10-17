@@ -1,11 +1,11 @@
-import './button.css'
+import './bevar-button.css'
 import '../../assets/css/fonts.css'
 
 import React from 'react'
 import { Link } from 'react-router-dom'
 import Card from './Card'
 
-const Button = ({ title, icon, link }) => {
+const BevarButton = ({ title, icon, link }) => {
     return (
         <Card className="button-wrapper">
             <Link to={link} className="button-link">
@@ -18,4 +18,4 @@ const Button = ({ title, icon, link }) => {
     )
 }
 
-export default Button
+export default BevarButton

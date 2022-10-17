@@ -1,7 +1,7 @@
 import './aktiviteter.css'
 
 import React from 'react'
-import Button from '../common/Button'
+import BevarButton from '../common/BevarButton'
 
 import AvtalerIcon from '../../assets/img/icons/aktiviteter/avtaler.svg'
 import MineFristerIcon from '../../assets/img/icons/aktiviteter/minefrister.svg'
@@ -53,7 +53,12 @@ const Aktiviteter = () => {
         <div className="grid aktiviteter">
             <div className="container grid buttons">
                 {buttons.map(({ title, icon, link }) => (
-                    <Button key={title} title={title} icon={icon} link={link} />
+                    <BevarButton
+                        key={title}
+                        title={title}
+                        icon={icon}
+                        link={link}
+                    />
                 ))}
             </div>
             <div className="container chart">

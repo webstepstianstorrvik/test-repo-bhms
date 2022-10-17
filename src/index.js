@@ -1,6 +1,8 @@
 import './assets/css/polyfill/bootstrap.css'
 import './assets/css/fonts.css'
 import './main.css'
+import './common.css'
+import './components/common/forms/forms.css'
 
 import React from 'react'
 import { AuthProvider } from 'react-oidc-context'
