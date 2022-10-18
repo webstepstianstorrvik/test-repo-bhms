@@ -4,6 +4,7 @@ details > summary {
     justify-content: space-between;
     padding: 1.2rem 0.2rem 0.7rem 0.2rem;
     cursor: pointer;
+    color: var(--main-color-text-faded);
 }
 
 details > summary::-webkit-details-marker {

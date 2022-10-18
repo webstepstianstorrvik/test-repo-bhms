@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Input = ({
+const DatePicker = ({
     className,
     id,
     label,
@@ -8,7 +8,6 @@ const Input = ({
     onChange,
     placeholder,
     required = true,
-    type = "text",
     value,
 }) => {
     return (
@@ -20,7 +19,7 @@ const Input = ({
                 className="form__control"
                 id={id}
                 name={name}
-                type={type}
+                type="date"
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder}
@@ -30,4 +29,4 @@ const Input = ({
     )
 }
 
-export default Input
+export default DatePicker

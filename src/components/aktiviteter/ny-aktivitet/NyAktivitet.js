@@ -7,13 +7,18 @@ import Select from '../../common/forms/Select'
 import RadioButtons from '../../common/forms/RadioButtons'
 import Button from '../../common/Button'
 import Accordion from '../../common/Accordion'
+import DatePicker from '../../common/forms/DatePicker'
 
 const initialForm = {
-    title: '',
-    description: '',
-    type: 'Avvik',
     status: 'Åpen',
-    boligselskap: 'Mitt boligselskap',
+    tittel: '',
+    beskrivelse: '',
+    fristDato: '2022-10-18',
+    repetisjon: 'Hver uke',
+    varslingFørFrist: 1,
+    leverandor: 'HMS Leverandør',
+    ansvarligUtforelse: 'Kari Nordmann',
+    kopiTil: 'Jens Stoltenberg',
 
     sjekkliste: '',
     vedlegg: '',
@@ -40,61 +45,125 @@ const NyAktivitet = () => {
         }))
     }
 
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        console.log(formValues)
+    }
+
     return (
         <div className="aktiviteter-form">
-            <form>
-                <div className="flex">
-                    <div className="flex-2 mrl">
+            <form onSubmit={handleSubmit}>
+                <div className="form-container">
+                    <div className="aktiviteter-form__generelt">
                         <Input
-                            name="title"
-                            id="aktivitet-title"
+                            name="tittel"
+                            id="aktivitet-tittel"
                             label="Tittel"
                             onChange={handleInputChange}
-                            value={formValues['title']}
+                            value={formValues['tittel']}
                         />
                         <Textarea
-                            name="description"
-                            id="aktivitet-description"
+                            name="beskrivelse"
+                            id="aktivitet-beskrivelse"
                             label="Beskrivelse"
                             onChange={handleInputChange}
-                            value={formValues['description']}
+                            value={formValues['beskrivelse']}
                         />
                         <div className="flex">
                             <div className="flex-1 mrs">
-                                <Select
-                                    name="type"
-                                    id="aktivitet-type"
-                                    label="Type"
+                            <RadioButtons
+                                    name="status"
+                                    id="aktivitet-status"
+                                    label="Endre status"
                                     onChange={handleInputChange}
-                                    options={['Avvik', 'Forbedring']}
-                                    value={formValues['type']}
+                                    options={['Åpen', 'Ferdig']}
+                                    value={formValues['status']}
                                 />
-                            </div>
-                            <div className="flex-1 mls">
+                            
                                 <Select
-                                    name="boligselskap"
-                                    id="aktivitet-boligselskap"
-                                    label="Boligselskap"
+                                    name="repetisjon"
+                                    id="aktivitet-repetisjon"
+                                    label="Repetisjon"
                                     onChange={handleInputChange}
                                     options={[
-                                        'Mitt boligselskap',
-                                        'Noen andre sitt boligselskap',
+                                        'Hver dag',
+                                        'Hver uke',
+                                        'Hver måned',
+                                        'Hvert år',
                                     ]}
-                                    value={formValues['boligselskap']}
+                                    value={formValues['repetisjon']}
+                                />
+                                
+                                <Select
+                                    name="leverandor"
+                                    id="aktivitet-leverandor"
+                                    label="Leverandør"
+                                    onChange={handleInputChange}
+                                    options={[
+                                        'HMS Leverandør',
+                                        'Bolig leverandør',
+                                    ]}
+                                    value={formValues['leverandor']}
+                                />
+                                <Select
+                                    name="ansvarligOppfolging"
+                                    id="aktivitet-ansvarligOppfolging"
+                                    label="Ansvarlig oppfølging"
+                                    onChange={handleInputChange}
+                                    options={[
+                                        'Ola Nordmann',
+                                        'Kari Nordmann',
+                                        'Ole Brumm',
+                                    ]}
+                                    value={formValues['ansvarligOppfolging']}
+                                />
+                                
+                            </div>
+                            <div className="flex-1 mls">
+                            <DatePicker
+                                    name="fristDato"
+                                    id="aktivitet-fristDato"
+                                    label="Frist"
+                                    onChange={handleInputChange}
+                                    value={formValues['fristDato']}
+                                />
+                                <Input
+                                    name="varsling"
+                                    id="aktivitet-varsling"
+                                    label="Varsling før frist (dager)"
+                                    type="number"
+                                    onChange={handleInputChange}
+                                    value={formValues['varsling']}
+                                />
+                                
+                                 <Select
+                                    name="ansvarligUtforelse"
+                                    id="aktivitet-ansvarligUtforelse"
+                                    label="Ansvarlig utførelse"
+                                    onChange={handleInputChange}
+                                    options={[
+                                        'Ola Nordmann',
+                                        'Kari Nordmann',
+                                        'Ole Brumm',
+                                    ]}
+                                    value={formValues['ansvarligUtforelse']}
+                                />
+                                <Select
+                                    name="kopiTil"
+                                    id="aktivitet-kopiTil"
+                                    label="Kopi til"
+                                    onChange={handleInputChange}
+                                    options={[
+                                        'Ola Nordmann',
+                                        'Kari Nordmann',
+                                        'Ole Brumm',
+                                    ]}
+                                    value={formValues['kopiTil']}
                                 />
                             </div>
                         </div>
-                        <RadioButtons
-                            name="status"
-                            id="aktivitet-status"
-                            label="Endre status"
-                            onChange={handleInputChange}
-                            options={['Åpen', 'Ferdig']}
-                            value={formValues['status']}
-                        />
                     </div>
-                    <div className="flex-1 mll">
-                        <h2 className="mbs">Koblinger:</h2>
+                    <div className="aktiviteter-form__handlinger">
                         <Accordion title="Legg til sjekkliste">
                             <Select
                                 name="sjekkliste"
@@ -165,11 +234,12 @@ const NyAktivitet = () => {
                                 value={formValues['eksterneLenker']}
                             />
                         </Accordion>
+                        <div className="flex justify-cfe mtl">
+                    <Button type="submit" fullWidth>Lagre ny aktivitet</Button>
+                </div>
                     </div>
                 </div>
-                <div className="flex justify-cfe mtxl">
-                    <Button>Lagre</Button>
-                </div>
+                
             </form>
         </div>
     )

@@ -1,0 +1,27 @@
+@media (min-width: 768px) {
+    .borettslaget-wrapper {
+        flex: 3;
+    }
+
+    .mine-frister-wrapper {
+        flex: 2;
+    }
+    .nyheter-wrapper {
+        flex-basis: 100%;
+    }
+}
+@media (min-width: 1280px) {
+    .aktiviteter-form .form-container {
+        display: flex;
+    }
+
+    .aktiviteter-form__generelt {
+        flex: 2;
+    }
+
+    .aktiviteter-form__handlinger {
+        flex: 1;
+        margin-left: 5rem;
+        margin-top: 1rem;
+    }
+}
