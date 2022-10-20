@@ -1,6 +1,26 @@
+.dn { display: none; }
+.di { display: inline; }
+.db { display: block; }
+.dib { display: inline-block; }
+.dif { display: inline-flex; }
+
+.fl { float: left; display: inline; }
+.fr { float: right; display: inline; }
+.fn { float: none; }
+
 .flex {
     display: flex;
 }
+.flex-10p { flex: 10% }
+.flex-20p { flex: 20% }
+.flex-30p { flex: 30% }
+.flex-40p { flex: 40% }
+.flex-50p { flex: 50% }
+.flex-60p { flex: 60% }
+.flex-70p { flex: 70% }
+.flex-80p { flex: 80% }
+.flex-90p { flex: 90% }
+.flex-100p { flex: 100% }
 .flex-1 {
     flex: 1;
 }

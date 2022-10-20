@@ -1,12 +1,26 @@
+details {
+    border-width: 1px;
+    border-style: solid;
+    border-color: rgb(216, 226, 239);
+    border-image: initial;
+    border-radius: 0.25rem;
+    background-color: white;
+}
+
 details > summary {
     list-style: none;
     display: flex;
     justify-content: space-between;
-    padding: 1.2rem 0.2rem 0.7rem 0.2rem;
+    padding: .8rem 1.5rem;
     cursor: pointer;
     color: var(--main-color-text-faded);
 }
 
 details > summary::-webkit-details-marker {
     display: none;
+}
+
+details > div {
+    padding: .5rem 1.5rem;
+    border-top: 2px solid var(--main-border-color);
 }

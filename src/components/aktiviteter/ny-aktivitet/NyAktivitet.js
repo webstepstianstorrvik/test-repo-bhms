@@ -8,6 +8,7 @@ import RadioButtons from '../../common/forms/RadioButtons'
 import Button from '../../common/Button'
 import Accordion from '../../common/Accordion'
 import DatePicker from '../../common/forms/DatePicker'
+import Checkboxes from '../../common/forms/Checkboxes'
 
 const initialForm = {
     status: 'Åpen',
@@ -15,18 +16,17 @@ const initialForm = {
     beskrivelse: '',
     fristDato: '2022-10-18',
     repetisjon: 'Hver uke',
-    varslingFørFrist: 1,
+    varsling: 1,
     leverandor: 'HMS Leverandør',
     ansvarligUtforelse: 'Kari Nordmann',
     kopiTil: 'Jens Stoltenberg',
-
-    sjekkliste: '',
-    vedlegg: '',
-    hmsHandbok: '',
-    risikovurdering: '',
-    kontakter: '',
-    arkiv: '',
-    eksterneLenker: '',
+    sjekkliste: [],
+    vedlegg: [],
+    hmsHandbok: [],
+    risikovurdering: [],
+    kontakter: [],
+    arkiv: [],
+    eksterneLenker: [],
 }
 
 const NyAktivitet = () => {
@@ -34,8 +34,14 @@ const NyAktivitet = () => {
 
     const handleInputChange = (event) => {
         const target = event.target
-        const value = target.type === 'checkbox' ? target.checked : target.value
         const name = target.name
+        var value = target.value
+
+        if(target.type === 'checkbox') {
+            // TODO: Remove typeof when refactoring to TS
+            value = (target.checked && typeof formValues[name] == 'object') ? [...formValues[name], target.value] : formValues[name].filter(e => e !== target.value)
+        }
+        
 
         console.log(name, value)
 
@@ -45,12 +51,18 @@ const NyAktivitet = () => {
         }))
     }
 
+
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log(formValues)
     }
 
     return (
+        <>
+        <div className="fr mtl">
+            <Button type="submit" variant="secondary" onClick={() => setFormValues(initialForm)}>Nullstill skjema</Button>
+            <Button type="submit" className="mlm">Lagre ny aktivitet</Button>
+        </div>  
         <div className="aktiviteter-form">
             <form onSubmit={handleSubmit}>
                 <div className="form-container">
@@ -69,8 +81,8 @@ const NyAktivitet = () => {
                             onChange={handleInputChange}
                             value={formValues['beskrivelse']}
                         />
-                        <div className="flex">
-                            <div className="flex-1 mrs">
+                        <div className="column-2">
+                            <div className="flex-1 column-left">
                             <RadioButtons
                                     name="status"
                                     id="aktivitet-status"
@@ -119,7 +131,7 @@ const NyAktivitet = () => {
                                 />
                                 
                             </div>
-                            <div className="flex-1 mls">
+                            <div className="flex-1 column-right">
                             <DatePicker
                                     name="fristDato"
                                     id="aktivitet-fristDato"
@@ -165,67 +177,67 @@ const NyAktivitet = () => {
                     </div>
                     <div className="aktiviteter-form__handlinger">
                         <Accordion title="Legg til sjekkliste">
-                            <Select
+                            <Checkboxes
                                 name="sjekkliste"
                                 id="aktivitet-sjekkliste"
                                 aria-label="Legg til sjekkliste:"
                                 onChange={handleInputChange}
                                 options={['Option 1', 'Option 2']}
-                                value={formValues['sjekkliste']}
+                                values={formValues['sjekkliste']}
                             />
                         </Accordion>
                         <Accordion title="Legg til vedlegg">
-                            <Select
+                            <Checkboxes
                                 name="vedlegg"
                                 id="aktivitet-vedlegg"
                                 aria-label="Legg til vedlegg:"
                                 onChange={handleInputChange}
                                 options={['Option 1', 'Option 2']}
-                                value={formValues['vedlegg']}
+                                values={formValues['vedlegg']}
                             />
                         </Accordion>
                         <Accordion title="Legg til HMS-Håndbok">
-                            <Select
+                            <Checkboxes
                                 name="hmsHandbok"
                                 id="aktivitet-hmsHandbok"
                                 aria-label="Legg til HMS-Håndbok:"
                                 onChange={handleInputChange}
-                                options={['Option 1', 'Option 2']}
-                                value={formValues['hmsHandbok']}
+                                options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+                                values={formValues['hmsHandbok']}
                             />
                         </Accordion>
                         <Accordion title="Legg til risikovurderinger">
-                            <Select
+                            <Checkboxes
                                 name="risikovurdering"
                                 id="aktivitet-risikovurdering"
                                 aria-label="Legg til risikovurderinger:"
                                 onChange={handleInputChange}
                                 options={['Option 1', 'Option 2']}
-                                value={formValues['risikovurdering']}
+                                values={formValues['risikovurdering']}
                             />
                         </Accordion>
                         <Accordion title="Legg til kontakter">
-                            <Select
+                            <Checkboxes
                                 name="kontakter"
                                 id="aktivitet-kontakter"
                                 aria-label="Legg til kontakter:"
                                 onChange={handleInputChange}
-                                options={['Option 1', 'Option 2']}
-                                value={formValues['kontakter']}
+                                options={['Option 1', 'Option 2', 'Option 3', 'Option 4']}
+                                values={formValues['kontakter']}
                             />
                         </Accordion>
                         <Accordion title="Legg til arkiv">
-                            <Select
+                            <Checkboxes
                                 name="arkiv"
                                 id="aktivitet-arkiv"
                                 aria-label="Legg til arkiv:"
                                 onChange={handleInputChange}
                                 options={['Option 1', 'Option 2']}
-                                value={formValues['arkiv']}
+                                values={formValues['arkiv']}
                             />
                         </Accordion>
                         <Accordion title="Legg til eksterne lenker">
-                            <Select
+                            <Checkboxes
                                 name="eksterneLenker"
                                 id="aktivitet-eksterneLenker"
                                 aria-label="Legg til eksterne lenker:"
@@ -234,14 +246,13 @@ const NyAktivitet = () => {
                                 value={formValues['eksterneLenker']}
                             />
                         </Accordion>
-                        <div className="flex justify-cfe mtl">
-                    <Button type="submit" fullWidth>Lagre ny aktivitet</Button>
-                </div>
+                        
                     </div>
                 </div>
                 
             </form>
         </div>
+        </>
     )
 }
 

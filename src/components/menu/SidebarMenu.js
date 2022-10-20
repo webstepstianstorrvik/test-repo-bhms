@@ -40,7 +40,7 @@ const SidebarMenu = ({ isMenuOpen }) => {
         {
             itemUrl: '/avviktiltak',
             itemImgUrl: AvviktiltakIcon,
-            title: 'Avviktiltak',
+            title: 'Avvik/tiltak',
         },
         {
             itemUrl: '/risikovurdering',

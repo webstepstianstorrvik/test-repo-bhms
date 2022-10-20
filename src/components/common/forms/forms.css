@@ -39,7 +39,7 @@
 }
 
 textarea.form__control {
-    height: calc(4em + 0.625rem + 2px);
+    height: calc(4rem + 0.625rem + 2px);
 }
 
 .form__control.radio {
@@ -54,4 +54,22 @@ textarea.form__control {
 .form__control input[type='radio'] {
     margin: 0;
     margin-right: 1rem;
+}
+
+.form__control.checkbox {
+    display: flex;
+    align-items: center;
+    margin-right: 0.5rem;
+    margin-bottom: .2rem;
+    height: calc(2rem + 0.625rem + 2px);
+    border: none;
+}
+
+.form__control input[type='checkbox'] {
+    margin: 0;
+    margin-right: 1rem;
+}
+
+textarea.form__control {
+    resize: vertical;
 }

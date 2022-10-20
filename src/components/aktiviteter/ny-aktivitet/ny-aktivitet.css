@@ -1,13 +1,14 @@
 @media (min-width: 768px) {
-    .borettslaget-wrapper {
-        flex: 3;
+    .column-2 {
+        display: flex;
     }
 
-    .mine-frister-wrapper {
-        flex: 2;
+    .column-left {
+        margin-right: 1rem;
     }
-    .nyheter-wrapper {
-        flex-basis: 100%;
+
+    .column-right {
+        margin-left: 1rem;
     }
 }
 @media (min-width: 1280px) {
@@ -16,12 +17,12 @@
     }
 
     .aktiviteter-form__generelt {
-        flex: 2;
+        flex: 60%;
     }
 
     .aktiviteter-form__handlinger {
-        flex: 1;
-        margin-left: 5rem;
-        margin-top: 1rem;
+        flex: 40%;
+        margin-left: 3.5rem;
+        margin-top: 1.55rem;
     }
 }
