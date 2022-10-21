@@ -7,6 +7,7 @@ import SidebarMenu from './components/menu/SidebarMenu.js'
 import { useLocation } from 'react-router-dom'
 import Heading from './components/common/Heading.js'
 import { useAuth } from 'react-oidc-context'
+import { useUser } from './hooks/useUser.jsx'
 
 export const Context = createContext()
 
@@ -15,6 +16,9 @@ const App = () => {
     const auth = useAuth()
     const [isMenuOpen, setIsMenuOpen] = useState(true)
     const [isMobile, setIsMobile] = useState()
+    const user = useUser()
+
+    console.log(user)
 
     useEffect(() => {
         if (isMobile) {
@@ -46,23 +50,24 @@ const App = () => {
     }
 
     return (
-        <Context.Provider value={{ isMobile }}>
-            <main>
-                <Header toggleMenu={toggleMenu} />
-                <div className="container">
-                    {auth.isAuthenticated && (
-                        <SidebarMenu isMenuOpen={isMenuOpen} />
-                    )}
-                    <section>
-                        <div className="site-content">
-                            <Heading />
-                            <Outlet />
-                        </div>
-                    </section>
-                </div>
-                <Footer />
-            </main>
-        </Context.Provider>
+        
+            <Context.Provider value={{ isMobile }}>
+                <main>
+                    <Header toggleMenu={toggleMenu} />
+                    <div className="container">
+                        {auth.isAuthenticated && (
+                            <SidebarMenu isMenuOpen={isMenuOpen} />
+                        )}
+                        <section>
+                            <div className="site-content">
+                                <Heading />
+                                <Outlet />
+                            </div>
+                        </section>
+                    </div>
+                    <Footer />
+                </main>
+            </Context.Provider>
     )
 }
 

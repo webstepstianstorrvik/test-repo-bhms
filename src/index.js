@@ -7,6 +7,8 @@ import { AuthProvider } from 'react-oidc-context'
 import { createRoot } from 'react-dom/client'
 import reportWebVitals from './reportWebVitals'
 import Routes from './components/router/Routes'
+import { setupMock } from './setup-mock-server'
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 
 const oidcConfig = {
     authority: process.env.REACT_APP_STS_AUTHORITY,
@@ -15,15 +17,19 @@ const oidcConfig = {
     post_logout_redirect_uri: process.env.REACT_APP_CLIENT_REDIRECT,
 }
 
-console.log(process.env)
+setupMock()
+
+const queryClient = new QueryClient()
 
 const container = document.getElementById('root')
 const root = createRoot(container)
 
 root.render(
-    <AuthProvider {...oidcConfig}>
-        <Routes />
-    </AuthProvider>
+    <QueryClientProvider client={queryClient}>
+        <AuthProvider {...oidcConfig}>
+            <Routes />
+        </AuthProvider>
+    </QueryClientProvider>
 )
 
 // If you want to start measuring performance in your app, pass a function
