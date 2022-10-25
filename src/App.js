@@ -50,24 +50,23 @@ const App = () => {
     }
 
     return (
-        
-            <Context.Provider value={{ isMobile }}>
-                <main>
-                    <Header toggleMenu={toggleMenu} />
-                    <div className="container">
-                        {auth.isAuthenticated && (
-                            <SidebarMenu isMenuOpen={isMenuOpen} />
-                        )}
-                        <section>
-                            <div className="site-content">
-                                <Heading />
-                                <Outlet />
-                            </div>
-                        </section>
-                    </div>
-                    <Footer />
-                </main>
-            </Context.Provider>
+        <Context.Provider value={{ isMobile }}>
+            <main>
+                <Header toggleMenu={toggleMenu} />
+                <div className="container">
+                    {auth.isAuthenticated && (
+                        <SidebarMenu isMenuOpen={isMenuOpen} />
+                    )}
+                    <section>
+                        <div className="site-content">
+                            <Heading />
+                            <Outlet />
+                        </div>
+                    </section>
+                </div>
+                <Footer />
+            </main>
+        </Context.Provider>
     )
 }
 

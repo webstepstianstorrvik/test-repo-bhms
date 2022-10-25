@@ -9,8 +9,8 @@ export const useBoligselskaper = () => {
     const accessToken = auth.user?.access_token
 
     const config = {
-      headers: { Authorization: `Bearer ${accessToken}` }
-  };
+        headers: { Authorization: `Bearer ${accessToken}` },
+    }
 
     return useQuery(
         [MINE_BOLIGSELSKAPER_QUERY_KEY_PREFIX, accessToken],

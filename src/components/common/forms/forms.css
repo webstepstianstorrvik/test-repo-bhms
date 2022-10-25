@@ -19,7 +19,7 @@
     color: rgb(52, 64, 80);
     background-color: rgb(255, 255, 255);
     background-clip: padding-box;
-    margin-bottom: 1.2rem;
+    margin-bottom: 0.8rem;
     padding: 0.3125rem 1rem;
     border-width: 1px;
     border-style: solid;
@@ -56,12 +56,25 @@ textarea.form__control {
     margin-right: 1rem;
 }
 
+select.form__control {
+    border: 0;
+    border-right: 16px solid #fff;
+    outline: 1px solid;
+    outline-color: rgb(216, 226, 239);
+}
+select.form__control:focus {
+    outline: 1px solid;
+    outline-color: rgb(158, 194, 243);
+    border: 0;
+    border-right: 16px solid #fff;
+}
+
 .form__control.checkbox {
     display: flex;
     align-items: center;
     margin-right: 0.5rem;
-    margin-bottom: .2rem;
-    height: calc(2rem + 0.625rem + 2px);
+    margin-bottom: 0;
+    height: 2rem;
     border: none;
 }
 

@@ -12,19 +12,21 @@
         "@testing-library/react": "^13.4.0",
         "@testing-library/user-event": "^14.4.3",
         "axios": "^1.1.3",
-        "date-fns": "^2.29.1",
+        "date-fns": "^2.29.3",
         "eslint-config-prettier": "^8.5.0",
         "express": "^4.17.2",
         "prettier": "^2.7.1",
         "react": "^18.2.0",
         "react-big-calendar": "^1.5.0",
         "react-dom": "^18.2.0",
+        "react-file-drop": "^3.1.6",
         "react-modal": "^3.14.4",
         "react-oidc-context": "^2.1.0",
         "react-router-dom": "^6.2.1",
         "react-scripts": "^5.0.1",
         "react-table": "^7.8.0",
         "react-toastify": "^9.0.1",
+        "react-transition-group": "^4.4.5",
         "recharts": "^2.1.13",
         "web-vitals": "^2.1.4"
     },
@@ -55,6 +57,7 @@
         ]
     },
     "devDependencies": {
+        "@types/react-transition-group": "^4.4.5",
         "http-request-mock": "^1.8.2"
     }
 }

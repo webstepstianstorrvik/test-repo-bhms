@@ -8,7 +8,7 @@ const Input = ({
     onChange,
     placeholder,
     required = true,
-    type = "text",
+    type = 'text',
     value,
 }) => {
     return (

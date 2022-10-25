@@ -70,7 +70,7 @@ body {
     font-size: 0.9rem;
     font-weight: var(--main-text-font-weight);
     line-height: 1.125rem;
-    min-height: 2.815rem;
+    min-height: 3.2rem;
     min-width: 7rem;
     display: inline-block;
     padding: 0.875rem;
@@ -105,8 +105,22 @@ body {
 
 .btn:focus {
     -webkit-box-shadow: 0 0 0 0.2rem rgb(38 143 255 / 50%);
-    -moz-box-shadow: 0 0 0 0.2rem rgba(38,143,255,.5);
+    -moz-box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
     box-shadow: 0 0 0 0.2rem rgb(38 143 255 / 50%);
+}
+
+.icon-button {
+    background-color: transparent;
+    border-radius: 4px;
+    border: none;
+}
+
+.icon-button:focus {
+    box-shadow: 0 0 0 0.2rem rgb(38 143 255 / 50%);
+}
+
+.icon-button > svg:focus {
+    outline: none;
 }
 
 /************************ STATUS BADGE *************************/

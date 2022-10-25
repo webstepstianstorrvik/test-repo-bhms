@@ -12,9 +12,11 @@ const Checkboxes = ({
 }) => {
     return (
         <div className={`${className ?? ''}`}>
-            <label className="form__label" htmlFor={id}>
-                {label}
-            </label>
+            {label && (
+                <label className="form__label" htmlFor={id}>
+                    {label}
+                </label>
+            )}
             <div>
                 {options.map((option) => (
                     <div className="form__control checkbox" key={option}>
@@ -25,7 +27,12 @@ const Checkboxes = ({
                             value={option}
                             onChange={onChange}
                             placeholder={placeholder}
-                            checked={typeof values === "object" && values.includes(option)/*TODO: Remove typeof when refactoring to TS */}
+                            checked={
+                                typeof values === 'object' &&
+                                values.includes(
+                                    option
+                                ) /*TODO: Remove typeof when refactoring to TS */
+                            }
                         />
                         <label
                             className="form__checkbox-label"
