@@ -10,12 +10,12 @@ import Accordion from '../../common/Accordion'
 import DatePicker from '../../common/forms/DatePicker'
 import Checkboxes from '../../common/forms/Checkboxes'
 import { useSjekkliste } from '../../../hooks/useSjekkliste'
-import { useAnsvarligePersoner } from '../../../hooks/useAnsvarligePersoner'
 import { format } from 'date-fns'
 import AccordionItem from '../../common/AccordionItem'
 import AddLinks from '../../common/forms/AddLinks'
 import LeggTilVedlegg from './LeggTilVedlegg'
 import PersonSelect from '../../common/forms/PersonSelect'
+import PersonCheckboxes from '../../common/forms/PersonCheckboxes'
 import TemplateModal from './TemplateModal'
 
 const initialForm = {
@@ -40,7 +40,6 @@ const initialForm = {
 }
 
 const NyAktivitet = () => {
-    const ansvarligePersoner = useAnsvarligePersoner()
     const sjekkliste = useSjekkliste()
     const [formValues, setFormValues] = useState(initialForm)
     const [templateModalOpen, setTemplateModalOpen] = useState(false)
@@ -219,16 +218,10 @@ const NyAktivitet = () => {
                                 <AccordionItem title="Legg til HMS-Håndbok"></AccordionItem>
                                 <AccordionItem title="Legg til risikovurderinger"></AccordionItem>
                                 <AccordionItem title="Legg til kontakter">
-                                    <Checkboxes
+                                    <PersonCheckboxes
                                         name="kontakter"
                                         id="aktivitet-kontakter"
-                                        label="Velg kontakter:"
                                         onChange={handleInputChange}
-                                        options={
-                                            ansvarligePersoner.data?.map(
-                                                ({ navn }) => navn
-                                            ) ?? []
-                                        }
                                         values={formValues['kontakter']}
                                     />
                                 </AccordionItem>

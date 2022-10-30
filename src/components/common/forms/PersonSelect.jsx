@@ -36,7 +36,7 @@ const PesonSelect = ({
                         ({ gruppe }) => gruppe !== 'BBL' && gruppe !== 'BRL'
                     )
                     .map(({ navn, kartotekId }) => (
-                        <option key={navn} value={kartotekId}>
+                        <option key={kartotekId} value={kartotekId}>
                             {navn}
                         </option>
                     ))}
@@ -44,7 +44,7 @@ const PesonSelect = ({
                     {data
                         .filter(({ gruppe }) => gruppe === 'BBL')
                         .map(({ navn, kartotekId }) => (
-                            <option key={navn} value={kartotekId}>
+                            <option key={kartotekId} value={kartotekId}>
                                 {navn}
                             </option>
                         ))}
@@ -53,7 +53,7 @@ const PesonSelect = ({
                     {data
                         .filter(({ gruppe }) => gruppe === 'BRL')
                         .map(({ navn, kartotekId }) => (
-                            <option key={navn} value={kartotekId}>
+                            <option key={kartotekId} value={kartotekId}>
                                 {navn}
                             </option>
                         ))}
