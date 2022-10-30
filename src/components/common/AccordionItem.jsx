@@ -1,23 +1,15 @@
 import { useState, useRef } from 'react'
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { useEffect } from 'react'
 
 const AccordionItem = ({ title, children }) => {
     const contentElement = useRef()
     const [isOpen, setIsOpen] = useState(false)
-    const [contentHeight, setContentHeight] = useState(
-        contentElement.current?.scrollHeight
-    )
 
     const handleToggle = (e) => {
         e.preventDefault()
         setIsOpen((isOpen) => !isOpen)
     }
-
-    useEffect(() => {
-        setContentHeight(contentElement.current?.scrollHeight)
-    }, [children])
 
     return (
         <li className={`accordion_item ${isOpen ? 'active' : ''}`}>
@@ -43,8 +35,11 @@ const AccordionItem = ({ title, children }) => {
                 ref={contentElement}
                 style={
                     isOpen
-                        ? { height: contentHeight }
-                        : { height: '0px', visibility: 'hidden' }
+                        ? {
+                              maxHeight:
+                                  contentElement.current.scrollHeight + 100,
+                          }
+                        : { maxHeight: '0px', visibility: 'hidden' }
                 }
             >
                 <div

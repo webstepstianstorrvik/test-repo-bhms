@@ -2,7 +2,7 @@ import './file-upload.css'
 
 import React, { useRef, useState } from 'react'
 import { FileDrop } from 'react-file-drop'
-import { faCloudArrowUp, faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faCloudArrowUp, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const FileUpload = () => {
@@ -56,7 +56,7 @@ const FileUpload = () => {
                             {name}{' '}
                             <FontAwesomeIcon
                                 className="cpointer"
-                                icon={faXmark}
+                                icon={faTrash}
                                 onClick={() => handleRemoveFile(name)}
                             />
                         </li>

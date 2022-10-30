@@ -11,6 +11,7 @@
     margin-bottom: 0;
     cursor: pointer;
     position: relative;
+    padding: 1.75rem;
 }
 
 .accordion_item__button:focus {
@@ -34,7 +35,7 @@
 }
 
 .accordion_item__content_wrapper {
-    height: 0;
+    max-height: 0;
     overflow: hidden;
-    transition: all ease-in-out 0.3s;
+    transition: all ease-in-out 0.2s;
 }

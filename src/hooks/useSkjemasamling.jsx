@@ -21,7 +21,7 @@ export const useSkjemasamling = () => {
         () =>
             axios
                 .get(
-                    `https://api.bevarhms.no/api/boligselskaper/${brlId}/skjemasamling`,
+                    `https://api.bevarhms.no/api/boligselskaper/${brlId}/skjemasamlinger`,
                     config
                 )
                 .then((res) => res.data),

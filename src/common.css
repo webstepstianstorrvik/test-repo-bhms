@@ -432,7 +432,82 @@
 .cpointer {
     cursor: pointer;
 }
+.overflow-ys {
+    overflow-y: scroll;
+}
+.overflow-xs {
+    overflow-y: scroll;
+}
 
+.ba {
+    border-style: solid;
+}
+.bt {
+    border-top-style: solid;
+}
+.br {
+    border-right-style: solid;
+}
+.bb {
+    border-bottom-style: solid;
+}
+.bl {
+    border-left-style: solid;
+}
+.maxw8r {
+    max-width: 8rem;
+}
+.maxw10r {
+    max-width: 10rem;
+}
+.maxw12r {
+    max-width: 12rem;
+}
+.maxw16r {
+    max-width: 16rem;
+}
+.maxw20r {
+    max-width: 20rem;
+}
+.maxw24r {
+    max-width: 24rem;
+}
+.maxw32r {
+    max-width: 32rem;
+}
+.maxw40r {
+    max-width: 40rem;
+}
+.maxw44r {
+    max-width: 44rem;
+}
+.maxw48r {
+    max-width: 48rem;
+}
+.maxw64r {
+    max-width: 64rem;
+}
+.maxw80r {
+    max-width: 80rem;
+}
+.maxw96r {
+    max-width: 96rem;
+}
+.maxw100vw {
+    max-width: 100vw;
+}
+.maxw100p {
+    max-width: 100%;
+}
+.scale13 {
+    transform: scale(1.3);
+}
+.scale15 {
+    transform: scale(1.5);
+}
+.scale20 {
+    transform: scale(2);
+}
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import Button from '../Button'
-import { faXmark } from '@fortawesome/free-solid-svg-icons'
+import { faLink, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const AddLinks = ({
@@ -52,28 +52,42 @@ const AddLinks = ({
                 </Button>
             </div>
 
-            {values.length ? (
+            {values?.length ? (
                 <div>
                     <label className="form__label">Valgte lenker:</label>
                     <ul className="phl">
                         {values.map((value) => (
-                            <li key={value} className="flex justify-csb">
-                                <a
-                                    href={value}
-                                    target="_blank"
-                                    rel="noreferrer"
+                            <li key={value} className="flex justify-csb pvs">
+                                <div>
+                                    <button className="icon-button">
+                                        <FontAwesomeIcon
+                                            className="cpointer"
+                                            icon={faLink}
+                                            color="#5e6e82"
+                                            onClick={() =>
+                                                onChange(
+                                                    generateEvent(value, false)
+                                                )
+                                            }
+                                        />
+                                    </button>
+                                    <a
+                                        href={value}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
+                                        {value}
+                                    </a>
+                                </div>
+                                <button
+                                    className="icon-button"
+                                    onClick={() =>
+                                        onChange(generateEvent(value, false))
+                                    }
                                 >
-                                    {value}
-                                </a>
-                                <button className="icon-button">
                                     <FontAwesomeIcon
-                                        className="cpointer"
-                                        icon={faXmark}
-                                        onClick={() =>
-                                            onChange(
-                                                generateEvent(value, false)
-                                            )
-                                        }
+                                        icon={faTrash}
+                                        color="#5e6e82"
                                     />
                                 </button>
                             </li>

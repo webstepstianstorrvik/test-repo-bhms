@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom'
 import Heading from './components/common/Heading.js'
 import { useAuth } from 'react-oidc-context'
 import { useUser } from './hooks/useUser.jsx'
+import { ToastContainer } from 'react-toastify'
 
 export const Context = createContext()
 
@@ -66,6 +67,7 @@ const App = () => {
                 </div>
                 <Footer />
             </main>
+            <ToastContainer />
         </Context.Provider>
     )
 }

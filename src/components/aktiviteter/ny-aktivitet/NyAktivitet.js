@@ -10,18 +10,18 @@ import Accordion from '../../common/Accordion'
 import DatePicker from '../../common/forms/DatePicker'
 import Checkboxes from '../../common/forms/Checkboxes'
 import { useSjekkliste } from '../../../hooks/useSjekkliste'
-import { useSkjemasamling } from '../../../hooks/useSkjemasamling'
 import { useAnsvarligePersoner } from '../../../hooks/useAnsvarligePersoner'
 import { format } from 'date-fns'
 import AccordionItem from '../../common/AccordionItem'
 import AddLinks from '../../common/forms/AddLinks'
-import Modal from '../../common/Modal'
-import FileUpload from '../../common/FileUpload'
+import LeggTilVedlegg from './LeggTilVedlegg'
+import PersonSelect from '../../common/forms/PersonSelect'
+import TemplateModal from './TemplateModal'
 
 const initialForm = {
-    status: 'Åpen',
+    status: 'Aktiv',
     tittel: '',
-    beskrivelse: '',
+    aktivitet: '',
     fristDato: format(new Date(), 'yyyy-MM-dd'),
     repetisjon: 'Hver uke',
     varsling: 1,
@@ -31,6 +31,7 @@ const initialForm = {
     kopiTil: 'Styreleder',
     sjekkliste: [],
     vedlegg: [],
+    vedleggUploaded: [],
     hmsHandbok: [],
     risikovurdering: [],
     kontakter: [],
@@ -41,9 +42,8 @@ const initialForm = {
 const NyAktivitet = () => {
     const ansvarligePersoner = useAnsvarligePersoner()
     const sjekkliste = useSjekkliste()
-    const skjemasamling = useSkjemasamling()
     const [formValues, setFormValues] = useState(initialForm)
-    const [showFileModal, setShowFileModal] = useState(false)
+    const [templateModalOpen, setTemplateModalOpen] = useState(false)
 
     const handleInputChange = (event) => {
         const target = event.target
@@ -59,12 +59,15 @@ const NyAktivitet = () => {
                     : formValues[name].filter((e) => e !== target.value)
         }
 
-        console.log(name, value)
-
         setFormValues((values) => ({
             ...values,
             [name]: value,
         }))
+    }
+
+    const handleUseTemplate = (template) => {
+        setTemplateModalOpen(false)
+        setFormValues({ ...template, status: 'Aktiv' })
     }
 
     const handleSubmit = (event) => {
@@ -76,18 +79,24 @@ const NyAktivitet = () => {
         <>
             <div className="fr mtl">
                 <Button
-                    type="submit"
                     variant="secondary"
                     onClick={() => setFormValues(initialForm)}
                 >
                     Nullstill skjema
                 </Button>
-                <Button type="submit" className="mlm">
+                <Button
+                    className="mlm"
+                    variant="secondary"
+                    onClick={() => setTemplateModalOpen(true)}
+                >
+                    Importer fra mal
+                </Button>
+                <Button type="submit" className="mlm" onClick={handleSubmit}>
                     Lagre ny aktivitet
                 </Button>
             </div>
             <div className="aktiviteter-form">
-                <form onSubmit={handleSubmit}>
+                <form>
                     <div className="form-container">
                         <div className="aktiviteter-form__generelt">
                             <Input
@@ -98,11 +107,11 @@ const NyAktivitet = () => {
                                 value={formValues['tittel']}
                             />
                             <Textarea
-                                name="beskrivelse"
+                                name="aktivitet"
                                 id="aktivitet-beskrivelse"
                                 label="Beskrivelse"
                                 onChange={handleInputChange}
-                                value={formValues['beskrivelse']}
+                                value={formValues['aktivitet']}
                             />
                             <div className="column-2">
                                 <div className="flex-1 column-left">
@@ -111,7 +120,7 @@ const NyAktivitet = () => {
                                         id="aktivitet-status"
                                         label="Status"
                                         onChange={handleInputChange}
-                                        options={['Åpen', 'Ferdig']}
+                                        options={['Aktiv', 'Deaktivert']}
                                         value={formValues['status']}
                                     />
 
@@ -140,16 +149,11 @@ const NyAktivitet = () => {
                                         ]}
                                         value={formValues['leverandor']}
                                     />
-                                    <Select
+                                    <PersonSelect
                                         name="ansvarligOppfolging"
                                         id="aktivitet-ansvarligOppfolging"
                                         label="Ansvarlig oppfølging"
                                         onChange={handleInputChange}
-                                        options={
-                                            ansvarligePersoner.data?.map(
-                                                ({ navn }) => navn
-                                            ) ?? []
-                                        }
                                         value={
                                             formValues['ansvarligOppfolging']
                                         }
@@ -172,28 +176,18 @@ const NyAktivitet = () => {
                                         value={formValues['varsling']}
                                     />
 
-                                    <Select
+                                    <PersonSelect
                                         name="ansvarligUtforelse"
                                         id="aktivitet-ansvarligUtforelse"
                                         label="Ansvarlig utførelse"
                                         onChange={handleInputChange}
-                                        options={
-                                            ansvarligePersoner.data?.map(
-                                                ({ navn }) => navn
-                                            ) ?? []
-                                        }
                                         value={formValues['ansvarligUtforelse']}
                                     />
-                                    <Select
+                                    <PersonSelect
                                         name="kopiTil"
                                         id="aktivitet-kopiTil"
                                         label="Kopi til"
                                         onChange={handleInputChange}
-                                        options={
-                                            ansvarligePersoner.data?.map(
-                                                ({ navn }) => navn
-                                            ) ?? []
-                                        }
                                         value={formValues['kopiTil']}
                                     />
                                 </div>
@@ -206,7 +200,7 @@ const NyAktivitet = () => {
                                     <Checkboxes
                                         name="sjekkliste"
                                         id="aktivitet-sjekkliste"
-                                        label="Eksisterende sjekklister"
+                                        label="Velg sjekklister:"
                                         onChange={handleInputChange}
                                         options={
                                             sjekkliste.data?.map(
@@ -217,40 +211,27 @@ const NyAktivitet = () => {
                                     />
                                 </AccordionItem>
                                 <AccordionItem title="Legg til vedlegg">
-                                    <Checkboxes
-                                        name="vedlegg"
-                                        id="aktivitet-vedlegg"
-                                        label="Skjemasamlinger"
-                                        onChange={handleInputChange}
-                                        options={
-                                            skjemasamling.data?.map(
-                                                ({ tittel }) => tittel
-                                            ) ?? []
-                                        }
+                                    <LeggTilVedlegg
                                         values={formValues['vedlegg']}
+                                        handleInputChange={handleInputChange}
                                     />
-                                    <div className="mtm">
-                                        <Button
-                                            onClick={() =>
-                                                setShowFileModal(true)
-                                            }
-                                            variant="secondary"
-                                            fullWidth
-                                        >
-                                            Last opp egne vedlegg
-                                        </Button>
-                                    </div>
-                                    <Modal
-                                        title="Last opp filer"
-                                        show={showFileModal}
-                                        onClose={() => setShowFileModal(false)}
-                                    >
-                                        <FileUpload />
-                                    </Modal>
                                 </AccordionItem>
                                 <AccordionItem title="Legg til HMS-Håndbok"></AccordionItem>
                                 <AccordionItem title="Legg til risikovurderinger"></AccordionItem>
-                                <AccordionItem title="Legg til kontakter"></AccordionItem>
+                                <AccordionItem title="Legg til kontakter">
+                                    <Checkboxes
+                                        name="kontakter"
+                                        id="aktivitet-kontakter"
+                                        label="Velg kontakter:"
+                                        onChange={handleInputChange}
+                                        options={
+                                            ansvarligePersoner.data?.map(
+                                                ({ navn }) => navn
+                                            ) ?? []
+                                        }
+                                        values={formValues['kontakter']}
+                                    />
+                                </AccordionItem>
                                 <AccordionItem title="Legg til arkiv"></AccordionItem>
                                 <AccordionItem title="Legg til eksterne lenker">
                                     <AddLinks
@@ -267,6 +248,11 @@ const NyAktivitet = () => {
                     </div>
                 </form>
             </div>
+            <TemplateModal
+                show={templateModalOpen}
+                onTemplateSelect={handleUseTemplate}
+                onClose={() => setTemplateModalOpen(false)}
+            />
         </>
     )
 }

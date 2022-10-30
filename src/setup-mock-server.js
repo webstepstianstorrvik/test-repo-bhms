@@ -1,5 +1,6 @@
 import HttpRequestMock from 'http-request-mock'
 import {
+    aktivitetsmaler,
     ansvarligPerson,
     boligselskaper,
     sjekkliste,
@@ -54,6 +55,18 @@ export const setupMock = () => {
         (_, res) => {
             res.status = 200
             return ansvarligPerson
+        },
+        {
+            delay: 500,
+            header: { 'Content-Type': 'application/json' },
+        }
+    )
+
+    mocker.get(
+        'https://api.bevarhms.no/api/aktivitet-veiviser',
+        (_, res) => {
+            res.status = 200
+            return aktivitetsmaler
         },
         {
             delay: 500,

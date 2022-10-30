@@ -29,7 +29,7 @@ const Checkboxes = ({
                             placeholder={placeholder}
                             checked={
                                 typeof values === 'object' &&
-                                values.includes(
+                                values?.includes(
                                     option
                                 ) /*TODO: Remove typeof when refactoring to TS */
                             }
