@@ -17,6 +17,10 @@ import LeggTilVedlegg from './LeggTilVedlegg'
 import PersonSelect from '../../common/forms/PersonSelect'
 import PersonCheckboxes from '../../common/forms/PersonCheckboxes'
 import TemplateModal from './TemplateModal'
+import { faArrowRotateBackward } from '@fortawesome/free-solid-svg-icons'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import Modal from '../../common/Modal'
+import { toast } from 'react-toastify'
 
 const initialForm = {
     status: 'Aktiv',
@@ -43,6 +47,7 @@ const NyAktivitet = () => {
     const sjekkliste = useSjekkliste()
     const [formValues, setFormValues] = useState(initialForm)
     const [templateModalOpen, setTemplateModalOpen] = useState(false)
+    const [resetModalOpen, setResetModalOpen] = useState(false)
 
     const handleInputChange = (event) => {
         const target = event.target
@@ -69,6 +74,12 @@ const NyAktivitet = () => {
         setFormValues({ ...template, status: 'Aktiv' })
     }
 
+    const handleResetForm = () => {
+        setResetModalOpen(false)
+        setFormValues(initialForm)
+        toast("Alle verdier i skjemaet ditt har blitt nullstilt")
+    }
+
     const handleSubmit = (event) => {
         event.preventDefault()
         console.log(formValues)
@@ -77,11 +88,8 @@ const NyAktivitet = () => {
     return (
         <>
             <div className="fr mtl">
-                <Button
-                    variant="secondary"
-                    onClick={() => setFormValues(initialForm)}
-                >
-                    Nullstill skjema
+                <Button variant="secondary" onClick={() => setResetModalOpen(true)}>
+                    <FontAwesomeIcon icon={faArrowRotateBackward}/>
                 </Button>
                 <Button
                     className="mlm"
@@ -241,6 +249,14 @@ const NyAktivitet = () => {
                     </div>
                 </form>
             </div>
+            <Modal
+                title="Nullstill skjema"
+                show={resetModalOpen}
+                onSubmit={handleResetForm}
+                onClose={() => setResetModalOpen(false)}
+            >
+                <p className="mls">Er du sikkert på at du vil nulstille skjemaet? Dette vil slette alle tidligere verdier.</p>
+            </Modal> 
             <TemplateModal
                 show={templateModalOpen}
                 onTemplateSelect={handleUseTemplate}

@@ -67,7 +67,7 @@ const App = () => {
                 </div>
                 <Footer />
             </main>
-            <ToastContainer />
+            <ToastContainer autoClose={2500}/>
         </Context.Provider>
     )
 }

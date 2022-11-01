@@ -36,12 +36,11 @@ const Modal = ({ children, onClose, onSubmit, show, title }) => {
                 >
                     <div className="modal__content-top">
                         <h1>{title}</h1>
-                        <button className="icon-button">
+                        <button className="icon-button" onClick={onClose}>
                             <FontAwesomeIcon
                                 className="cpointer"
                                 icon={faXmark}
-                                onClick={onClose}
-                                size="2x"
+                                size="3x"
                             />
                         </button>
                     </div>

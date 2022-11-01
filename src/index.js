@@ -1,10 +1,11 @@
+import 'react-toastify/dist/ReactToastify.css'
 import './assets/css/polyfill/bootstrap.css'
 import './assets/css/fonts.css'
 import './index.css'
 import './main.css'
 import './common.css'
 import './components/common/forms/forms.css'
-import 'react-toastify/dist/ReactToastify.css'
+
 
 import React from 'react'
 import { AuthProvider } from 'react-oidc-context'

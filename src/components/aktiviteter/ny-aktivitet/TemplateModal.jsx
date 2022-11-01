@@ -21,7 +21,7 @@ const TemplateModal = ({ onTemplateSelect, onClose, show }) => {
     const handleConfirmClick = () => {
         onTemplateSelect(selectedTemplate)
         onClose()
-        toast(`Aktivitetsmalen '${selectedTemplate.tittel}' ble importert`)
+        toast(`Aktivitetsmalen '${selectedTemplate.tittel}' ble importert fra mal`)
     }
 
     return (
@@ -31,8 +31,8 @@ const TemplateModal = ({ onTemplateSelect, onClose, show }) => {
             show={show}
             onSubmit={handleConfirmClick}
         >
-            <p className="pts pls maxw40r">
-                Velg en aktivitetsmal du vil importere. Ved å importere en
+            <p className="pls maxw40r">
+                Velg den aktivitetsmalen du ønsker å bruke. Ved å importere en
                 aktivitetsmal vil alle eksisterende verdier i skjemaet
                 overskrives.
             </p>
