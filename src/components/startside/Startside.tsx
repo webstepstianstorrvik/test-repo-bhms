@@ -1,7 +1,7 @@
 import './startside.css'
 
 import React from 'react'
-import Button from '../common/Button'
+import BevarButton from '../common/BevarButton'
 
 import NyKontaktIcon from '../../assets/img/icons/startside/nykontakt.svg'
 import OmBevarHMSIcon from '../../assets/img/icons/startside/ombevarhms.svg'
@@ -57,7 +57,7 @@ const Startside = () => {
                 <h2>Aktuelle tema</h2>
                 <div className="container grid">
                     {buttons.map(({ title, icon, link }) => (
-                        <Button
+                        <BevarButton
                             key={title}
                             title={title}
                             icon={icon}

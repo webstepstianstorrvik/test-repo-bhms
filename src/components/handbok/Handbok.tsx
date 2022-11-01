@@ -1,7 +1,7 @@
 import './handbok.css'
 
 import React from 'react'
-import Button from '../common/Button'
+import BevarButton from '../common/BevarButton'
 
 import CancelIcon from '../../assets/img/icons/general/cancel.svg'
 import RutinerIcon from '../../assets/img/icons/handbok/rutiner.svg'
@@ -58,7 +58,12 @@ const Handbok = () => {
         <div className="grid handbok">
             <div className="container grid buttons">
                 {buttons.map(({ title, icon, link }) => (
-                    <Button key={title} title={title} icon={icon} link={link} />
+                    <BevarButton
+                        key={title}
+                        title={title}
+                        icon={icon}
+                        link={link}
+                    />
                 ))}
             </div>
             <Card title="Håndbok">

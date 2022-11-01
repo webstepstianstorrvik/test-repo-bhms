@@ -8,6 +8,7 @@ import { useLocation } from 'react-router-dom'
 import Heading from './components/common/Heading'
 import { useAuth } from 'react-oidc-context'
 import { useUser } from './hooks/useUser.jsx'
+import { ToastContainer } from 'react-toastify'
 
 export const Context = createContext({ isMobile: false })
 
@@ -50,24 +51,24 @@ const App = () => {
     }
 
     return (
-        
-            <Context.Provider value={{ isMobile }}>
-                <main>
-                    <Header toggleMenu={toggleMenu} />
-                    <div className="container">
-                        {auth.isAuthenticated && (
-                            <SidebarMenu isMenuOpen={isMenuOpen} />
-                        )}
-                        <section>
-                            <div className="site-content">
-                                <Heading />
-                                <Outlet />
-                            </div>
-                        </section>
-                    </div>
-                    <Footer />
-                </main>
-            </Context.Provider>
+        <Context.Provider value={{ isMobile }}>
+            <main>
+                <Header toggleMenu={toggleMenu} />
+                <div className="container">
+                    {auth.isAuthenticated && (
+                        <SidebarMenu isMenuOpen={isMenuOpen} />
+                    )}
+                    <section>
+                        <div className="site-content">
+                            <Heading />
+                            <Outlet />
+                        </div>
+                    </section>
+                </div>
+                <Footer />
+            </main>
+            <ToastContainer autoClose={2500} />
+        </Context.Provider>
     )
 }
 

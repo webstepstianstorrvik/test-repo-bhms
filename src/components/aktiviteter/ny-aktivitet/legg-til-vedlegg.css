@@ -1,0 +1,18 @@
+.aktiviteter-vedlegg__list {
+    list-style-type: none;
+    border-top: 1px solid var(--main-bevar-divider-color);
+    margin-top: 0.5rem;
+    padding-left: 1.1rem;
+}
+
+.aktiviteter-vedlegg__list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.5rem;
+}
+
+.aktiviteter-vedlegg__list svg {
+    margin-right: 1rem;
+    transform: scale(1.2);
+}

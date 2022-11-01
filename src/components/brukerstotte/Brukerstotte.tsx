@@ -1,5 +1,5 @@
 import React from 'react'
-import Button from '../common/Button'
+import BevarButton from '../common/BevarButton'
 
 import FagvideoerIcon from '../../assets/img/icons/brukerstotte/fagvideoer.svg'
 // import KontaktboligbyggelagetIcon from '../../assets/img/icons/brukerstotte/kontaktboligbyggelaget.svg';
@@ -38,7 +38,12 @@ const Brukerstotte = () => {
     return (
         <div className="container grid">
             {buttons.map(({ title, icon, link }) => (
-                <Button key={title} title={title} icon={icon} link={link} />
+                <BevarButton
+                    key={title}
+                    title={title}
+                    icon={icon}
+                    link={link}
+                />
             ))}
         </div>
     )
