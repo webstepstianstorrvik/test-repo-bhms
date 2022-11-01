@@ -1,6 +1,7 @@
 import axios from 'axios'
 import { useAuth } from 'react-oidc-context'
 import { useQuery } from '@tanstack/react-query'
+import { User } from '../types/common'
 
 export const MINE_BOLIGSELSKAPER_QUERY_KEY_PREFIX = 'mine-boligselskaper'
 
@@ -12,7 +13,7 @@ export const useBoligselskaper = () => {
         headers: { Authorization: `Bearer ${accessToken}` },
     }
 
-    return useQuery(
+    return useQuery<User[]>(
         [MINE_BOLIGSELSKAPER_QUERY_KEY_PREFIX, accessToken],
         () =>
             axios

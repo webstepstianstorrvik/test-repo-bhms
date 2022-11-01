@@ -3,31 +3,40 @@ import Button from '../Button'
 import { faLink, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
+interface IAddLinksProps {
+    className?: string
+    id: string
+    label: string
+    name: string
+    onChange: (event: any) => void
+    placeholder?: string
+    values: string[]
+    type?: string
+}
+
 const AddLinks = ({
-    className,
+    className = '',
     id,
     label,
     name,
     onChange,
     placeholder,
-    required = true,
-    type = 'text',
     values,
-}) => {
+    type = 'text',
+}: IAddLinksProps) => {
     const [input, setInput] = useState('')
 
-    const generateEvent = (value, isChecked) => {
+    const generateEvent = (value: string, isChecked: boolean) => {
         return { target: { type: 'checkbox', checked: isChecked, value, name } }
     }
 
-    const handleButtonClick = (e) => {
-        e.preventDefault()
+    const handleButtonClick = () => {
         onChange(generateEvent(input, true))
         setInput('')
     }
 
     return (
-        <div className={`multi-input ${className ?? ''}`}>
+        <div className={`multi-input ${className}`}>
             <div className="flex">
                 <div className="flex-1 mrm">
                     <label className="form__label" htmlFor={id}>
@@ -41,12 +50,11 @@ const AddLinks = ({
                         value={input}
                         onChange={(e) => setInput(e.target.value)}
                         placeholder={placeholder}
-                        required={required}
                     />
                 </div>
                 <Button
                     className="align-sc mts"
-                    onClick={(e) => handleButtonClick(e)}
+                    onClick={handleButtonClick}
                 >
                     Legg til
                 </Button>

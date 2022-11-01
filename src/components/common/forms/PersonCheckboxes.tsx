@@ -1,21 +1,29 @@
 import React from 'react'
 import { useAnsvarligePersoner } from '../../../hooks/useAnsvarligePersoner'
+import { Person } from '../../../types/common'
+
+interface IPersonCheckboxesProps {
+    className?: string
+    id: string
+    name: string
+    onChange: (event: any) => void
+    values: string[]
+}
 
 const PersonCheckboxes = ({
     className,
     id,
     name,
     onChange,
-    placeholder,
     values = [],
-}) => {
+}: IPersonCheckboxesProps) => {
     const { data, isLoading } = useAnsvarligePersoner()
 
-    if (isLoading) {
+    if (isLoading || !data) {
         return null
     }
 
-    const getCheckboxes = (persons) =>
+    const getCheckboxes = (persons: Person[]) =>
         persons.map(({ navn, kartotekId }) => (
             <div className="form__control checkbox" key={kartotekId}>
                 <input
@@ -24,7 +32,6 @@ const PersonCheckboxes = ({
                     type="checkbox"
                     value={navn}
                     onChange={onChange}
-                    placeholder={placeholder}
                     checked={
                         typeof values === 'object' &&
                         values?.includes(

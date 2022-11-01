@@ -1,15 +1,23 @@
 import './modal.css'
-import React, { useCallback, useEffect } from 'react'
+import React, { ReactNode, useCallback, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import { faXmark } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { CSSTransition } from 'react-transition-group'
 import Button from './Button'
 
-const Modal = ({ children, onClose, onSubmit, show, title }) => {
+interface IModalProps {
+    children: ReactNode
+    onClose: () => void
+    onSubmit: (event: any) => void
+    show: boolean
+    title: string
+}
+
+const Modal = ({ children, onClose, onSubmit, show, title }: IModalProps) => {
     const closeOnEscapeKeyDown = useCallback(
-        (e) => {
-            if ((e.charCode || e.keyCode) === 27) {
+        (e: KeyboardEvent) => {
+            if (e.key === "Escape") {
                 onClose()
             }
         },
@@ -56,7 +64,7 @@ const Modal = ({ children, onClose, onSubmit, show, title }) => {
                 </div>
             </div>
         </CSSTransition>,
-        document.getElementById('root')
+        document.getElementById('root')!!
     )
 }
 

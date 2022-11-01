@@ -1,12 +1,17 @@
-import { useState, useRef } from 'react'
+import React, { useState, useRef, SyntheticEvent } from 'react'
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
-const AccordionItem = ({ title, children }) => {
-    const contentElement = useRef()
+interface IAccordionItemProps {
+    title: string
+    children?: React.ReactNode
+}
+
+const AccordionItem = ({ title, children }: IAccordionItemProps) => {
+    const contentElement = useRef(document.createElement("div"))
     const [isOpen, setIsOpen] = useState(false)
 
-    const handleToggle = (e) => {
+    const handleToggle = (e: SyntheticEvent) => {
         e.preventDefault()
         setIsOpen((isOpen) => !isOpen)
     }

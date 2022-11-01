@@ -1,8 +1,19 @@
 import React from 'react'
 import { useAnsvarligePersoner } from '../../../hooks/useAnsvarligePersoner'
 
+interface IPersonSelectProps {
+    className?: string
+    id: string
+    label: string
+    name: string
+    onChange: (event: any) => void
+    placeholder?: string
+    required?: boolean
+    value: string
+}
+
 const PesonSelect = ({
-    className,
+    className = '',
     id,
     label,
     name,
@@ -10,10 +21,10 @@ const PesonSelect = ({
     placeholder,
     required = true,
     value,
-}) => {
+}: IPersonSelectProps) => {
     const { data, isLoading } = useAnsvarligePersoner()
 
-    if (isLoading) {
+    if (isLoading || !data) {
         return null
     }
 

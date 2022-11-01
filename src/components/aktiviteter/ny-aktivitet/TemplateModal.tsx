@@ -2,19 +2,26 @@ import React, { useEffect, useState } from 'react'
 import Modal from '../../common/Modal'
 import { useAktivitsMaler } from '../../../hooks/useAktivitetsmaler'
 import { toast } from 'react-toastify'
+import { AktivitetTemplate } from '../../../types/aktiviteter'
 
-const TemplateModal = ({ onTemplateSelect, onClose, show }) => {
+interface ITemplateModalProps {
+    onTemplateSelect: (event: any) => void
+    onClose: () => void
+    show: boolean
+}
+
+const TemplateModal = ({ onTemplateSelect, onClose, show }: ITemplateModalProps) => {
     const { data, isLoading } = useAktivitsMaler()
-    const [selectedTemplate, setSelectedTemplate] = useState()
+    const [selectedTemplate, setSelectedTemplate] = useState<AktivitetTemplate>()
 
-    const templates = data?.sort((a, b) => (a.tittel > b.tittel ? 1 : -1))
+    const templates = data?.sort((a: AktivitetTemplate, b: AktivitetTemplate) => (a.tittel > b.tittel ? 1 : -1))
     useEffect(() => {
         if (templates?.length) {
             setSelectedTemplate(templates[0])
         }
     }, [templates])
 
-    if (isLoading) {
+    if (isLoading || !selectedTemplate) {
         return null
     }
 
@@ -39,28 +46,28 @@ const TemplateModal = ({ onTemplateSelect, onClose, show }) => {
                 overskrives.
             </p>
             <div className="phl mvl overflow-ys">
-                {templates.map((aktivitet) => (
+                {templates.map((template: AktivitetTemplate) => (
                     <div
                         className="phl pvs bb"
-                        key={aktivitet.aktivitetVeiviserId}
+                        key={template.aktivitetVeiviserId}
                     >
                         <input
                             className="scale13"
-                            id={`aktivitetsmal-${aktivitet.aktivitetVeiviserId}`}
-                            name={aktivitet.tittel}
+                            id={`aktivitetsmal-${template.aktivitetVeiviserId}`}
+                            name={template.tittel}
                             type="radio"
-                            value={aktivitet}
-                            onChange={() => setSelectedTemplate(aktivitet)}
+                            value={template.tittel}
+                            onChange={() => setSelectedTemplate(template)}
                             checked={
                                 selectedTemplate?.aktivitetVeiviserId ===
-                                aktivitet.aktivitetVeiviserId
+                                template.aktivitetVeiviserId
                             }
                         />
                         <label
                             className="form__radio-label mlm"
-                            htmlFor={`aktivitetsmal-${aktivitet.aktivitetVeiviserId}`}
+                            htmlFor={`aktivitetsmal-${template.aktivitetVeiviserId}`}
                         >
-                            {aktivitet.tittel}
+                            {template.tittel}
                         </label>
                     </div>
                 ))}

@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useAuth } from 'react-oidc-context'
 import { useQuery } from '@tanstack/react-query'
 import { useUser } from './useUser'
+import { Sjekkliste } from '../types/sjekkliste'
 
 export const SJEKKLISTE_QUERY_KEY_PREFIX = 'sjekkliste'
 
@@ -16,7 +17,7 @@ export const useSjekkliste = () => {
         headers: { Authorization: `Bearer ${accessToken}` },
     }
 
-    return useQuery(
+    return useQuery<Sjekkliste[]>(
         [SJEKKLISTE_QUERY_KEY_PREFIX, accessToken, brlId],
         () =>
             axios

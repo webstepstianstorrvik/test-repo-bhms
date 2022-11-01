@@ -2,10 +2,11 @@ import axios from 'axios'
 import { useAuth } from 'react-oidc-context'
 import { useQuery } from '@tanstack/react-query'
 import { useUser } from './useUser'
+import { Skjemasamling } from '../types/skjemasamling'
 
 export const SKJEMASAMLING_QUERY_KEY_PREFIX = 'skjemasamling'
 
-export const useSkjemasamling = () => {
+export const useSkjemasamlinger = () => {
     const auth = useAuth()
     const user = useUser()
 
@@ -16,7 +17,7 @@ export const useSkjemasamling = () => {
         headers: { Authorization: `Bearer ${accessToken}` },
     }
 
-    return useQuery(
+    return useQuery<Skjemasamling[]>(
         [SKJEMASAMLING_QUERY_KEY_PREFIX, accessToken, brlId],
         () =>
             axios

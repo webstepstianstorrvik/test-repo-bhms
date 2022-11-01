@@ -1,38 +1,45 @@
 import React from 'react'
 
-const Select = ({
-    className,
+interface IInputProps {
+    className?: string
+    id: string
+    label: string
+    name: string
+    onChange: (event: any) => void
+    placeholder?: string
+    required?: boolean
+    value: string | number
+    type?: string
+}
+
+const Input = ({
+    className = '',
     id,
     label,
     name,
     onChange,
-    options,
     placeholder,
     required = true,
+    type = 'text',
     value,
-}) => {
+}: IInputProps) => {
     return (
-        <div className={`${className ?? ''}`}>
+        <div className={`${className}`}>
             <label className="form__label" htmlFor={id}>
                 {label}
             </label>
-            <select
+            <input
                 className="form__control"
                 id={id}
                 name={name}
+                type={type}
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder}
                 required={required}
-            >
-                {options.map((option) => (
-                    <option key={option} value={option}>
-                        {option}
-                    </option>
-                ))}
-            </select>
+            />
         </div>
     )
 }
 
-export default Select
+export default Input

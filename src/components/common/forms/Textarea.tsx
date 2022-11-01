@@ -1,7 +1,18 @@
 import React from 'react'
 
+interface ITextareaProps {
+    className?: string
+    id: string
+    label: string
+    name: string
+    onChange: (event: any) => void
+    placeholder?: string
+    required?: boolean
+    value: string
+}
+
 const Textarea = ({
-    className,
+    className = '',
     id,
     label,
     name,
@@ -9,9 +20,9 @@ const Textarea = ({
     placeholder,
     required = true,
     value,
-}) => {
+}: ITextareaProps) => {
     return (
-        <div className={`${className ?? ''}`}>
+        <div className={`${className}`}>
             <label className="form__label" htmlFor={id}>
                 {label}
             </label>
@@ -19,7 +30,6 @@ const Textarea = ({
                 className="form__control"
                 id={id}
                 name={name}
-                type="text"
                 value={value}
                 onChange={onChange}
                 placeholder={placeholder}

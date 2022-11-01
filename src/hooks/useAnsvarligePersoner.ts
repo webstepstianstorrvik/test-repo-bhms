@@ -2,6 +2,7 @@ import axios from 'axios'
 import { useAuth } from 'react-oidc-context'
 import { useQuery } from '@tanstack/react-query'
 import { useUser } from './useUser'
+import { Person } from '../types/common'
 
 export const ANSVARLIG_PERSON_QUERY_KEY_PREFIX = 'ansvarlig-person'
 
@@ -16,7 +17,7 @@ export const useAnsvarligePersoner = () => {
         headers: { Authorization: `Bearer ${accessToken}` },
     }
 
-    return useQuery(
+    return useQuery<Person[]>(
         [ANSVARLIG_PERSON_QUERY_KEY_PREFIX, accessToken, brlId],
         () =>
             axios

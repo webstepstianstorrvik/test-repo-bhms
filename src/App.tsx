@@ -7,7 +7,7 @@ import SidebarMenu from './components/menu/SidebarMenu'
 import { useLocation } from 'react-router-dom'
 import Heading from './components/common/Heading'
 import { useAuth } from 'react-oidc-context'
-import { useUser } from './hooks/useUser.jsx'
+import { useUser } from './hooks/useUser'
 import { ToastContainer } from 'react-toastify'
 
 export const Context = createContext({ isMobile: false })

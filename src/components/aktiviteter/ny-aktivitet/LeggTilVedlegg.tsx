@@ -1,25 +1,32 @@
 import './legg-til-vedlegg.css'
 
-import React, { useRef, useState } from 'react'
-import { useSkjemasamling } from '../../../hooks/useSkjemasamling'
+import React, { ChangeEvent, useRef, useState } from 'react'
+import { useSkjemasamlinger } from '../../../hooks/useSkjemasamlinger'
 import Button from '../../common/Button'
 import Checkboxes from '../../common/forms/Checkboxes'
 import { faFileArrowUp, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { toast } from 'react-toastify'
 
-const LeggTilVedlegg = ({ handleInputChange, values }) => {
-    const skjemasamling = useSkjemasamling()
-    const inputRef = useRef()
-    const [files, setFiles] = useState([])
+interface ILeggTilVedleggProps {
+    handleInputChange: (event: any) => void
+    values: string[]
+}
 
-    const handleFileUpload = (e) => {
-        const files = e.target.files
+const LeggTilVedlegg = ({ handleInputChange, values }: ILeggTilVedleggProps) => {
+    const skjemasamling = useSkjemasamlinger()
+    const inputRef = useRef(document.createElement("input"))
+    const [files, setFiles] = useState<File[]>([])
+
+
+    // TODO: Fix this method to destructure files correctly
+    const handleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {
+        const files = e.target.files!!
         toast(`${files.length} vedlegg ble lagt til`)
-        setFiles((currentFiles) => [...currentFiles, ...files])
+        setFiles((currentFiles) => [...currentFiles, files.item(0)!!])
     }
 
-    const handleRemoveFile = (name) => {
+    const handleRemoveFile = (name: string) => {
         toast(`'${name}' ble fjernet fra vedlegg`)
         setFiles((selectFiles) => [
             ...selectFiles.filter((file) => file.name !== name),

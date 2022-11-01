@@ -1,7 +1,19 @@
 import React from 'react'
 
+interface ICheckboxesProps {
+    className?: string
+    id: string
+    label: string
+    name: string
+    onChange: (event: any) => void
+    options: string[]
+    placeholder?: string
+    values: string[]
+}
+
+
 const Checkboxes = ({
-    className,
+    className = '',
     id,
     label,
     name,
@@ -9,9 +21,9 @@ const Checkboxes = ({
     options,
     placeholder,
     values = [],
-}) => {
+}: ICheckboxesProps) => {
     return (
-        <div className={`${className ?? ''}`}>
+        <div className={`${className}`}>
             {label && (
                 <label className="form__label" htmlFor={id}>
                     {label}

@@ -1,6 +1,6 @@
 import './ny-aktivitet.css'
 
-import React, { useState } from 'react'
+import React, { ChangeEvent, useState } from 'react'
 import Input from '../../common/forms/Input'
 import Textarea from '../../common/forms/Textarea'
 import Select from '../../common/forms/Select'
@@ -21,11 +21,12 @@ import { faArrowRotateBackward } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import Modal from '../../common/Modal'
 import { toast } from 'react-toastify'
+import { Aktivitet, AktivitetTemplate } from '../../../types/aktiviteter'
 
 const initialForm = {
     status: 'Aktiv',
     tittel: '',
-    aktivitet: '',
+    beskrivelse: '',
     fristDato: format(new Date(), 'yyyy-MM-dd'),
     repetisjon: 'Hver uke',
     varsling: 1,
@@ -45,22 +46,24 @@ const initialForm = {
 
 const NyAktivitet = () => {
     const sjekkliste = useSjekkliste()
-    const [formValues, setFormValues] = useState(initialForm)
+    const [formValues, setFormValues] = useState<Aktivitet>(initialForm)
     const [templateModalOpen, setTemplateModalOpen] = useState(false)
     const [resetModalOpen, setResetModalOpen] = useState(false)
 
-    const handleInputChange = (event) => {
+    const handleInputChange = (event: ChangeEvent<HTMLInputElement>) => {
         const target = event.target
         const name = target.name
-        var value = target.value
+        var value: string | string[] = target.value
 
         if (target.type === 'checkbox') {
-            // TODO: Remove typeof when refactoring to TS
-            console.log('checked', name)
-            value =
-                target.checked && typeof formValues[name] == 'object'
-                    ? [...formValues[name], target.value]
-                    : formValues[name].filter((e) => e !== target.value)
+            var currentValues = formValues[name as keyof Aktivitet]
+            if (Array.isArray(currentValues)) {
+                value =
+                target.checked
+                    ? [...currentValues, target.value]
+                    : currentValues.filter((e) => e !== target.value)
+            }
+            
         }
 
         setFormValues((values) => ({
@@ -69,9 +72,13 @@ const NyAktivitet = () => {
         }))
     }
 
-    const handleUseTemplate = (template) => {
+    const handleUseTemplate = (template: AktivitetTemplate) => {
         setTemplateModalOpen(false)
-        setFormValues({ ...template, status: 'Aktiv' })
+        setFormValues({ 
+            ...initialForm,
+            ...template,
+            status: "Aktiv"
+        })
     }
 
     const handleResetForm = () => {
@@ -80,10 +87,10 @@ const NyAktivitet = () => {
         toast('Alle verdier i skjemaet ditt har blitt nullstilt')
     }
 
-    const handleSubmit = (event) => {
-        event.preventDefault()
+    const handleSubmit = () => {
         console.log(formValues)
     }
+
 
     return (
         <>
@@ -117,11 +124,11 @@ const NyAktivitet = () => {
                                 value={formValues['tittel']}
                             />
                             <Textarea
-                                name="aktivitet"
+                                name="beskrivelse"
                                 id="aktivitet-beskrivelse"
                                 label="Beskrivelse"
                                 onChange={handleInputChange}
-                                value={formValues['aktivitet']}
+                                value={formValues['beskrivelse']}
                             />
                             <div className="column-2">
                                 <div className="flex-1 column-left">
@@ -243,7 +250,6 @@ const NyAktivitet = () => {
                                         id="aktivitet-eksterneLenker"
                                         label="Legg til ny lenke"
                                         onChange={handleInputChange}
-                                        options={['Option 1', 'Option 2']}
                                         values={formValues['eksterneLenker']}
                                     />
                                 </AccordionItem>
@@ -259,7 +265,7 @@ const NyAktivitet = () => {
                 onClose={() => setResetModalOpen(false)}
             >
                 <p className="mls">
-                    Er du sikkert på at du vil nulstille skjemaet? Dette vil
+                    Er du sikkert på at du vil nullstille skjemaet? Dette vil
                     slette alle tidligere verdier.
                 </p>
             </Modal>
