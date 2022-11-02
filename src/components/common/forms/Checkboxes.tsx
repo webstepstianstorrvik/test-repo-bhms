@@ -11,7 +11,6 @@ interface ICheckboxesProps {
     values: string[]
 }
 
-
 const Checkboxes = ({
     className = '',
     id,

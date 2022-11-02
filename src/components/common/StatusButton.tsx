@@ -1,36 +1,33 @@
-import './button.css'
 import React from 'react'
 
-interface IButtonProps {
+interface IStatusButtonProps {
     children: React.ReactNode
     className?: string
     disabled?: boolean
     fullWidth?: boolean
     onClick?: (event: any) => void
-    type?: 'button' | 'submit' | 'reset'
-    variant?: 'primary' | 'secondary'
+    status?: 'success' | 'warning' | 'error' | 'info'
 }
 
-const Button = ({
+const StatusButton = ({
     children,
     className = '',
     disabled = false,
     fullWidth = false,
     onClick,
-    type = 'button',
-    variant = 'primary',
-}: IButtonProps) => {
+    status = 'info',
+}: IStatusButtonProps) => {
     return (
         <button
-            className={`btn btn-${variant} ${className}`}
+            className={`btn btn-status ${status} ${className}`}
             disabled={disabled}
             onClick={onClick}
             style={fullWidth ? { width: '100%' } : {}}
-            type={type}
+            type="button"
         >
             {children}
         </button>
     )
 }
 
-export default Button
+export default StatusButton

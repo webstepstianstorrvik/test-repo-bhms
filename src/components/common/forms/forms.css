@@ -94,3 +94,11 @@ select.form__control:focus {
 textarea.form__control {
     resize: vertical;
 }
+
+.form__control.wauto {
+    width: auto;
+}
+
+.form__control.mb0 {
+    margin-bottom: 0;
+}

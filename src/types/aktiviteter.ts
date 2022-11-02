@@ -1,11 +1,12 @@
 export interface Aktivitet {
+    aktivitetId?: number
     status: string
     tittel: string
     beskrivelse: string
     fristDato: string
     repetisjon: string
     varsling: number
-    leverandor: string,
+    leverandor: string
     ansvarligUtforelse: string
     ansvarligOppfolging: string
     kopiTil: string
@@ -29,9 +30,17 @@ export interface AktivitetTemplate {
     start: string
     ansvarlig: string
     repetisjon: string
-    kravId: string,
-    lovkrav: string,
-    sjekklisteMaler: string[],
-    vedlegg: string[],
-    skjemaSamlinger: string[],
+    kravId: string
+    lovkrav: string
+    sjekklisteMaler: string[]
+    vedlegg: string[]
+    skjemaSamlinger: string[]
+}
+
+export interface AktiviteterResponse {
+    pageNumber: number
+    rowsPerPage: number
+    totalRows: number
+    totalPages: number
+    resultData: Aktivitet[]
 }

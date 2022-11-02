@@ -6,7 +6,7 @@ import { faCloudArrowUp, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const FileUpload = () => {
-    const inputRef = useRef(document.createElement("input"))
+    const inputRef = useRef(document.createElement('input'))
     const [selectFiles, setSelectFiles] = useState<File[]>([])
 
     const handleFileUploadClick = () => {
@@ -15,7 +15,9 @@ const FileUpload = () => {
 
     // TODO: Fix this method to destructure files correctly
     const handleAddFile = (files: FileList | null) => {
-        if (!files) { return }
+        if (!files) {
+            return
+        }
         setSelectFiles((selectFiles) => [...selectFiles, files.item(0)!!])
     }
 

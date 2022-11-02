@@ -11,9 +11,9 @@ export interface User {
     styreleder: boolean
     styrelederTilgang: boolean
     brlId: number
-    boligselskap: string,
-    bblId: number,
-    boligbyggelag: string,
+    boligselskap: string
+    bblId: number
+    boligbyggelag: string
 }
 
 export interface Person {

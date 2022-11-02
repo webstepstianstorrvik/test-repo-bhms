@@ -1,4 +1,3 @@
-import React from 'react'
 import { useAnsvarligePersoner } from '../../../hooks/useAnsvarligePersoner'
 import { Person } from '../../../types/common'
 
@@ -17,11 +16,16 @@ const PersonCheckboxes = ({
     onChange,
     values = [],
 }: IPersonCheckboxesProps) => {
-    const { data, isLoading } = useAnsvarligePersoner()
-
-    if (isLoading || !data) {
-        return null
-    }
+    const { data } = useAnsvarligePersoner()
+    const options = data
+        ? data
+        : [
+              {
+                  navn: 'Styreleder',
+                  kartotekId: 0,
+                  gruppe: '',
+              },
+          ]
 
     const getCheckboxes = (persons: Person[]) =>
         persons.map(({ navn, kartotekId }) => (
@@ -53,18 +57,22 @@ const PersonCheckboxes = ({
             <div className="mbs">
                 <label className="form__label">Kontakter</label>
                 {getCheckboxes(
-                    data.filter(
+                    options.filter(
                         ({ gruppe }) => gruppe !== 'BBL' && gruppe !== 'BRL'
                     )
                 )}
             </div>
             <div className="mbs">
                 <label className="form__label">Boligbyggelag</label>
-                {getCheckboxes(data.filter(({ gruppe }) => gruppe === 'BBL'))}
+                {getCheckboxes(
+                    options.filter(({ gruppe }) => gruppe === 'BBL')
+                )}
             </div>
             <div className="mbs">
                 <label className="form__label">Boligselskap</label>
-                {getCheckboxes(data.filter(({ gruppe }) => gruppe === 'BRL'))}
+                {getCheckboxes(
+                    options.filter(({ gruppe }) => gruppe === 'BRL')
+                )}
             </div>
         </div>
     )

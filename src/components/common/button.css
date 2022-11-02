@@ -1,0 +1,94 @@
+.btn {
+    font-family: var(--main-font-family);
+    font-size: 0.9rem;
+    font-weight: var(--main-text-font-weight);
+    line-height: 1.125rem;
+    min-height: 3.2rem;
+    min-width: 4rem;
+    display: inline-block;
+    padding: 0.875rem;
+    text-align: center;
+    border-radius: 4px;
+    outline: 0;
+    transition: none;
+    border: 0;
+    font-size: 0.9rem;
+}
+.btn:hover {
+    cursor: pointer;
+}
+.btn-primary {
+    border: 1px solid #175fab;
+    background-color: var(--main-link-text-color-blue);
+    color: #ffffff;
+}
+.btn-primary:hover {
+    background-color: var(--main-color-blue);
+    border: 1px solid #414141;
+    color: #ffffff;
+}
+.btn-secondary {
+    background-color: var(--main-card-hover-background-color);
+    border: 1px solid var(--main-border-color);
+    color: #414141;
+}
+.btn-secondary:hover {
+    background-color: var(--main-border-color);
+    color: #414141;
+}
+
+.btn:focus {
+    -webkit-box-shadow: 0 0 0 0.2rem rgb(38 143 255 / 50%);
+    -moz-box-shadow: 0 0 0 0.2rem rgba(38, 143, 255, 0.5);
+    box-shadow: 0 0 0 0.2rem rgb(38 143 255 / 50%);
+}
+
+.icon-button {
+    background-color: transparent;
+    border-radius: 4px;
+    border: none;
+    cursor: pointer;
+}
+
+.icon-button:hover {
+    color: var(--main-color-black);
+}
+
+.icon-button:focus {
+    box-shadow: 0 0 0 0.2rem rgb(38 143 255 / 50%);
+}
+
+.icon-button > svg:focus {
+    outline: none;
+}
+
+.btn-status {
+    min-height: 0;
+    padding: 0.3rem 0.8rem;
+    color: #5e6e82;
+    font-size: 0.8rem;
+    font-weight: 500;
+    border-radius: 32px;
+    opacity: 0.9;
+}
+.btn-status:hover {
+    opacity: 1;
+}
+
+.btn-status.info {
+    background-color: #fff;
+    border: 1px solid var(--main-bevar-divider-color);
+}
+
+.btn-status.success {
+    background-color: var(--main-color-green);
+    color: #fff;
+}
+.btn-status.warning {
+    background-color: var(--main-color-yellow);
+}
+.btn-status.error {
+    background-color: var(--main-color-red);
+    /* background-color: rgb(231, 76, 60); */
+    color: #fff;
+}

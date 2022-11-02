@@ -28,9 +28,9 @@ const Aktiviteter = () => {
 
     const buttons = [
         {
-            link: 'avtaler',
-            icon: AvtalerIcon,
-            title: 'Avtaler',
+            link: 'oversikt',
+            icon: AktivitetsoversiktIcon,
+            title: 'Oversikt',
         },
         {
             link: 'mine-frister',
@@ -43,9 +43,9 @@ const Aktiviteter = () => {
             title: 'Ny aktivitet',
         },
         {
-            link: 'oversikt',
-            icon: AktivitetsoversiktIcon,
-            title: 'Oversikt',
+            link: 'avtaler',
+            icon: AvtalerIcon,
+            title: 'Avtaler',
         },
     ]
 

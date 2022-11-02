@@ -10,11 +10,18 @@ interface ITemplateModalProps {
     show: boolean
 }
 
-const TemplateModal = ({ onTemplateSelect, onClose, show }: ITemplateModalProps) => {
+const TemplateModal = ({
+    onTemplateSelect,
+    onClose,
+    show,
+}: ITemplateModalProps) => {
     const { data, isLoading } = useAktivitsMaler()
-    const [selectedTemplate, setSelectedTemplate] = useState<AktivitetTemplate>()
+    const [selectedTemplate, setSelectedTemplate] =
+        useState<AktivitetTemplate>()
 
-    const templates = data?.sort((a: AktivitetTemplate, b: AktivitetTemplate) => (a.tittel > b.tittel ? 1 : -1))
+    const templates = data?.sort((a: AktivitetTemplate, b: AktivitetTemplate) =>
+        a.tittel > b.tittel ? 1 : -1
+    )
     useEffect(() => {
         if (templates?.length) {
             setSelectedTemplate(templates[0])

@@ -8,7 +8,7 @@ interface IAccordionItemProps {
 }
 
 const AccordionItem = ({ title, children }: IAccordionItemProps) => {
-    const contentElement = useRef(document.createElement("div"))
+    const contentElement = useRef(document.createElement('div'))
     const [isOpen, setIsOpen] = useState(false)
 
     const handleToggle = (e: SyntheticEvent) => {

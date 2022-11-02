@@ -13,6 +13,10 @@
     height: 3rem;
 }
 
+.table .icon-button {
+    color: #5e6e82;
+}
+
 .table tr:not(:last-child),
 .table thead > tr {
     border-bottom: 1px solid var(--main-bevar-divider-color);
@@ -21,4 +25,32 @@
 .table tr td,
 tr th {
     padding: 0.5rem;
+}
+
+.table-pagination {
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    border-top: 1px solid var(--main-bevar-divider-color);
+    width: 100%;
+    padding: 1rem 2rem 0 2rem;
+}
+
+.table-pagination select {
+    height: 2.5rem;
+    margin-bottom: 0;
+}
+
+.table-pagination .icon-button {
+    min-height: 2.5rem;
+    min-width: 2.5rem;
+    padding: 0.5rem;
+    font-weight: 500;
+    font-size: 1.2rem;
+}
+
+.table-pagination .double-chevron {
+    letter-spacing: -1px;
+    margin: 0 0.2rem;
 }

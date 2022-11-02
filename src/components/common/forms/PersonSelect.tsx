@@ -22,11 +22,16 @@ const PesonSelect = ({
     required = true,
     value,
 }: IPersonSelectProps) => {
-    const { data, isLoading } = useAnsvarligePersoner()
-
-    if (isLoading || !data) {
-        return null
-    }
+    const { data } = useAnsvarligePersoner()
+    const options = data
+        ? data
+        : [
+              {
+                  navn: 'Styreleder',
+                  kartotekId: 0,
+                  gruppe: '',
+              },
+          ]
 
     return (
         <div className={`${className ?? ''}`}>
@@ -42,7 +47,7 @@ const PesonSelect = ({
                 placeholder={placeholder}
                 required={required}
             >
-                {data
+                {options
                     .filter(
                         ({ gruppe }) => gruppe !== 'BBL' && gruppe !== 'BRL'
                     )
@@ -52,7 +57,7 @@ const PesonSelect = ({
                         </option>
                     ))}
                 <optgroup label={'Boligbyggelag'}>
-                    {data
+                    {options
                         .filter(({ gruppe }) => gruppe === 'BBL')
                         .map(({ navn, kartotekId }) => (
                             <option key={kartotekId} value={kartotekId}>
@@ -61,7 +66,7 @@ const PesonSelect = ({
                         ))}
                 </optgroup>
                 <optgroup label={'Boligselskap'}>
-                    {data
+                    {options
                         .filter(({ gruppe }) => gruppe === 'BRL')
                         .map(({ navn, kartotekId }) => (
                             <option key={kartotekId} value={kartotekId}>

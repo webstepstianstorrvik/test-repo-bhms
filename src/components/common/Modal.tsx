@@ -17,7 +17,7 @@ interface IModalProps {
 const Modal = ({ children, onClose, onSubmit, show, title }: IModalProps) => {
     const closeOnEscapeKeyDown = useCallback(
         (e: KeyboardEvent) => {
-            if (e.key === "Escape") {
+            if (e.key === 'Escape') {
                 onClose()
             }
         },

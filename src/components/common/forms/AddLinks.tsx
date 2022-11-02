@@ -52,10 +52,7 @@ const AddLinks = ({
                         placeholder={placeholder}
                     />
                 </div>
-                <Button
-                    className="align-sc mts"
-                    onClick={handleButtonClick}
-                >
+                <Button className="align-sc mts" onClick={handleButtonClick}>
                     Legg til
                 </Button>
             </div>

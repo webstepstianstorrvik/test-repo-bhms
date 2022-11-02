@@ -13,11 +13,13 @@ interface ILeggTilVedleggProps {
     values: string[]
 }
 
-const LeggTilVedlegg = ({ handleInputChange, values }: ILeggTilVedleggProps) => {
+const LeggTilVedlegg = ({
+    handleInputChange,
+    values,
+}: ILeggTilVedleggProps) => {
     const skjemasamling = useSkjemasamlinger()
-    const inputRef = useRef(document.createElement("input"))
+    const inputRef = useRef(document.createElement('input'))
     const [files, setFiles] = useState<File[]>([])
-
 
     // TODO: Fix this method to destructure files correctly
     const handleFileUpload = (e: ChangeEvent<HTMLInputElement>) => {

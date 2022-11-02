@@ -54,6 +54,7 @@ import ProtectedRoute from './ProtectedRoute'
 import { useAuth } from 'react-oidc-context'
 import TidligereRevisjoner from '../risikovurdering/tidligere-revisjoner/TidligereRevisjoner'
 import SeRisikovurdering from '../risikovurdering/se-risikovurdering/SeRisikovurdering'
+import Aktivitet from '../aktiviteter/Aktivitet'
 
 const Routes = () => {
     const auth = useAuth()
@@ -123,6 +124,14 @@ const Routes = () => {
                         element={
                             <ProtectedRoute>
                                 <Avtaler />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="aktiviteter/aktivitet/:aktivitetId"
+                        element={
+                            <ProtectedRoute>
+                                <Aktivitet />
                             </ProtectedRoute>
                         }
                     />

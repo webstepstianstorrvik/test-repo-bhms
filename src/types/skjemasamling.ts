@@ -5,8 +5,8 @@ export interface Skjemasamling {
     filnavn: string
     opprettet: string
     endret: string
-    versjon: string,
-    brlId: number,
-    bblId: number,
-    ansatte: string,
+    versjon: string
+    brlId: number
+    bblId: number
+    ansatte: string
 }

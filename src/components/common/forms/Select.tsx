@@ -3,13 +3,13 @@ import React from 'react'
 interface ISelectProps {
     className?: string
     id: string
-    label: string
+    label?: string
     name: string
     onChange: (event: any) => void
-    options: string[]
+    options: string[] | number[]
     placeholder?: string
     required?: boolean
-    value: string
+    value: string | number
 }
 
 const Select = ({
@@ -25,9 +25,11 @@ const Select = ({
 }: ISelectProps) => {
     return (
         <div className={`${className}`}>
-            <label className="form__label" htmlFor={id}>
-                {label}
-            </label>
+            {label && (
+                <label className="form__label" htmlFor={id}>
+                    {label}
+                </label>
+            )}
             <select
                 className="form__control"
                 id={id}

@@ -1,4 +1,4 @@
 export interface Sjekkliste {
-    sjekklisteMalId: number,
-    tittel: string,
+    sjekklisteMalId: number
+    tittel: string
 }

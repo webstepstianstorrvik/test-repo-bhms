@@ -58,12 +58,10 @@ const NyAktivitet = () => {
         if (target.type === 'checkbox') {
             var currentValues = formValues[name as keyof Aktivitet]
             if (Array.isArray(currentValues)) {
-                value =
-                target.checked
+                value = target.checked
                     ? [...currentValues, target.value]
                     : currentValues.filter((e) => e !== target.value)
             }
-            
         }
 
         setFormValues((values) => ({
@@ -74,10 +72,10 @@ const NyAktivitet = () => {
 
     const handleUseTemplate = (template: AktivitetTemplate) => {
         setTemplateModalOpen(false)
-        setFormValues({ 
+        setFormValues({
             ...initialForm,
             ...template,
-            status: "Aktiv"
+            status: 'Aktiv',
         })
     }
 
@@ -91,6 +89,7 @@ const NyAktivitet = () => {
         console.log(formValues)
     }
 
+    console.log(formValues)
 
     return (
         <>
