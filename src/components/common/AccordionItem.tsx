@@ -4,10 +4,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 interface IAccordionItemProps {
     title: string
+    titleCount?: number
     children?: React.ReactNode
 }
 
-const AccordionItem = ({ title, children }: IAccordionItemProps) => {
+const AccordionItem = ({
+    title,
+    titleCount,
+    children,
+}: IAccordionItemProps) => {
     const contentElement = useRef(document.createElement('div'))
     const [isOpen, setIsOpen] = useState(false)
 
@@ -24,7 +29,15 @@ const AccordionItem = ({ title, children }: IAccordionItemProps) => {
                 className="accordion_item__button form__control"
                 onClick={(e) => handleToggle(e)}
             >
-                {title}
+                <div>
+                    {titleCount !== undefined ? (
+                        <>
+                            {title} (<b className="fw600">{titleCount}</b>)
+                        </>
+                    ) : (
+                        title
+                    )}
+                </div>
                 <span className="accordion_item__control">
                     {isOpen ? 'Vis mindre' : 'Vis mer'}
                     <FontAwesomeIcon

@@ -9,6 +9,7 @@ import Heading from './components/common/Heading'
 import { useAuth } from 'react-oidc-context'
 import { useUser } from './hooks/useUser'
 import { ToastContainer } from 'react-toastify'
+import ReactTooltip from 'react-tooltip'
 
 export const Context = createContext({ isMobile: false })
 
@@ -68,6 +69,7 @@ const App = () => {
                 <Footer />
             </main>
             <ToastContainer autoClose={2500} />
+            <ReactTooltip id="main" place="top" type="dark" effect="float" />
         </Context.Provider>
     )
 }

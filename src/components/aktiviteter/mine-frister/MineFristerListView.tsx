@@ -3,6 +3,9 @@ import Table from '../../common/Table'
 import { Aktivitet } from './MineFrister'
 
 import { createColumnHelper } from '@tanstack/react-table'
+import Select from '../../common/forms/Select'
+import Button from '../../common/Button'
+import { NavLink } from 'react-router-dom'
 
 interface IMineFristerListViewProps {
     events: Aktivitet[]
@@ -42,15 +45,18 @@ const MineFristerListView = ({ events }: IMineFristerListViewProps) => {
 
     return (
         <div className="list-view">
-            <div className="buttons-wrapper">
-                <select
-                    className="form-select"
+            <div className="flex ml-auto">
+                <Select
+                    className="wauto mb0 mrm"
+                    id="aktivitet-status-filter"
+                    name="aktivitet-status-filter"
                     onChange={(event) => setFilter(event.target.value)}
-                >
-                    <option>Aktive</option>
-                    <option>Stoppet</option>
-                </select>
-                <button className="btn btn-primary">Ny aktivitet</button>
+                    options={['Alle', 'Aktive', 'Deaktiverte']}
+                    value={filter}
+                />
+                <NavLink to="#">
+                    <Button>Legg til ny frist</Button>
+                </NavLink>
             </div>
             <Table data={filteredData} columns={columns} />
         </div>

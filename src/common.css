@@ -525,6 +525,38 @@
 .scale20 {
     transform: scale(2);
 }
+.fw100 {
+    font-weight: 100;
+}
+.fw200 {
+    font-weight: 200;
+}
+.fw300 {
+    font-weight: 300;
+}
+.fw400 {
+    font-weight: 400;
+}
+.fw500 {
+    font-weight: 500;
+}
+.fw600 {
+    font-weight: 600;
+}
+.fw700 {
+    font-weight: 700;
+}
+.fw800 {
+    font-weight: 800;
+}
+.fw900 {
+    font-weight: 900;
+}
+.text-nowrap {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
 .noselect {
     -webkit-touch-callout: none; /* iOS Safari */
     -webkit-user-select: none; /* Safari */

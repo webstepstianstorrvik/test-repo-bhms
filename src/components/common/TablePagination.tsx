@@ -38,34 +38,34 @@ const TablePagination = <T,>({ table, size }: ITablePaginationProps<T>) => {
 
             <div className="mll">
                 <Button
-                    className="icon-button double-chevron"
+                    className="double-chevron"
                     onClick={() => table.setPageIndex(0)}
                     disabled={!table.getCanPreviousPage()}
-                    variant="secondary"
+                    variant="icon"
                 >
                     &lt;&lt;
                 </Button>
                 <Button
-                    className="icon-button"
+                    className=""
                     onClick={() => table.previousPage()}
                     disabled={!table.getCanPreviousPage()}
-                    variant="secondary"
+                    variant="icon"
                 >
                     &lt;
                 </Button>
                 <Button
-                    className="icon-button"
+                    className=""
                     onClick={() => table.nextPage()}
                     disabled={!table.getCanNextPage()}
-                    variant="secondary"
+                    variant="icon"
                 >
                     &gt;
                 </Button>
                 <Button
-                    className="icon-button double-chevron"
+                    className="double-chevron"
                     onClick={() => table.setPageIndex(table.getPageCount() - 1)}
                     disabled={!table.getCanNextPage()}
-                    variant="secondary"
+                    variant="icon"
                 >
                     &gt;&gt;
                 </Button>

@@ -128,14 +128,6 @@ const Routes = () => {
                         }
                     />
                     <Route
-                        path="aktiviteter/aktivitet/:aktivitetId"
-                        element={
-                            <ProtectedRoute>
-                                <Aktivitet />
-                            </ProtectedRoute>
-                        }
-                    />
-                    <Route
                         path="aktiviteter/mine-frister"
                         element={
                             <ProtectedRoute>
@@ -156,6 +148,14 @@ const Routes = () => {
                         element={
                             <ProtectedRoute>
                                 <OversiktAktiviteter />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="aktiviteter/oversikt/:aktivitetId"
+                        element={
+                            <ProtectedRoute>
+                                <Aktivitet />
                             </ProtectedRoute>
                         }
                     />

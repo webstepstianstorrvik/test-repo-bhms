@@ -51,7 +51,7 @@
     margin-bottom: 1rem;
 }
 
-.modal__content-top .icon-button {
+.modal__content-top .btn-icon {
     left: 6px;
     position: relative;
     color: var(--main-text-color-black);

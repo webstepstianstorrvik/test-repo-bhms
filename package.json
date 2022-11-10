@@ -4,11 +4,11 @@
     "private": true,
     "dependencies": {
         "@datepicker-react/styled": "^2.8.4",
-        "@tanstack/react-query": "^4.12.0",
         "@fortawesome/fontawesome-svg-core": "^6.1.2",
         "@fortawesome/free-regular-svg-icons": "^6.1.2",
         "@fortawesome/free-solid-svg-icons": "^6.1.2",
         "@fortawesome/react-fontawesome": "^0.2.0",
+        "@tanstack/react-query": "^4.12.0",
         "@tanstack/react-table": "^8.5.15",
         "@testing-library/jest-dom": "^5.16.5",
         "@testing-library/react": "^13.4.0",
@@ -21,6 +21,7 @@
         "date-fns": "^2.29.3",
         "eslint-config-prettier": "^8.5.0",
         "express": "^4.17.2",
+        "is-url": "^1.2.4",
         "prettier": "^2.7.1",
         "react": "^18.2.0",
         "react-big-calendar": "^1.5.0",
@@ -31,6 +32,7 @@
         "react-router-dom": "^6.2.1",
         "react-scripts": "^5.0.1",
         "react-toastify": "^9.0.1",
+        "react-tooltip": "^4.5.0",
         "react-transition-group": "^4.4.5",
         "recharts": "^2.1.13",
         "typescript": "^4.8.4",
@@ -63,10 +65,12 @@
         ]
     },
     "devDependencies": {
-        "http-request-mock": "^1.8.2",
+        "@types/is-url": "^1.2.30",
         "@types/react-big-calendar": "^0.38.2",
         "@types/react-modal": "^3.13.1",
         "@types/react-table": "^7.7.12",
-        "@types/react-transition-group": "^4.4.5"
+        "@types/react-toggle": "^4.0.3",
+        "@types/react-transition-group": "^4.4.5",
+        "http-request-mock": "^1.8.2"
     }
 }

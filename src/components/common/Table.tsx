@@ -61,7 +61,7 @@ const Table = <T,>({ data, columns }: ITableProps<T>) => {
                                                     {...{
                                                         className:
                                                             header.column.getCanSort()
-                                                                ? 'cursor-pointer select-none'
+                                                                ? 'cpointer noselect'
                                                                 : '',
                                                         onClick:
                                                             header.column.getToggleSortingHandler(),

@@ -7,9 +7,14 @@ import Button from '../../common/Button'
 import { NavLink } from 'react-router-dom'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faPenToSquare } from '@fortawesome/free-regular-svg-icons'
-import { faArrowUpRightFromSquare } from '@fortawesome/free-solid-svg-icons'
+import {
+    faArrowUpRightFromSquare,
+    faLock,
+} from '@fortawesome/free-solid-svg-icons'
 import StatusButton from '../../common/StatusButton'
 import Spinner from '../../common/Spinner'
+import Select from '../../common/forms/Select'
+import ReactTooltip from 'react-tooltip'
 
 const Oversikt = () => {
     const { data, isLoading } = useAktiviteter()
@@ -22,9 +27,15 @@ const Oversikt = () => {
             cell: (info) => info.getValue(),
             header: () => <span>Tittel</span>,
         }),
-        columnHelper.accessor('repetisjon', {
-            cell: (info) => info.getValue(),
-            header: () => <span>Hyppighet</span>,
+        columnHelper.accessor('aktivitetId', {
+            cell: (info) => (
+                <NavLink to={`/aktiviteter/oversikt/${info.getValue()}`}>
+                    <Button variant="secondary" size="small">
+                        1
+                    </Button>
+                </NavLink>
+            ),
+            header: () => <span>Frister</span>,
         }),
         columnHelper.accessor('fristDato', {
             cell: (info) => (
@@ -38,24 +49,47 @@ const Oversikt = () => {
             ),
             header: () => <span>Neste frist</span>,
         }),
+        columnHelper.accessor('fristDato', {
+            cell: (info) => info.getValue(),
+            header: () => <span>Sist utført</span>,
+        }),
         columnHelper.accessor('ansvarligUtforelse', {
-            cell: (info) => info.getValue(),
-            header: () => <span>Ansvarlig utførelse</span>,
-        }),
-        columnHelper.accessor('status', {
-            cell: (info) => info.getValue(),
-            header: () => <span>Status</span>,
-        }),
-        columnHelper.accessor('aktivitetId', {
             cell: (info) => (
-                <NavLink to={`/aktiviteter/aktivitet/${info.getValue()}`}>
-                    <button className="icon-button">
+                <>
+                    <span className="db">
+                        {info.row.original.ansvarligUtforelse}
+                    </span>
+                    <span className="db">
+                        {info.row.original.ansvarligOppfolging}
+                    </span>
+                </>
+            ),
+            header: () => <span>Ansvarlige</span>,
+        }),
+        columnHelper.accessor('repetisjon', {
+            cell: (info) => info.getValue(),
+            header: () => <div>Hyppighet</div>,
+        }),
+        columnHelper.accessor('readonlyMaster', {
+            cell: (info) => (
+                <NavLink
+                    data-for="locked-tip"
+                    data-tip-disable={!info.getValue()}
+                    data-tip="Aktiviteten er låst av borettslaget"
+                    to={`/aktiviteter/oversikt/${info.getValue()}`}
+                >
+                    <ReactTooltip id="locked-tip" />
+                    <Button
+                        variant="secondary"
+                        size="small"
+                        disabled={info.getValue()}
+                    >
                         <FontAwesomeIcon
-                            className="scale12 mrs"
-                            icon={faPenToSquare}
+                            className="mrs"
+                            icon={info.getValue() ? faLock : faPenToSquare}
                         />
-                        Rediger
-                    </button>
+                        {info.getValue() ? 'Låst' : 'Rediger'}
+                    </Button>
                 </NavLink>
             ),
             header: () => <span>Detaljer</span>,
@@ -81,14 +115,14 @@ const Oversikt = () => {
     return (
         <>
             <div className="flex fr mtl">
-                <select
-                    className="form__control wauto mb0 mrm"
+                <Select
+                    className="wauto mb0 mrm"
+                    id="aktivitet-status-filter"
+                    name="aktivitet-status-filter"
                     onChange={(event) => setFilter(event.target.value)}
-                >
-                    <option>Alle</option>
-                    <option>Aktive</option>
-                    <option>Deaktivert</option>
-                </select>
+                    options={['Alle', 'Aktive', 'Deaktiverte']}
+                    value={filter}
+                />
                 <NavLink to="./../ny-aktivitet">
                     <Button>Legg til ny aktivitet</Button>
                 </NavLink>

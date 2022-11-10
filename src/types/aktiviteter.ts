@@ -10,6 +10,7 @@ export interface Aktivitet {
     ansvarligUtforelse: string
     ansvarligOppfolging: string
     kopiTil: string
+    readonlyMaster: boolean
     sjekkliste: string[]
     vedlegg: string[]
     vedleggUploaded: string[]
@@ -43,4 +44,11 @@ export interface AktiviteterResponse {
     totalRows: number
     totalPages: number
     resultData: Aktivitet[]
+}
+
+export interface AktivitetRepetisjon {
+    aktivitetRepetisjonId: number
+    tittel: string
+    termin: string
+    veiviser: string
 }

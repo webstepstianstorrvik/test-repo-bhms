@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import Button from '../Button'
 import { faLink, faTrash } from '@fortawesome/free-solid-svg-icons'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import isUrl from 'is-url'
+import { toast } from 'react-toastify'
 
 interface IAddLinksProps {
     className?: string
@@ -31,8 +33,12 @@ const AddLinks = ({
     }
 
     const handleButtonClick = () => {
-        onChange(generateEvent(input, true))
-        setInput('')
+        if (isUrl(input)) {
+            onChange(generateEvent(input, true))
+            setInput('')
+        } else {
+            toast.error(`'${input}' is not a valid url`)
+        }
     }
 
     return (
@@ -63,10 +69,14 @@ const AddLinks = ({
                     <ul className="phl">
                         {values.map((value) => (
                             <li key={value} className="flex justify-csb pvs">
-                                <div>
-                                    <button className="icon-button">
+                                <span className="text-nowrap">
+                                    <a
+                                        href={value}
+                                        target="_blank"
+                                        rel="noreferrer"
+                                    >
                                         <FontAwesomeIcon
-                                            className="cpointer"
+                                            className="cpointer mrs"
                                             icon={faLink}
                                             color="#5e6e82"
                                             onClick={() =>
@@ -75,17 +85,11 @@ const AddLinks = ({
                                                 )
                                             }
                                         />
-                                    </button>
-                                    <a
-                                        href={value}
-                                        target="_blank"
-                                        rel="noreferrer"
-                                    >
                                         {value}
                                     </a>
-                                </div>
+                                </span>
                                 <button
-                                    className="icon-button"
+                                    className="icon-button mll"
                                     onClick={() =>
                                         onChange(generateEvent(value, false))
                                     }

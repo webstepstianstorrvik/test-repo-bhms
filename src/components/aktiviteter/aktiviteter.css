@@ -9,6 +9,22 @@
 }
 
 @media (min-width: 1280px) {
+    .aktivitet,
+    .ny-aktivitet {
+        display: flex;
+    }
+
+    .aktivitet .aktivitet__detaljer,
+    .ny-aktivitet .aktivitet-form {
+        flex: 60%;
+    }
+
+    .aktivitet .aktivitet__frister,
+    .ny-aktivitet .aktivitet-koblinger {
+        flex: 40%;
+        margin-left: 3.5rem;
+    }
+
     .aktiviteter .buttons {
         flex: 2;
     }

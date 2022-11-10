@@ -7,8 +7,9 @@ interface IButtonProps {
     disabled?: boolean
     fullWidth?: boolean
     onClick?: (event: any) => void
+    size?: 'small' | 'medium' | 'large'
     type?: 'button' | 'submit' | 'reset'
-    variant?: 'primary' | 'secondary'
+    variant?: 'primary' | 'secondary' | 'icon'
 }
 
 const Button = ({
@@ -17,12 +18,13 @@ const Button = ({
     disabled = false,
     fullWidth = false,
     onClick,
+    size = 'medium',
     type = 'button',
     variant = 'primary',
 }: IButtonProps) => {
     return (
         <button
-            className={`btn btn-${variant} ${className}`}
+            className={`btn btn-${variant} btn-${size} ${className}`}
             disabled={disabled}
             onClick={onClick}
             style={fullWidth ? { width: '100%' } : {}}

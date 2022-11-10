@@ -1,18 +1,22 @@
 import './heading.css'
 
-import React from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 const Heading = () => {
     const location = useLocation()
-    const paths = location.pathname.split('/').filter((path) => path)
-    const heading = paths[paths.length - 1]
+    var paths = location.pathname.split('/').filter((path) => path)
+    var heading = paths[paths.length - 1]
 
     /** @TODO: START Fix this hack to avoid broken backlink in haandbok */
     if (paths[0] === 'haandbok') {
         paths[0] = 'brukerstotte'
     }
     /** @Todo: END */
+
+    if (paths[0] === 'aktiviteter' && paths[1] === 'oversikt' && paths[2]) {
+        paths = paths.slice(0, 2)
+        heading = 'Aktivitet'
+    }
 
     const formatText = (text: string) => {
         return (

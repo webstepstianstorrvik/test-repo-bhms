@@ -9,7 +9,7 @@ import Button from './Button'
 interface IModalProps {
     children: ReactNode
     onClose: () => void
-    onSubmit: (event: any) => void
+    onSubmit?: (event: any) => void
     show: boolean
     title: string
 }
@@ -44,7 +44,7 @@ const Modal = ({ children, onClose, onSubmit, show, title }: IModalProps) => {
                 >
                     <div className="modal__content-top">
                         <h1>{title}</h1>
-                        <button className="icon-button" onClick={onClose}>
+                        <button className="btn-icon" onClick={onClose}>
                             <FontAwesomeIcon
                                 className="cpointer"
                                 icon={faXmark}
@@ -55,11 +55,13 @@ const Modal = ({ children, onClose, onSubmit, show, title }: IModalProps) => {
                     <div className="modal__content-main">{children}</div>
                     <div className="modal__content-bottom">
                         <Button variant="secondary" onClick={onClose}>
-                            Avbryt
+                            {onSubmit ? 'Avbryt' : 'Lukk'}
                         </Button>
-                        <Button className="mlm" onClick={onSubmit}>
-                            Bekreft
-                        </Button>
+                        {onSubmit && (
+                            <Button className="mlm" onClick={onSubmit}>
+                                Bekreft
+                            </Button>
+                        )}
                     </div>
                 </div>
             </div>

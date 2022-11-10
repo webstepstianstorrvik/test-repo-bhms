@@ -13,7 +13,7 @@
     height: 3rem;
 }
 
-.table .icon-button {
+.table .btn-icon {
     color: #5e6e82;
 }
 
@@ -42,11 +42,10 @@ tr th {
     margin-bottom: 0;
 }
 
-.table-pagination .icon-button {
+.table-pagination .btn-icon {
     min-height: 2.5rem;
     min-width: 2.5rem;
     padding: 0.5rem;
-    font-weight: 500;
     font-size: 1.2rem;
 }
 
