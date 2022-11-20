@@ -1,3 +1,5 @@
+import { News } from './types/news'
+
 export const boligselskaper = [
     {
         type: 'Kontakt',
@@ -1060,7 +1062,7 @@ export const aktiviteter = {
         {
             aktivitetId: 1,
             status: 'Aktiv',
-            tittel: 'Brannalarm - årlig kontroll',
+            tittel: 'Brannalarm - Kontroll av annlegg',
             beskrivelse:
                 'Årlig kontroll utføres av firma med nødvendig kompetanse om boligselskapets brannalarmanlegg. Ved alarmsentral som ikke er koblet til brannvesenet, gis nødvendig opplæring til instruert personell i boligselskapet for betjening av alarmsentral. Ved funksjonstest av anlegget varsles beboere i god tid.',
             fristDato: '2022-11-01',
@@ -1129,7 +1131,7 @@ export const aktiviteter = {
         {
             aktivitetId: 4,
             status: 'Deaktivert',
-            tittel: 'Batteri til røykvarslere',
+            tittel: 'Rengjøring av fellesarealer',
             beskrivelse:
                 'Utdeling av 1 stk batteri til røykvarsler i hver leilighet. I utgangspunktet har beboer selv ansvar for skifte av batteri i røykvarsler. Styret i boligselskapet har valgt å gjøre dette til et årlig tiltak.',
             fristDato: '2022-11-11',
@@ -1174,3 +1176,71 @@ export const aktiviteter = {
         },
     ],
 }
+
+export const news: News[] = [
+    {
+        id: 0,
+        author: 'Rebekka Aadland',
+        category: 'Aktiviteter',
+        content:
+            'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
+        published: '2022-11-25T00:00:00.000Z',
+        ingress:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        imageUrl:
+            'https://www.sheknows.com/wp-content/uploads/2018/08/fajkx3pdvvt9ax6btssg.jpeg?w=1255',
+        title: 'Derfor er hunden din beste venn',
+    },
+    {
+        id: 1,
+        author: 'Joachim Eivindsen',
+        category: 'Aktiviteter',
+        content:
+            'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
+        published: '2022-11-30T00:00:00.000Z',
+        ingress:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        imageUrl:
+            'https://machinelearningmastery.com/wp-content/uploads/2017/01/A-Gentle-Introduction-to-the-Random-Walk-for-Times-Series-Forecasting-with-Python.jpg',
+        title: 'Den gylne okse',
+    },
+    {
+        id: 2,
+        author: 'Joachim Eivindsen',
+        category: 'Avvik/Tiltak',
+        content:
+            'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
+        published: '2022-10-05T00:00:00.000Z',
+        ingress:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        imageUrl:
+            'https://cdn-media-2.freecodecamp.org/w1280/5f9c9d8c740569d1a4ca3853.jpg',
+        title: 'Norske sukkervaner',
+    },
+    {
+        id: 3,
+        author: 'Joachim Eivindsen',
+        category: 'Avvik/Tiltak',
+        content:
+            'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
+        published: '2022-08-08T00:00:00.000Z',
+        ingress:
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.",
+        imageUrl:
+            'https://www.brightful.me/content/images/2020/07/david-kovalenko-G85VuTpw6jg-unsplash.jpg',
+        title: 'Flight 828: Where did it go?',
+    },
+    {
+        id: 4,
+        author: 'Joachim Eivindsen',
+        category: 'Risikovurdering',
+        content:
+            'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32. The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections 1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact original form, accompanied by English versions from the 1914 translation by H. Rackham.',
+        published: '2022-10-29T00:00:00.000Z',
+        ingress:
+            'Lorem Ipsum is simply dummy text of the printing and typesetting industry. ',
+        imageUrl:
+            'https://www.sciencenews.org/wp-content/uploads/2021/02/022421_mt_number-generator_feat-1030x580.jpg',
+        title: 'Derfor er ikke terninger så tilfeldige som folk tror',
+    },
+]

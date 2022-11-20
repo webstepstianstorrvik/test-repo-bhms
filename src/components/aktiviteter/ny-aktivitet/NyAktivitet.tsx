@@ -76,8 +76,6 @@ const NyAktivitet = () => {
         console.log(formValues)
     }
 
-    console.log(formValues)
-
     return (
         <>
             <div className="fr mtm">

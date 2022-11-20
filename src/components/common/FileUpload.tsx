@@ -27,8 +27,6 @@ const FileUpload = () => {
         ])
     }
 
-    console.log(selectFiles)
-
     return (
         <div className="file-upload">
             <FileDrop

@@ -7,7 +7,6 @@ import SidebarMenu from './components/menu/SidebarMenu'
 import { useLocation } from 'react-router-dom'
 import Heading from './components/common/Heading'
 import { useAuth } from 'react-oidc-context'
-import { useUser } from './hooks/useUser'
 import { ToastContainer } from 'react-toastify'
 import ReactTooltip from 'react-tooltip'
 
@@ -18,9 +17,6 @@ const App = () => {
     const auth = useAuth()
     const [isMenuOpen, setIsMenuOpen] = useState(true)
     const [isMobile, setIsMobile] = useState(false)
-    const user = useUser()
-
-    console.log(user)
 
     useEffect(() => {
         if (isMobile) {

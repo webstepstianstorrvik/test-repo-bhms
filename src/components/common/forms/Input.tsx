@@ -3,7 +3,7 @@ import React from 'react'
 interface IInputProps {
     className?: string
     id: string
-    label: string
+    label?: string
     name: string
     onChange: (event: any) => void
     placeholder?: string
@@ -25,9 +25,11 @@ const Input = ({
 }: IInputProps) => {
     return (
         <div className={`${className}`}>
-            <label className="form__label" htmlFor={id}>
-                {label}
-            </label>
+            {label && (
+                <label className="form__label" htmlFor={id}>
+                    {label}
+                </label>
+            )}
             <input
                 className="form__control"
                 id={id}

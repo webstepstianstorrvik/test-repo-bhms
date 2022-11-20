@@ -1,14 +1,22 @@
 import './minefrister.css'
 
-import React, { useState, useMemo } from 'react'
+import React, { useMemo } from 'react'
 import Calendar from '../../common/Calendar'
 
 import CalendarButtonIcon from '../../../assets/img/icons/handbok/skjema.svg'
 import ListButtonIcon from '../../../assets/img/icons/aktiviteter/oversikt.svg'
 import PagesButtonIcon from '../../../assets/img/icons/arkiv/arkiv.svg'
 import MineFristerListView from './MineFristerListView'
+import { useSearchParams } from 'react-router-dom'
 
-export interface Aktivitet {
+export enum VIEW {
+    CALENDAR = 'calendar',
+    LIST = 'list',
+    SINGLE = 'single',
+}
+
+export interface Frist {
+    aktivitetId: number
     tittel: string
     hyppighet: string
     nesteFrist: string
@@ -18,11 +26,13 @@ export interface Aktivitet {
 }
 
 const MineFrister = () => {
-    const [view, setView] = useState('CALENDAR')
+    const [searchParams, setSearchParams] = useSearchParams()
+    const view = searchParams.get('view')
 
-    const events: Aktivitet[] = useMemo(
+    const events: Frist[] = useMemo(
         () => [
             {
+                aktivitetId: 0,
                 tittel: 'Årlig kontroll av brannalarmanlegg',
                 hyppighet: 'Årlig',
                 nesteFrist: '19.08.2022',
@@ -31,6 +41,7 @@ const MineFrister = () => {
                 isActive: true,
             },
             {
+                aktivitetId: 1,
                 tittel: 'Kontroll av sprinkelanlegg',
                 hyppighet: 'Ukentlig',
                 nesteFrist: '08.08.2022',
@@ -39,6 +50,7 @@ const MineFrister = () => {
                 isActive: false,
             },
             {
+                aktivitetId: 2,
                 tittel: 'Kontroll av garasjeport',
                 hyppighet: 'Månedlig',
                 nesteFrist: '10.08.2022',
@@ -47,6 +59,7 @@ const MineFrister = () => {
                 isActive: true,
             },
             {
+                aktivitetId: 3,
                 tittel: 'Årlig kontroll av røykventilasjon',
                 hyppighet: 'Årlig',
                 nesteFrist: '13.08.2021',
@@ -64,7 +77,7 @@ const MineFrister = () => {
                 <div className="toggle-view-button-wrapper">
                     <button
                         className="btn btn-secondary toggle-view-button"
-                        onClick={() => setView('CALENDAR')}
+                        onClick={() => setSearchParams({ view: VIEW.CALENDAR })}
                     >
                         <img
                             src={CalendarButtonIcon}
@@ -73,13 +86,13 @@ const MineFrister = () => {
                     </button>
                     <button
                         className="btn btn-secondary toggle-view-button"
-                        onClick={() => setView('LIST')}
+                        onClick={() => setSearchParams({ view: VIEW.LIST })}
                     >
                         <img src={ListButtonIcon} alt="list-toggle-icon" />
                     </button>
                     <button
                         className="btn btn-secondary toggle-view-button"
-                        onClick={() => setView('PAGES')}
+                        onClick={() => setSearchParams({ view: VIEW.SINGLE })}
                     >
                         <img src={PagesButtonIcon} alt="pages-toggle-icon" />
                     </button>
@@ -95,8 +108,8 @@ const MineFrister = () => {
             </div>
 
             <div className="mine-frister-main">
-                {view === 'CALENDAR' && <Calendar events={[]} />}
-                {view === 'LIST' && <MineFristerListView events={events} />}
+                {view === VIEW.CALENDAR && <Calendar events={[]} />}
+                {view === VIEW.LIST && <MineFristerListView events={events} />}
             </div>
         </>
     )

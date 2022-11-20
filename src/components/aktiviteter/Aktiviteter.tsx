@@ -33,7 +33,7 @@ const Aktiviteter = () => {
             title: 'Oversikt',
         },
         {
-            link: 'mine-frister',
+            link: 'mine-frister?view=calendar',
             icon: MineFristerIcon,
             title: 'Mine frister',
         },

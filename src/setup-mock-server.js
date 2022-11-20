@@ -5,6 +5,7 @@ import {
     aktivitetsmaler,
     ansvarligPerson,
     boligselskaper,
+    news,
     sjekkliste,
     skjemasamling,
 } from './mock-data'
@@ -93,6 +94,78 @@ export const setupMock = () => {
         (_, res) => {
             res.status = 200
             return aktivitetRepetisjoner
+        },
+        {
+            delay: 500,
+            header: { 'Content-Type': 'application/json' },
+        }
+    )
+
+    mocker.get(
+        'https://api.bevarhms.no/api/nyheter',
+        (_, res) => {
+            res.status = 200
+            return news
+        },
+        {
+            delay: 500,
+            header: { 'Content-Type': 'application/json' },
+        }
+    )
+
+    mocker.get(
+        'https://api.bevarhms.no/api/nyheter/0',
+        (_, res) => {
+            res.status = 200
+            return news[0]
+        },
+        {
+            delay: 500,
+            header: { 'Content-Type': 'application/json' },
+        }
+    )
+
+    mocker.get(
+        'https://api.bevarhms.no/api/nyheter/1',
+        (_, res) => {
+            res.status = 200
+            return news[1]
+        },
+        {
+            delay: 500,
+            header: { 'Content-Type': 'application/json' },
+        }
+    )
+
+    mocker.get(
+        'https://api.bevarhms.no/api/nyheter/2',
+        (_, res) => {
+            res.status = 200
+            return news[2]
+        },
+        {
+            delay: 500,
+            header: { 'Content-Type': 'application/json' },
+        }
+    )
+
+    mocker.get(
+        'https://api.bevarhms.no/api/nyheter/3',
+        (_, res) => {
+            res.status = 200
+            return news[3]
+        },
+        {
+            delay: 500,
+            header: { 'Content-Type': 'application/json' },
+        }
+    )
+
+    mocker.get(
+        'https://api.bevarhms.no/api/nyheter/4',
+        (_, res) => {
+            res.status = 200
+            return news[4]
         },
         {
             delay: 500,

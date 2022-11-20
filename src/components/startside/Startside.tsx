@@ -10,7 +10,7 @@ import TilsynFraMyndigheteneIcon from '../../assets/img/icons/startside/tilsynfr
 import Card from '../common/Card'
 import Borettslaget from './Borettslaget'
 import MineFrister from './MineFrister'
-import Nyheter from './Nyheter'
+import NewsSlider from './NewsSlider'
 
 const Startside = () => {
     const buttons = [
@@ -49,8 +49,8 @@ const Startside = () => {
                 </Card>
             </div>
             <div className="nyheter-wrapper">
-                <Card title="Nyheter">
-                    <Nyheter />
+                <Card>
+                    <NewsSlider />
                 </Card>
             </div>
             <div className="aktuelle-tema-wrapper">

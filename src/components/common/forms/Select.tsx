@@ -1,4 +1,5 @@
 import React from 'react'
+import { NameValue } from '../../../types/common'
 
 interface ISelectProps {
     className?: string
@@ -6,7 +7,7 @@ interface ISelectProps {
     label?: string
     name: string
     onChange: (event: any) => void
-    options: string[] | number[]
+    options: NameValue[] | string[] | number[]
     placeholder?: string
     required?: boolean
     value: string | number
@@ -39,11 +40,17 @@ const Select = ({
                 placeholder={placeholder}
                 required={required}
             >
-                {options.map((option) => (
-                    <option key={option} value={option}>
-                        {option}
-                    </option>
-                ))}
+                {options.map((option) =>
+                    typeof option === 'object' ? (
+                        <option key={option.value} value={option.value}>
+                            {option.name}
+                        </option>
+                    ) : (
+                        <option key={option} value={option}>
+                            {option}
+                        </option>
+                    )
+                )}
             </select>
         </div>
     )

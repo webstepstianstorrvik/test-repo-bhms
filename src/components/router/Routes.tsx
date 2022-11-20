@@ -55,6 +55,7 @@ import { useAuth } from 'react-oidc-context'
 import TidligereRevisjoner from '../risikovurdering/tidligere-revisjoner/TidligereRevisjoner'
 import SeRisikovurdering from '../risikovurdering/se-risikovurdering/SeRisikovurdering'
 import Aktivitet from '../aktiviteter/Aktivitet'
+import NewsArticle from '../nyheter/NewsArticle'
 
 const Routes = () => {
     const auth = useAuth()
@@ -325,6 +326,14 @@ const Routes = () => {
                         element={
                             <ProtectedRoute>
                                 <Nyheter />
+                            </ProtectedRoute>
+                        }
+                    />
+                    <Route
+                        path="nyheter/:id"
+                        element={
+                            <ProtectedRoute>
+                                <NewsArticle />
                             </ProtectedRoute>
                         }
                     />

@@ -78,6 +78,31 @@
 .flex-3 {
     flex: 3;
 }
+.flexgrid {
+    display: flex;
+    flex-wrap: wrap;
+}
+.flexgrid__item {
+    flex: 0 0 auto;
+}
+.flexgrid--gutters-s {
+    margin: 0px -0.25rem;
+}
+.flexgrid--gutters-s > .flexgrid__item {
+    padding: 0px 0.25rem 0.5rem;
+}
+.flexgrid--gutters-m {
+    margin: 0px -0.5rem;
+}
+.flexgrid--gutters-m > .flexgrid__item {
+    padding: 0px 0.5rem 1rem;
+}
+.flexgrid--gutters-l {
+    margin: 0px -1rem;
+}
+.flexgrid--gutters-l > .flexgrid__item {
+    padding: 0px 1rem 2rem;
+}
 .justify-cfs {
     justify-content: flex-start;
 }

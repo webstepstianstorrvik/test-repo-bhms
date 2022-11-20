@@ -2,6 +2,8 @@ import './heading.css'
 
 import { Link, useLocation } from 'react-router-dom'
 
+const IGNORE_LIST = ['nyheter/']
+
 const Heading = () => {
     const location = useLocation()
     var paths = location.pathname.split('/').filter((path) => path)
@@ -16,6 +18,11 @@ const Heading = () => {
     if (paths[0] === 'aktiviteter' && paths[1] === 'oversikt' && paths[2]) {
         paths = paths.slice(0, 2)
         heading = 'Aktivitet'
+    }
+
+    if (paths[0] === 'nyheter' && paths[1]) {
+        paths = paths.slice(0, 1)
+        heading = 'Nyheter'
     }
 
     const formatText = (text: string) => {
@@ -38,7 +45,10 @@ const Heading = () => {
         return path
     }
 
-    if (paths.length === 0) {
+    if (
+        paths.length === 0 ||
+        IGNORE_LIST.some((v) => location.pathname.includes(v))
+    ) {
         return null
     }
 

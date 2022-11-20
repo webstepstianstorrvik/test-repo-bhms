@@ -21,3 +21,8 @@ export interface Person {
     kartotekId: number
     gruppe: string
 }
+
+export interface NameValue {
+    name: string
+    value: string | number
+}

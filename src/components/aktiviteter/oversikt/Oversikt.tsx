@@ -15,6 +15,7 @@ import StatusButton from '../../common/StatusButton'
 import Spinner from '../../common/Spinner'
 import Select from '../../common/forms/Select'
 import ReactTooltip from 'react-tooltip'
+import { VIEW } from '../mine-frister/MineFrister'
 
 const Oversikt = () => {
     const { data, isLoading } = useAktiviteter()
@@ -29,7 +30,11 @@ const Oversikt = () => {
         }),
         columnHelper.accessor('aktivitetId', {
             cell: (info) => (
-                <NavLink to={`/aktiviteter/oversikt/${info.getValue()}`}>
+                <NavLink
+                    to={`/aktiviteter/mine-frister/?view=${
+                        VIEW.LIST
+                    }&aktivitet=${info.getValue()}`}
+                >
                     <Button variant="secondary" size="small">
                         1
                     </Button>
